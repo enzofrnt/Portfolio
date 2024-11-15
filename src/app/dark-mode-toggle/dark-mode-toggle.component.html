@@ -1,0 +1,12 @@
+<button
+  class="dark-mode-toggle"
+  (click)="onToggle()"
+>
+  <i
+    [ngClass]="{
+      'bi-brightness-high': !(darkMode$ | async),
+      'bi-moon-stars': darkMode$ | async
+    }"
+    class="bi"
+  ></i>
+</button>
