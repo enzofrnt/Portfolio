@@ -14,7 +14,7 @@ export class ProjectService {
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
-    private injector: Injector
+    private injector: Injector,
   ) {}
 
   getProjects(): Project[] {

@@ -8,10 +8,9 @@ describe('WaitForDbComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WaitForDbComponent]
-    })
-    .compileComponents();
-    
+      declarations: [WaitForDbComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(WaitForDbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -10,7 +10,9 @@ $color-light-mode: #2d3436;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
 
   i {
     font-size: 20px;
@@ -25,5 +27,3 @@ $color-light-mode: #2d3436;
     color: $color-dark-mode;
   }
 }
-
-

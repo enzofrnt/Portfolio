@@ -5,15 +5,8 @@ import { ProjectsRoutingModule } from './projects-routing.module';
 import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
 import { ProjectsComponent } from './projects/projects.component';
 
-
 @NgModule({
-  declarations: [
-    WaitForDbComponent,
-    ProjectsComponent
-  ],
-  imports: [
-    CommonModule,
-    ProjectsRoutingModule
-  ]
+  declarations: [WaitForDbComponent, ProjectsComponent],
+  imports: [CommonModule, ProjectsRoutingModule],
 })
-export class ProjectsModule { }
+export class ProjectsModule {}
