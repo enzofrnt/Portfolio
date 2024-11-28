@@ -3,8 +3,7 @@
   [ngClass]="{
     'navbar-light bg-light': !(darkMode$ | async),
     'navbar-dark bg-dark': darkMode$ | async,
-  }"
->
+  }">
   <div class="container-fluid">
     <!-- Marque et bouton toggler -->
     <a class="navbar-brand" href="#">Portfolio</a>
@@ -15,8 +14,7 @@
       data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -36,35 +34,26 @@
             href="#"
             role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+            aria-expanded="false">
             Expériences
           </a>
           <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-            <!-- Section IUT -->
-            <h6 class="dropdown-header">IUT</h6>
-            <li><a class="dropdown-item" href="#">AUTO-QCM</a></li>
-            <li><a class="dropdown-item" href="#">Occupation-salles</a></li>
-            <li><a class="dropdown-item" href="#">Memory</a></li>
-            <li><a class="dropdown-item" href="#">Gestion de banque</a></li>
+            <li><a class="dropdown-item" href="/projects">Tout mes
+                projets</a></li>
+            <li><hr class="dropdown-divider" /></li>
+
+            <app-project-dropdown
+              [projects]="persoProjects"
+              header="Projets personnels">
+            </app-project-dropdown>
 
             <li><hr class="dropdown-divider" /></li>
 
-            <!-- Section Projets -->
-            <h6 class="dropdown-header">Projets personnel</h6>
-            <li><a class="dropdown-item" href="#">BeamMP MacOS Port</a></li>
-            <li><a class="dropdown-item" href="#">Django WaitForDB</a></li>
-            <li>
-              <a class="dropdown-item" href="#">Django Evenstream (SSE)</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"
-                >Django REST Framework HybridRouter</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">FlopEDT rework arborécence</a>
-            </li>
+            <app-project-dropdown
+              [projects]="iutProjects"
+              header="Projet de l'IUT">
+            </app-project-dropdown>
+
           </ul>
         </li>
         <li class="nav-item">

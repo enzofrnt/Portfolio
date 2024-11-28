@@ -1,0 +1,5 @@
+<h6 class="dropdown-header">{{ header }}</h6>
+<li *ngFor="let project of projects">
+  <a class="dropdown-item" [href]="'/projects/' + project.id">{{ project.name
+    }}</a>
+</li>

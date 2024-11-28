@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsListComponent } from './projects-list/projects-list/projects-list.component';
+import { ProjectService } from './project.service';
 
 const routes: Routes = [
-  { path: '', component: ProjectsComponent },
-  { path: 'wait-for-db', component: WaitForDbComponent },
+  { path: '', component: ProjectsListComponent },
+  ...ProjectService.projectComponents.map((component) => ({
+    path: new component().id,
+    component: component,
+  })),
 ];
 
 @NgModule({
