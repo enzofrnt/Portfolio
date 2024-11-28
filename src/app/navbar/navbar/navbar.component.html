@@ -1,8 +1,8 @@
 <nav
-  class="navbar navbar-expand-lg"
+  class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
   [ngClass]="{
-    'navbar-light bg-light': !(darkMode$ | async),
-    'navbar-dark bg-dark': darkMode$ | async,
+  'navbar-light bg-light': !(darkMode$ | async),
+  'navbar-dark bg-dark': darkMode$ | async,
   }">
   <div class="container-fluid">
     <!-- Marque et bouton toggler -->

@@ -9,6 +9,7 @@ import { DjangoHybridrouterComponent } from './projects/django-hybridrouter/djan
 import { BeampMacosComponent } from './projects/beamp-macos/beamp-macos.component';
 import { BankManageComponent } from './projects/bank-manage/bank-manage.component';
 import { AutoQcmComponent } from './projects/auto-qcm/auto-qcm.component';
+import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,7 @@ export class ProjectService {
     BeampMacosComponent,
     BankManageComponent,
     AutoQcmComponent,
+    DjangoRagComponent,
   ];
 
   constructor(

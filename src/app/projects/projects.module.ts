@@ -13,6 +13,7 @@ import { BeampMacosComponent } from './projects/beamp-macos/beamp-macos.componen
 import { DjangoSseComponent } from './projects/django-sse/django-sse.component';
 import { DjangoHybridrouterComponent } from './projects/django-hybridrouter/django-hybridrouter.component';
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
+import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework
     DjangoSseComponent,
     DjangoHybridrouterComponent,
     FlopedtReworkComponent,
+    DjangoRagComponent,
   ],
   imports: [CommonModule, ProjectsRoutingModule],
 })
