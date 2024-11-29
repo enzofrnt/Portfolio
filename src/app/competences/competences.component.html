@@ -1,0 +1,27 @@
+<div class="container text-center my-5">
+  <h1 class="mb-4">Compétences</h1>
+  <p class="text-muted">
+    Cliquez sur le dernier niveau de chaque compétence pour accéder à un projet
+    illustratif.
+  </p>
+  <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-6 g-4">
+    <div class="col" *ngFor="let competence of competences">
+      <div class="card shadow-sm h-100 border-0">
+        <div class="card-header text-white text-center rounded mb-3"
+          [style.backgroundColor]="competence.color">
+          <h5 class="mb-0">{{ competence.title }}</h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="list-group d-flex flex-column h-100">
+            <div
+              class="list-group-item d-flex flex-column justify-content-between"
+              *ngFor="let niveau of competence.niveaux">
+              <h6 class="fw-bold">{{ niveau.titre }}</h6>
+              <p class="mb-0 text-muted">{{ niveau.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

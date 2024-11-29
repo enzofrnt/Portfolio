@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode-toggle',
@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dark-mode-toggle.component.scss'],
 })
 export class DarkModeToggleComponent {
-  darkMode$: Observable<boolean> = new Observable<boolean>();
+  constructor(public darkModeService: DarkModeService) {}
 
-  constructor() {}
-
-  onToggle(): void {}
+  toggleDarkMode(): void {
+    this.darkModeService.updateDarkMode();
+  }
 }

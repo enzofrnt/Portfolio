@@ -1,0 +1,8 @@
+<button class="btn" (click)="toggleDarkMode()">
+  <i
+    [ngClass]="{
+      'bi-brightness-high': darkModeService.darkModeSignal() !== 'dark',
+      'bi-moon-stars': darkModeService.darkModeSignal() === 'dark'
+    }"
+    class="bi"></i>
+</button>
