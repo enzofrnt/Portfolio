@@ -14,6 +14,7 @@ import { DjangoSseComponent } from './projects/django-sse/django-sse.component';
 import { DjangoHybridrouterComponent } from './projects/django-hybridrouter/django-hybridrouter.component';
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
 import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
+import { BackButtonComponent } from './projects/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
     DjangoHybridrouterComponent,
     FlopedtReworkComponent,
     DjangoRagComponent,
+    BackButtonComponent,
   ],
   imports: [CommonModule, ProjectsRoutingModule],
 })

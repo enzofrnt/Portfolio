@@ -2,10 +2,52 @@
 
 body.dark-mode {
   background-color: #2d3436;
-  color: #dfe6e9;
+  color: #dfe6e9 !important;
+}
+
+// .dark-mode {
+//   background-color: #2d3436;
+//   color: #dfe6e9 !important;
+
+//   .card {
+//     background-color: #333;
+//     border-color: #444;
+//     color: #dfe6e9 !important;
+//   }
+
+//   .btn-primary {
+//     background-color: #6c5ce7;
+//     border-color: #6c5ce7;
+//   }
+// }
+
+.dark-mode {
+  // Variables pour les boutons primaires en mode sombre
+  --bs-btn-bg: #6c5ce7 !important; /* Couleur de fond du bouton */
+  --bs-btn-border-color: #6c5ce7; /* Couleur de la bordure */
+  --bs-btn-hover-bg: #5a4ce0; /* Couleur de fond au hover */
+  --bs-btn-hover-border-color: #5a4ce0; /* Couleur de bordure au hover */
+  --bs-btn-color: #ffffff; /* Couleur du texte */
+
+  // Variables pour d'autres types de boutons si nécessaire
+  --bs-btn-secondary-bg: #444;
+  --bs-btn-secondary-border-color: #444;
+  --bs-btn-secondary-hover-bg: #555;
+  --bs-btn-secondary-hover-border-color: #555;
+
+  body {
+    background-color: #2d3436;
+    color: #dfe6e9;
+  }
+
+  .card {
+    background-color: #333;
+    border-color: #444;
+    color: #dfe6e9;
+  }
 }
 
 body.light-mode {
   background-color: #dfe6e9;
-  color: #2d3436;
+  color: #2d3436 !important;
 }

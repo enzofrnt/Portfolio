@@ -1,8 +1,9 @@
 <div class="card h-100">
   <img
-    src="assets/images/{{ project.id }}.jpg"
+    src="assets/images/{{ project.id }}.png"
     class="card-img-top"
-    alt="{{ project.name }}" />
+    alt="{{ project.name }}"
+    onerror="this.src='assets/images/default.png';" />
   <div class="card-body d-flex flex-column">
     <h5 class="card-title">{{ project.name }}</h5>
     <p class="card-text">{{ project.description }}</p>
