@@ -1,0 +1,35 @@
+// Redéfinir les breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 580px,
+  md: 770px,
+  lg: 1250px,
+  xl: 1350px,
+  xxl: 1400px,
+);
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+.competence {
+  font-size: 0.8rem;
+
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    height: 180px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    height: 120px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    height: 195px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, xl)) {
+    height: 160px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, xxl)) {
+    height: 160px;
+  }
+}
