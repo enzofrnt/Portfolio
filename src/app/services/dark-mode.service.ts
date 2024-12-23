@@ -18,6 +18,11 @@ export class DarkModeService {
   }
 
   updateDarkMode(): void {
-    this.darkModeSignal.update((value) => (value === 'dark' ? 'null' : 'dark'));
+    this.darkModeSignal.update((value) => {
+      const newTheme = value === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', newTheme); // html
+      document.body.setAttribute('data-bs-theme', newTheme); // optionnel
+      return newTheme;
+    });
   }
 }
