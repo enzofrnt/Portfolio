@@ -9,6 +9,6 @@ import { Project, ProjectType } from '../../project.model';
 export class FlopedtReworkComponent implements Project {
   id = 'flopedt-rework';
   name = 'Flopedt rework arborescence';
-  description = "Refonte de l'arborecense du repository de Flopedt.";
+  description = "Refonte de l'arborecense du repository de Flopedt";
   type = ProjectType.PERSO;
 }

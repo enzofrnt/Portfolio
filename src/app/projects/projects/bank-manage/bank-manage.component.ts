@@ -9,6 +9,6 @@ import { Project, ProjectType } from '../../project.model';
 export class BankManageComponent implements Project {
   id = 'bank-manage';
   name = 'Gestion de banque';
-  description = 'Gestion de compte bancaire.';
+  description = 'Gestion de compte bancaire';
   type = ProjectType.IUT;
 }

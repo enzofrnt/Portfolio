@@ -9,7 +9,7 @@ import { Project, ProjectType } from '../../project.model';
 export class BeamMPMacosComponent implements Project {
   id = 'beammp-macos';
   name = 'BeamMP MacOS Port';
-  description = 'Port du client BeamMP sur MacOS.';
+  description = 'Port du client BeamMP sur MacOS';
   type = ProjectType.PERSO;
   link = 'https://github.com/BeamMP/BeamMP-Launcher/pull/147';
 }

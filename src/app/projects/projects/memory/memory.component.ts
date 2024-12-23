@@ -9,7 +9,7 @@ import { Project, ProjectType } from '../../project.model';
 export class MemoryComponent implements Project {
   id = 'memory';
   name = 'Memory';
-  description = "Un jeu de memory pour s'amuser et tester sa mémoire. javaFX";
+  description = "Un jeu de memory pour s'amuser et tester sa mémoire";
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/Memory';
 }

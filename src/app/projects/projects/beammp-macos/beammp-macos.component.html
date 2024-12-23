@@ -1,8 +1,85 @@
 <app-project-wrapper [project]="this">
-  <h1>BeamMP MacOS</h1>
-  <p>
-    BeamMP MacOS est un launcher pour le mod multijoueur de BeamNG.drive,
-    BeamMP. Il permet de lancer le jeu avec le mod
-    multijoueur en un clic, sans avoir à passer par le terminal.
-  </p>
+  <!-- <div class="project-container p-4 bg-light rounded"> -->
+  <!-- Titre du projet avec un badge -->
+
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>BeamMP MacOS</strong> est un launcher pour le mod
+            multijoueur de
+            <strong>BeamNG.drive</strong>, conçu pour rendre le mod
+            accessible sur MacOS. Le jeu s'exécute via des solutions comme
+            <a href="https://www.winehq.org/" target="_blank"
+              rel="noopener noreferrer">Wine</a>,
+            <a href="https://www.codeweavers.com/" target="_blank"
+              rel="noopener noreferrer">CrossOver</a>,
+            ou <a href="https://github.com/Gcenx/WineskinServer"
+              target="_blank" rel="noopener noreferrer">Whisky</a>,
+            ajoutant une couche de complexité au lancement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Défis -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+          <i class="bi bi-tools"></i> Défis relevés
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Adapter le launcher Linux existant pour MacOS.</li>
+            <li>Assurer la compatibilité avec Wine et CrossOver.</li>
+            <li>Simplifier l'exécution sans passer par le terminal.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Fonctionnalités -->
+    <div class="col-md-6">
+      <div class="card shadow-sm border-success">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-check-circle"></i> Fonctionnalités principales
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Lancement en un clic de BeamNG.drive avec BeamMP.</li>
+            <li>Support des environnements Wine, CrossOver et Whisky.</li>
+            <li>Interface utilisateur intuitive et adaptée aux utilisateurs
+              MacOS.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-laptop"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <p>
+            Le projet utilise <strong>Node.js</strong> pour le backend et
+            <strong>Electron</strong> pour une interface multiplateforme. Des
+            ajustements spécifiques ont été faits pour intégrer Wine et ses
+            variantes (CrossOver, Whisky).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
 </app-project-wrapper>

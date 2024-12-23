@@ -1,11 +1,30 @@
-<div class="d-flex justify-content-start mb-3">
-  <button class="btn btn-secondary me-2" [routerLink]="['/projects']">
-    <i class="bi bi-arrow-left"></i> Retour aux projets
-  </button>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <!-- Boutons à gauche -->
+  <div class="d-flex">
+    <button class="btn btn-secondary me-2" [routerLink]="['/projects']">
+      <i class="bi bi-arrow-left"></i> Retour aux projets
+    </button>
 
-  <a [href]="project.link" *ngIf="project.link" class="btn btn-secondary">
-    <i class="bi bi-github"></i>
-  </a>
+    <a
+      [href]="project.link"
+      *ngIf="project.link"
+      class="btn btn-primary">
+      Lien du projet
+      <i class="bi bi-github"></i>
+    </a>
+  </div>
+
+  <!-- Titre centré -->
+  <!-- <h1 class="flex-grow-1 text-center m-0">{{ project.name }}</h1> -->
+
+  <!-- <div class="text-center mb-4"> -->
+
+</div>
+<div class="text-center mb-4 flex-grow-1 text-center m-0">
+  <h1 class="display-4">{{ this.project.name }}</h1>
+  <!-- <span class="badge bg-primary">Portage MacOS</span> -->
+  <span class="badge bg-primary">{{ this.project.description }}</span>
+  <!--TODO: Add little summary for Project -->
 </div>
 
 <ng-content></ng-content>

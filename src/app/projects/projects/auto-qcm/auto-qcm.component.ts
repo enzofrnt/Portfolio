@@ -9,7 +9,7 @@ import { Project, ProjectType } from '../../project.model';
 export class AutoQcmComponent implements Project {
   id = 'auto-qcm';
   name = 'Auto QCM';
-  description = "Application de QCM automatique pour l'IUT de blagnac.";
+  description = "Application de QCM automatique pour l'IUT de blagnac";
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/AUTO-QCM';
 }
