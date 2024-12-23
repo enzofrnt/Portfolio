@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
   <div class="container-fluid">
-    <!-- Marque et bouton toggler -->
-    <a class="navbar-brand" href="#">Portfolio</a>
+    <!-- Logo/Marque : renvoie à la page d'accueil -->
+    <a class="navbar-brand" [routerLink]="['/']">Portfolio</a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -13,30 +14,57 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Contenu de la barre de navigation -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Section gauche : Liens -->
+      <!-- Liens à gauche -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!-- Lien Accueil -->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+          <a
+            class="nav-link"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            aria-current="page">
+            Accueil
+          </a>
         </li>
+
+        <!-- Lien Compétences -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/competences']">Compétences</a>
+          <a
+            class="nav-link"
+            [routerLink]="['/competences']"
+            routerLinkActive="active">
+            Compétences
+          </a>
         </li>
-        <li class="nav-item dropdown">
+
+        <!-- Dropdown Expériences -->
+        <li
+          class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false">
+            aria-expanded="false"
+            [ActiveLink]="'/projects'">
             Expériences
           </a>
           <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-            <li><a class="dropdown-item" [routerLink]="['/projects']">
-                Tout mes projets</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/projects']"
+                [ActiveLink]="'/projects'"
+                [ActiveLinkStrict]="true">
+                Tous mes projets
+              </a>
+            </li>
             <li><hr class="dropdown-divider" /></li>
 
+            <!-- Composant pour projets perso -->
             <app-project-dropdown
               [projects]="persoProjects"
               header="Projets personnels">
@@ -44,29 +72,34 @@
 
             <li><hr class="dropdown-divider" /></li>
 
+            <!-- Composant pour projets IUT -->
             <app-project-dropdown
               [projects]="iutProjects"
-              header="Projet de l'IUT">
+              header="Projets de l'IUT">
             </app-project-dropdown>
 
           </ul>
         </li>
+
+        <!-- Lien Services (exemple désactivé) -->
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Services</a>
         </li>
       </ul>
 
-      <!-- Section droite : Bouton GitHub et mode sombre -->
+      <!-- Boutons à droite -->
       <div class="d-flex align-items-center ms-auto">
+        <!-- Lien GitHub -->
         <a
           href="https://github.com/enzofrnt"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline-secondary me-3">
           Mon GitHub
-          <!-- <i class="bi bi-box-arrow-up-right"></i> -->
           <i class="bi bi-github"></i>
         </a>
+
+        <!-- Bouton / Switch dark mode -->
         <app-dark-mode-toggle></app-dark-mode-toggle>
       </div>
     </div>

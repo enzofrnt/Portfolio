@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDropdownComponent } from './navbar/project-dropdown/project-dropdown.component';
 import { CompetencesComponent } from './competences/competences.component';
+import { ActiveLinkDirective } from './directives/active-link.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CompetencesComponent } from './competences/competences.component';
     HomeComponent,
     ProjectDropdownComponent,
     CompetencesComponent,
+    ActiveLinkDirective,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, CommonModule],
   providers: [],
