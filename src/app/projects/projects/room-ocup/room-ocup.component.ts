@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
-  selector: 'app-room-ocup',
-  templateUrl: './room-ocup.component.html',
-  styleUrl: './room-ocup.component.scss',
+    selector: 'app-room-ocup',
+    templateUrl: './room-ocup.component.html',
+    styleUrl: './room-ocup.component.scss',
+    standalone: false
 })
 export class RoomOcupComponent implements Project {
   id = 'room-ocup';

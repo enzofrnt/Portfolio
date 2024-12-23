@@ -3,9 +3,10 @@ import { Project, ProjectType } from '../../project.model';
 import { ProjectService } from '../../project.service';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects-list.component.html',
-  styleUrls: ['./projects-list.component.scss'],
+    selector: 'app-projects',
+    templateUrl: './projects-list.component.html',
+    styleUrls: ['./projects-list.component.scss'],
+    standalone: false
 })
 export class ProjectsListComponent implements OnInit {
   iutProjects: Project[] = [];

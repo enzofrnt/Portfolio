@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Project } from '../../projects/project.model';
 
 @Component({
-  selector: 'app-project-dropdown',
-  templateUrl: './project-dropdown.component.html',
-  styleUrls: ['./project-dropdown.component.scss'],
+    selector: 'app-project-dropdown',
+    templateUrl: './project-dropdown.component.html',
+    styleUrls: ['./project-dropdown.component.scss'],
+    standalone: false
 })
 export class ProjectDropdownComponent {
   @Input() projects: Project[] = [];

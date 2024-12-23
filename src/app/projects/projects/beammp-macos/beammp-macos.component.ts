@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
-  selector: 'app-beammp-macos',
-  templateUrl: './beammp-macos.component.html',
-  styleUrl: './beammp-macos.component.scss',
+    selector: 'app-beammp-macos',
+    templateUrl: './beammp-macos.component.html',
+    styleUrl: './beammp-macos.component.scss',
+    standalone: false
 })
 export class BeamMPMacosComponent implements Project {
   id = 'beammp-macos';

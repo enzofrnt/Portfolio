@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
-  selector: 'app-auto-qcm',
-  templateUrl: './auto-qcm.component.html',
-  styleUrl: './auto-qcm.component.scss',
+    selector: 'app-auto-qcm',
+    templateUrl: './auto-qcm.component.html',
+    styleUrl: './auto-qcm.component.scss',
+    standalone: false
 })
 export class AutoQcmComponent implements Project {
   id = 'auto-qcm';

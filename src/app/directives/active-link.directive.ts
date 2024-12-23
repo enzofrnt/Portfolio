@@ -2,7 +2,8 @@ import { Directive, ElementRef, Renderer2, Input, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Directive({
-  selector: '[ActiveLink]',
+    selector: '[ActiveLink]',
+    standalone: false
 })
 export class ActiveLinkDirective implements OnInit {
   @Input('ActiveLink') activePath: string = '';
