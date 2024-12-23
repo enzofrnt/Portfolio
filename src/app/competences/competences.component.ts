@@ -111,4 +111,14 @@ export class CompetencesComponent {
       ],
     },
   ];
+
+  hoveredIndex: number | null = null;
+
+  onMouseOver(index: number) {
+    this.hoveredIndex = index;
+  }
+
+  onMouseLeave() {
+    this.hoveredIndex = null;
+  }
 }

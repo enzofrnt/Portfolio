@@ -12,4 +12,6 @@ export class RoomOcupComponent implements Project {
   description =
     "Application web de prévision d'occupation des salles de l'IUT de Blagnac.";
   type = ProjectType.IUT;
+  link =
+    'https://github.com/Tructruc/SAE-ALT-S3-Dev-23-24-Occupation-salles-3A-Groupe-2';
 }

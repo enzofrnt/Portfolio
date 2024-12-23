@@ -11,7 +11,7 @@ export class ProjectCardComponent {
     id: '',
     name: '',
     description: '',
-    // path: '',
     type: ProjectType.PERSO,
+    link: '',
   };
 }

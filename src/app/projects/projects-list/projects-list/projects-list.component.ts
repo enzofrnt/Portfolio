@@ -16,6 +16,8 @@ export class ProjectsListComponent implements OnInit {
   ngOnInit(): void {
     const projectsByType = this.projectService.getProjectsByType();
     this.iutProjects = projectsByType[ProjectType.IUT];
+    console.log(this.iutProjects);
     this.persoProjects = projectsByType[ProjectType.PERSO];
+    console.log(this.persoProjects);
   }
 }

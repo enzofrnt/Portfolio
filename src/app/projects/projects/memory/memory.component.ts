@@ -11,4 +11,5 @@ export class MemoryComponent implements Project {
   name = 'Memory';
   description = "Un jeu de memory pour s'amuser et tester sa mémoire. javaFX";
   type = ProjectType.IUT;
+  link = 'https://github.com/enzofrnt/Memory';
 }

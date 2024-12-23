@@ -9,6 +9,7 @@ import { Project, ProjectType } from '../../project.model';
 export class DjangoSseComponent implements Project {
   id = 'django-sse';
   name = 'Django Eventstream (SSE)';
-  description = 'Un exemple de Server-Sent Events avec Django.';
+  description = 'Ajout du support multiprocessus au module Django Eventstream';
   type = ProjectType.PERSO;
+  link = 'https://github.com/fanout/django-eventstream/pull/152';
 }

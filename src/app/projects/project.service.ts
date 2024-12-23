@@ -6,7 +6,7 @@ import { MemoryComponent } from './projects/memory/memory.component';
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
 import { DjangoSseComponent } from './projects/django-sse/django-sse.component';
 import { DjangoHybridrouterComponent } from './projects/django-hybridrouter/django-hybridrouter.component';
-import { BeampMacosComponent } from './projects/beamp-macos/beamp-macos.component';
+import { BeamMPMacosComponent } from './projects/beammp-macos/beammp-macos.component';
 import { BankManageComponent } from './projects/bank-manage/bank-manage.component';
 import { AutoQcmComponent } from './projects/auto-qcm/auto-qcm.component';
 import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
@@ -22,7 +22,7 @@ export class ProjectService {
     FlopedtReworkComponent,
     DjangoSseComponent,
     DjangoHybridrouterComponent,
-    BeampMacosComponent,
+    BeamMPMacosComponent,
     BankManageComponent,
     AutoQcmComponent,
     DjangoRagComponent,
@@ -46,6 +46,9 @@ export class ProjectService {
         description: instance.description,
         type: instance.type,
       };
+      if ('link' in instance && typeof instance.link === 'string') {
+        project.link = instance.link;
+      }
 
       componentRef.destroy();
       return project;

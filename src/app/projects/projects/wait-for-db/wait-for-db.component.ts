@@ -12,4 +12,5 @@ export class WaitForDbComponent implements Project {
   description =
     'Un projet de gestion des connexions pour vérifier la disponibilité des bases de données.';
   type = ProjectType.PERSO;
+  link = 'https://github.com/enzofrnt/django_wait_for_db';
 }

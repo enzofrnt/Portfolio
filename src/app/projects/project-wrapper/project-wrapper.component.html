@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-start mb-3">
+  <button class="btn btn-secondary me-2" [routerLink]="['/projects']">
+    <i class="bi bi-arrow-left"></i> Retour aux projets
+  </button>
+
+  <a [href]="project.link" *ngIf="project.link" class="btn btn-secondary">
+    <i class="bi bi-github"></i>
+  </a>
+</div>
+
+<ng-content></ng-content>

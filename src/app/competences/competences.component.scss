@@ -33,3 +33,25 @@ $grid-breakpoints: (
     height: 160px;
   }
 }
+
+.col-competence {
+  transition: transform 0.3s ease-in-out;
+
+  &.hovered {
+    transform: scale(1.02);
+  }
+}
+
+.card-header {
+  position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+
+  &:after {
+    content: ''; /* Pseudo-élément pour rendre la marge interactive */
+    position: absolute;
+    bottom: -1rem; /* Étend la zone à la marge définie par Bootstrap */
+    left: 0;
+    right: 0;
+    height: 1rem; /* Correspond à la hauteur de la marge définie par Bootstrap */
+    pointer-events: all; /* Permet à la marge de capturer les événements */
+  }
+}
