@@ -8,7 +8,7 @@ $grid-breakpoints: (
   xxl: 1400px,
 );
 
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@use '../../../node_modules/bootstrap/scss/bootstrap';
 
 .competence {
   font-size: 0.8rem;
