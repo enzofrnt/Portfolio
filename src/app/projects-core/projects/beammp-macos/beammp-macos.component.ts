@@ -13,4 +13,12 @@ export class BeamMPMacosComponent implements Project {
   description = 'Port du client BeamMP sur MacOS';
   type = ProjectType.PERSO;
   link = 'https://github.com/BeamMP/BeamMP-Launcher/pull/147';
+
+  code: string = `
+  def test() :
+    if true :
+      return "Hello World";
+    else :
+      return "Goodbye";
+  `;
 }

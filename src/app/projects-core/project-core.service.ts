@@ -10,11 +10,12 @@ import { BeamMPMacosComponent } from './projects/beammp-macos/beammp-macos.compo
 import { BankManageComponent } from './projects/bank-manage/bank-manage.component';
 import { AutoQcmComponent } from './projects/auto-qcm/auto-qcm.component';
 import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
+import { ProjectsModule } from './projects/projects.module';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProjectService {
+export class ProjectCoreService {
   static projectComponents = [
     WaitForDbComponent,
     RoomOcupComponent,
@@ -28,13 +29,17 @@ export class ProjectService {
     DjangoRagComponent,
   ];
 
+  // static projectComponentss = (ProjectsModule as any).__annotations__[0]
+  //   .declarations;
+
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector,
   ) {}
 
   getProjects(): Project[] {
-    return ProjectService.projectComponents.map((component) => {
+    // console.log(ProjectCoreService.projectComponentss);
+    return ProjectCoreService.projectComponents.map((component) => {
       const componentFactory =
         this.componentFactoryResolver.resolveComponentFactory(component);
       const componentRef = componentFactory.create(this.injector);

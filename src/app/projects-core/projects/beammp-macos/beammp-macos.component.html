@@ -1,0 +1,111 @@
+<app-project-wrapper [project]="this">
+  <!-- <div class="project-container p-4 bg-light rounded"> -->
+  <!-- Titre du projet avec un badge -->
+
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>BeamMP</strong> est le lanceur d'un mod créé par la
+            communauté, permettant de jouer en multijoueur à
+            <strong><a href="https://www.beamng.com/game/" target="_blank"
+                rel="noopener noreferrer">BeamNG.drive</a></strong>. Ce lanceur
+            est déjà disponible pour
+            Linux et Windows, mais pas encore pour macOS.
+            <br><br>
+            Cependant, il est désormais possible d’installer
+            <strong>BeamNG.drive</strong> sur macOS grâce à des solutions comme
+            <strong><a href="https://www.winehq.org/" target="_blank"
+                rel="noopener noreferrer">Wine</a></strong>,
+            <strong><a href="https://www.codeweavers.com/" target="_blank"
+                rel="noopener noreferrer">CrossOver</a></strong> ou
+            <strong><a href="https://github.com/Gcenx/WineskinServer"
+                target="_blank" rel="noopener noreferrer">Whisky</a></strong>,
+            qui permettent d’exécuter des applications Windows sur macOS.
+            <br><br>
+            Récemment, Apple a lancé un outil appelé GPTK (Game Porting Tool
+            Kit), qui améliore les performances de ces solutions. Cela permet à
+            de nombreux jeux Windows, y compris <strong>BeamNG.drive</strong>,
+            de fonctionner plus efficacement sur macOS.
+            <br><br>
+            Dans ce contexte, il pourrait sembler simple de télécharger la
+            version Windows de <strong>BeamMP</strong>, puis de l’utiliser pour
+            lancer <strong>BeamNG.drive</strong> en multijoueur via Wine,
+            CrossOver ou Whisky.
+            Cependant, le lanceur <strong>BeamMP</strong> rencontre des
+            problèmes de compatibilité dans ces environnements, compliquant son
+            utilisation.
+            <br><br>
+            Aprés avoir consulté le code source de <strong>BeamMP</strong>, il
+            semble que le laucher communique avec le jeu via des sockets TCP.
+            Il devient donc possible de créer une varsion MacOS native de
+            BeamMP, qui communiquerait avec le jeu de la même manière même si
+            le jeu est exécuté via Wine, CrossOver ou Whisky.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Défis -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+          <i class="bi bi-tools"></i> Défis à relever
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Adapter le launcher Linux existant pour MacOS.</li>
+            <!-- <li>Assurer la compatibilité avec Wine et CrossOver.</li> -->
+            <li>Conserver l'execution automatique du jeux lors de l'écution du
+              launcher avec Wine, CrossOver ou Whisky.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Fonctionnalités -->
+    <div class="col-md-6">
+      <div class="card shadow-sm border-success">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-check-circle"></i> Fonctionnalités principales
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Lancement en un clic de BeamNG.drive avec BeamMP.</li>
+            <li>Support des environnements Wine, CrossOver et Whisky.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-laptop"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <p>
+            Le projet utilise <strong>Node.js</strong> pour le backend et
+            <strong>Electron</strong> pour une interface multiplateforme. Des
+            ajustements spécifiques ont été faits pour intégrer Wine et ses
+            variantes (CrossOver, Whisky).
+          </p>
+          coucou
+          <pre><code [highlight]="code" language="html"></code></pre>
+          coucou
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</app-project-wrapper>

@@ -8,7 +8,9 @@ const routes: Routes = [
   {
     path: 'projects',
     loadChildren: () =>
-      import('./projects/projects.module').then((m) => m.ProjectsModule),
+      import('./projects-core/projects-core.module').then(
+        (m) => m.ProjectsCoreModule,
+      ),
   },
   { path: 'home', component: HomeComponent },
   { path: 'competences', component: CompetencesComponent },
