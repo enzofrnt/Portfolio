@@ -6,8 +6,8 @@ import { Router, NavigationEnd } from '@angular/router';
   standalone: false,
 })
 export class ActiveLinkDirective implements OnInit {
-  @Input('ActiveLink') activePath: string = '';
-  @Input('ActiveLinkStrict') activeLinkStrict: boolean = false;
+  @Input('ActiveLink') activePath = '';
+  @Input('ActiveLinkStrict') activeLinkStrict = false;
 
   constructor(
     private el: ElementRef,

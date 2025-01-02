@@ -14,7 +14,7 @@ export class BeamMPMacosComponent implements Project {
   type = ProjectType.PERSO;
   link = 'https://github.com/BeamMP/BeamMP-Launcher/pull/147';
 
-  code: string = `
+  code = `
   def test() :
     if true :
       return "Hello World";
