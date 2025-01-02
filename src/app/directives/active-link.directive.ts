@@ -7,7 +7,8 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class ActiveLinkDirective implements OnInit {
   @Input() appActiveLink = '';
-  @Input() activeLinkStrict = false;
+  // @Input() appActiveLink = '';
+  @Input() appActiveLinkStrict = false;
 
   constructor(
     private el: ElementRef,
@@ -18,7 +19,7 @@ export class ActiveLinkDirective implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        const isActive = this.activeLinkStrict
+        const isActive = this.appActiveLinkStrict
           ? this.router.url === this.appActiveLink
           : this.router.url.includes(this.appActiveLink);
 
