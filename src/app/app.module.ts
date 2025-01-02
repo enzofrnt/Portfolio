@@ -1,4 +1,7 @@
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -33,5 +36,6 @@ import { ProjectsModule } from './projects-core/projects/projects.module';
     ProjectsModule,
   ],
   bootstrap: [AppComponent],
+  providers: [provideExperimentalZonelessChangeDetection()],
 })
 export class AppModule {}
