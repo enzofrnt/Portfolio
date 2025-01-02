@@ -2,12 +2,12 @@ import { Directive, ElementRef, Renderer2, Input, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Directive({
-  selector: '[ActiveLink]',
+  selector: '[appActiveLink]',
   standalone: false,
 })
 export class ActiveLinkDirective implements OnInit {
-  @Input('ActiveLink') activePath = '';
-  @Input('ActiveLinkStrict') activeLinkStrict = false;
+  @Input() appActiveLink = '';
+  @Input() activeLinkStrict = false;
 
   constructor(
     private el: ElementRef,
@@ -19,8 +19,8 @@ export class ActiveLinkDirective implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const isActive = this.activeLinkStrict
-          ? this.router.url === this.activePath
-          : this.router.url.includes(this.activePath);
+          ? this.router.url === this.appActiveLink
+          : this.router.url.includes(this.appActiveLink);
 
         if (isActive) {
           this.renderer.addClass(this.el.nativeElement, 'active');

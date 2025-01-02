@@ -49,7 +49,7 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            [ActiveLink]="'/projects'">
+            [AppActiveLink]="'/projects'">
             Expériences
           </a>
           <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
@@ -57,8 +57,8 @@
               <a
                 class="dropdown-item"
                 [routerLink]="['/projects']"
-                [ActiveLink]="'/projects'"
-                [ActiveLinkStrict]="true">
+                [AppActiveLink]="'/projects'"
+                [AppActiveLinkStrict]="true">
                 Tous mes projets
               </a>
             </li>
