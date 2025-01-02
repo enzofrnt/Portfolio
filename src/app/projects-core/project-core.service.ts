@@ -1,4 +1,4 @@
-import { Injectable, ComponentFactoryResolver, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { WaitForDbComponent } from './projects/wait-for-db/wait-for-db.component';
 import { Project, ProjectType } from './project.model';
 import { RoomOcupComponent } from './projects/room-ocup/room-ocup.component';
@@ -10,7 +10,6 @@ import { BeamMPMacosComponent } from './projects/beammp-macos/beammp-macos.compo
 import { BankManageComponent } from './projects/bank-manage/bank-manage.component';
 import { AutoQcmComponent } from './projects/auto-qcm/auto-qcm.component';
 import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
-import { ProjectsModule } from './projects/projects.module';
 
 @Injectable({
   providedIn: 'root',
@@ -29,46 +28,25 @@ export class ProjectCoreService {
     DjangoRagComponent,
   ];
 
-  // static projectComponentss = (ProjectsModule as any).__annotations__[0]
-  //   .declarations;
-
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private injector: Injector,
-  ) {}
+  private cachedProjects: Project[] | null = null;
 
   getProjects(): Project[] {
-    // console.log(ProjectCoreService.projectComponentss);
-    return ProjectCoreService.projectComponents.map((component) => {
-      const componentFactory =
-        this.componentFactoryResolver.resolveComponentFactory(component);
-      const componentRef = componentFactory.create(this.injector);
-      const instance = componentRef.instance;
+    if (this.cachedProjects) {
+      return this.cachedProjects;
+    }
 
-      const project: Project = {
-        id: instance.id,
-        name: instance.name,
-        description: instance.description,
-        type: instance.type,
-      };
-      if ('link' in instance && typeof instance.link === 'string') {
-        project.link = instance.link;
-      }
+    this.cachedProjects = ProjectCoreService.projectComponents.map(
+      (Component) => new Component() as Project,
+    );
 
-      componentRef.destroy();
-      return project;
-    });
+    return this.cachedProjects;
   }
 
-  getProjectsByType(): { [key in ProjectType]: Project[] } {
+  getProjectsByType(): Record<ProjectType, Project[]> {
     const projects = this.getProjects();
     return {
-      [ProjectType.IUT]: projects.filter(
-        (project) => project.type === ProjectType.IUT,
-      ),
-      [ProjectType.PERSO]: projects.filter(
-        (project) => project.type === ProjectType.PERSO,
-      ),
+      [ProjectType.IUT]: projects.filter((p) => p.type === ProjectType.IUT),
+      [ProjectType.PERSO]: projects.filter((p) => p.type === ProjectType.PERSO),
     };
   }
 }
