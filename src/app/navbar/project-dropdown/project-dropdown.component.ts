@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Project } from '../../projects-core/project.model';
 
 @Component({
@@ -8,6 +8,6 @@ import { Project } from '../../projects-core/project.model';
   standalone: false,
 })
 export class ProjectDropdownComponent {
-  @Input() projects: Project[] = [];
-  @Input() header: string = '';
+  readonly projects = input<Project[]>([]);
+  readonly header = input<string>('');
 }

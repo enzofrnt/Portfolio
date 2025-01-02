@@ -8,10 +8,9 @@ describe('ProjectWrapperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectWrapperComponent]
-    })
-    .compileComponents();
-    
+      declarations: [ProjectWrapperComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ProjectWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

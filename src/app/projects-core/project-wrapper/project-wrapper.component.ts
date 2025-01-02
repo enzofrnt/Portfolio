@@ -9,12 +9,5 @@ import { Input } from '@angular/core';
   standalone: false,
 })
 export class ProjectWrapperComponent {
-  // @Input() project: Project = {
-  //   id: '',
-  //   name: '',
-  //   description: '',
-  //   type: ProjectType.PERSO,
-  //   link: '',
-  // };
   @Input() project!: Project;
 }
