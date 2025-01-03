@@ -17,6 +17,7 @@ import { ActiveLinkDirective } from './directives/active-link.directive';
 import { ProjectsCoreModule } from './projects-core/projects-core.module';
 import { ProjectsModule } from './projects-core/projects/projects.module';
 
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ProjectsModule } from './projects-core/projects/projects.module';
     ProjectDropdownComponent,
     CompetencesComponent,
     ActiveLinkDirective,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
