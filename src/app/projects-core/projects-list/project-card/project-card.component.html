@@ -8,10 +8,12 @@
     <h5 class="card-title">{{ project.name }}</h5>
     <p class="card-text">{{ project.description }}</p>
     <div class="d-flex align-items-center mt-auto">
-      <a [routerLink]="[project.id]" class="btn btn-primary flex-grow-1 me-2">
+      <a [routerLink]="['/projects', project.id]"
+        class="btn btn-primary flex-grow-1 me-2">
         Voir le projet
       </a>
-      <a [href]="project.link" *ngIf="project.link" class="btn btn-secondary">
+      <a [href]="project.link" *ngIf="project.link" class="btn btn-secondary"
+        target="_blank">
         <i class="bi bi-github"></i>
       </a>
     </div>

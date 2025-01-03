@@ -1,17 +1,22 @@
-<h2>Projets personnels</h2>
-<div class="row">
-  <div *ngFor="let project of persoProjects" class="col-md-6 col-lg-4 mb-4">
-    <app-project-card [project]="project">
-    </app-project-card>
+<div *ngIf="this.includePersoProjects">
+  <h2>Projets personnels</h2>
+  <div class="row">
+    <div *ngFor="let project of persoProjects" class="col-md-6 col-lg-4 mb-4">
+      <app-project-card [project]="project">
+      </app-project-card>
+    </div>
   </div>
 </div>
 
-<hr class="my-4" />
+<hr class="my-4"
+  *ngIf="this.includeIutProjects && this.includePersoProjects" />
 
-<h2>Projet de l'iut</h2>
-<div class="row">
-  <div *ngFor="let project of iutProjects" class="col-md-6 col-lg-4 mb-4">
-    <app-project-card [project]="project">
-    </app-project-card>
+<div *ngIf="this.includeIutProjects">
+  <h2>Projet de l'iut</h2>
+  <div class="row">
+    <div *ngFor="let project of iutProjects" class="col-md-6 col-lg-4 mb-4">
+      <app-project-card [project]="project">
+      </app-project-card>
+    </div>
   </div>
-</div>
+  <div>

@@ -12,6 +12,6 @@ import { ProjectWrapperComponent } from './project-wrapper/project-wrapper.compo
     ProjectCardComponent,
   ],
   imports: [CommonModule, ProjectsRoutingModule],
-  exports: [ProjectWrapperComponent],
+  exports: [ProjectWrapperComponent, ProjectsListComponent],
 })
 export class ProjectsCoreModule {}

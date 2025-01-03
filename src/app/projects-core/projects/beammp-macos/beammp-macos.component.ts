@@ -14,11 +14,10 @@ export class BeamMPMacosComponent implements Project {
   type = ProjectType.PERSO;
   link = 'https://github.com/BeamMP/BeamMP-Launcher/pull/147';
 
-  code = `
-  def test() :
-    if true :
-      return "Hello World";
-    else :
-      return "Goodbye";
-  `;
+  code = `def test() :
+  if true :
+    return "Hello World";
+  else :
+    return "Goodbye";
+`;
 }

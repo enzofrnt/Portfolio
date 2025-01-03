@@ -11,7 +11,7 @@ import { MemoryComponent } from './memory/memory.component';
 import { RoomOcupComponent } from './room-ocup/room-ocup.component';
 import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
 import { ProjectsCoreModule } from '../projects-core.module';
-import { Highlight, provideHighlightOptions } from 'ngx-highlightjs';
+import { CodeBlockComponent } from '../../utils/code-block/code-block.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +26,7 @@ import { Highlight, provideHighlightOptions } from 'ngx-highlightjs';
     FlopedtReworkComponent,
     DjangoRagComponent,
   ],
-  imports: [CommonModule, ProjectsCoreModule, Highlight],
-  providers: [
-    provideHighlightOptions({
-      fullLibraryLoader: () => import('highlight.js'),
-    }),
-  ],
+  imports: [CommonModule, ProjectsCoreModule, CodeBlockComponent],
+  providers: [],
 })
 export class ProjectsModule {}
