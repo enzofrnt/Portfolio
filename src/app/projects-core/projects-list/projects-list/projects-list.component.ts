@@ -11,6 +11,7 @@ import { ProjectCoreService } from '../../project-core.service';
 export class ProjectsListComponent implements OnInit {
   @Input() includeIutProjects = true;
   @Input() includePersoProjects = true;
+  @Input() includeCompetences = false;
 
   iutProjects: Project[] = [];
   persoProjects: Project[] = [];

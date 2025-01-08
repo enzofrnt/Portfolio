@@ -1,0 +1,18 @@
+.competence-label {
+  display: inline-block;
+  padding: 0.2rem 0.5rem; // Réduction de l'espace vertical pour compenser les bordures
+  border: 3px solid rgba(0, 0, 0, 0.3); // Bordures plus épaisses
+  border-radius: 1rem; // Coins bien arrondis
+  font-size: 0.9rem; // Texte légèrement réduit
+  font-weight: 600; // Texte toujours bien lisible
+  text-align: center;
+  white-space: nowrap; // Empêche le texte de passer à la ligne
+  transition: all 0.15s ease-in-out; // Transition pour hover
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); // Ombre légère
+
+  &:hover {
+    transform: scale(1.03); // Animation subtile au survol
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); // Ombre accentuée
+    border-color: rgba(0, 0, 0, 0.4); // Bordure légèrement plus foncée
+  }
+}

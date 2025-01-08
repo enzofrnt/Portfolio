@@ -9,4 +9,5 @@ import { Project } from '../../project.model';
 })
 export class ProjectCardComponent {
   @Input() project!: Project;
+  @Input() includeCompetences = true;
 }

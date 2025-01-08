@@ -12,13 +12,13 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDropdownComponent } from './navbar/project-dropdown/project-dropdown.component';
-import { CompetencesComponent } from './competences/competences.component';
 import { ActiveLinkDirective } from './directives/active-link.directive';
 import { ProjectsCoreModule } from './projects-core/projects-core.module';
 import { ProjectsModule } from './projects-core/projects/projects.module';
 import { FooterComponent } from './footer/footer.component';
 import { CodeBlockComponent } from './utils/code-block/code-block.component';
 import { provideHighlightOptions } from 'ngx-highlightjs';
+import { CompetencesModule } from './competences/competences.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,6 @@ import { provideHighlightOptions } from 'ngx-highlightjs';
     NavbarComponent,
     HomeComponent,
     ProjectDropdownComponent,
-    CompetencesComponent,
     ActiveLinkDirective,
     FooterComponent,
   ],
@@ -38,6 +37,7 @@ import { provideHighlightOptions } from 'ngx-highlightjs';
     ProjectsCoreModule,
     ProjectsModule,
     CodeBlockComponent,
+    CompetencesModule,
   ],
   bootstrap: [AppComponent],
   providers: [

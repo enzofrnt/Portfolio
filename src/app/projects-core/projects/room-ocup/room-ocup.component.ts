@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
+import { CompetencesComponent } from '../../../competences/competence/competence.component';
 
 @Component({
-    selector: 'app-room-ocup',
-    templateUrl: './room-ocup.component.html',
-    styleUrl: './room-ocup.component.scss',
-    standalone: false
+  selector: 'app-room-ocup',
+  templateUrl: './room-ocup.component.html',
+  styleUrl: './room-ocup.component.scss',
+  standalone: false,
 })
 export class RoomOcupComponent implements Project {
   id = 'room-ocup';
@@ -15,4 +16,11 @@ export class RoomOcupComponent implements Project {
   type = ProjectType.IUT;
   link =
     'https://github.com/Tructruc/SAE-ALT-S3-Dev-23-24-Occupation-salles-3A-Groupe-2';
+  competences = [
+    CompetencesComponent.competenceAdministrer,
+    CompetencesComponent.competenceRealiser,
+    CompetencesComponent.competenceGerer,
+    CompetencesComponent.competenceConduire,
+    CompetencesComponent.competenceCollaborer,
+  ];
 }

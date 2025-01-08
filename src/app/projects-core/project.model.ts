@@ -1,3 +1,5 @@
+import { Competence } from '../competences/competence';
+
 export enum ProjectType {
   IUT = 'iut',
   PERSO = 'perso',
@@ -9,4 +11,5 @@ export interface Project {
   description: string;
   type: ProjectType;
   link?: string;
+  competences?: Competence[];
 }

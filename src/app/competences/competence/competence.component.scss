@@ -1,5 +1,5 @@
 // Redéfinir les breakpoints
-@use '../../../node_modules/bootstrap/scss/bootstrap' as bootstrap with (
+@use '../../../../node_modules/bootstrap/scss/bootstrap' as bootstrap with (
   $grid-breakpoints: (
     xs: 0,
     sm: 580px,

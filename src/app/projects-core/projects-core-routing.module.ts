@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjectsListComponent } from './projects-list/projects-list/projects-list.component';
 import { ProjectCoreService } from './project-core.service';
+import { ProjectsPageComponent } from './projects-page/projects-page.component';
 
 const routes: Routes = [
-  { path: '', component: ProjectsListComponent },
+  { path: '', component: ProjectsPageComponent },
   ...ProjectCoreService.projectComponents.map((component) => ({
     path: new component().id,
     component: component,
