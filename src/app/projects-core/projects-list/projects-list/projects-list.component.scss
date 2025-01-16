@@ -1,0 +1,35 @@
+.selected {
+  transform: scale(1.02);
+  transition: transform 0.2s;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-card {
+  transition: transform 0.3s ease-in-out;
+
+  &.selected {
+    transform: scale(1.05);
+    z-index: 1;
+    animation: highlight 2s ease-in-out forwards;
+  }
+
+  &.reset-animation {
+    animation: none;
+    transform: scale(1);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}

@@ -1,4 +1,4 @@
-import { Competence } from '../competences/competence';
+import { Competence } from '../competences/competence.model';
 
 export enum ProjectType {
   IUT = 'iut',

@@ -1,7 +1,13 @@
 <div *ngIf="this.includePersoProjects">
   <h2>Projets personnels</h2>
-  <div class="row">
-    <div *ngFor="let project of persoProjects" class="col-md-6 col-lg-4 mb-4">
+  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div *ngFor="let project of persoProjects"
+      class="col mb-4 project-card"
+      [ngClass]="{
+      'selected': highlightedCompetence &&
+                  project.competences?.includes(highlightedCompetence),
+      'reset-animation': !highlightedCompetence
+    }">
       <app-project-card [project]="project"
         [includeCompetences]="this.includeCompetences">
       </app-project-card>
@@ -14,8 +20,14 @@
 
 <div *ngIf="this.includeIutProjects">
   <h2>Projet de l'IUT</h2>
-  <div class="row">
-    <div *ngFor="let project of iutProjects" class="col-md-6 col-lg-4 mb-4">
+  <div
+    class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div *ngFor="let project of iutProjects"
+      class="mb-4 col project-card"
+      [ngClass]="{
+      'selected': highlightedCompetence &&
+                  project.competences?.includes(highlightedCompetence)
+    }">
       <app-project-card [project]="project"
         [includeCompetences]="this.includeCompetences">
       </app-project-card>

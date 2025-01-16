@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CodeBlockComponent } from './utils/code-block/code-block.component';
 import { provideHighlightOptions } from 'ngx-highlightjs';
 import { CompetencesModule } from './competences/competences.module';
+import { CvComponent } from './cv/cv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { CompetencesModule } from './competences/competences.module';
     ProjectDropdownComponent,
     ActiveLinkDirective,
     FooterComponent,
+    CvComponent,
   ],
   imports: [
     BrowserModule,

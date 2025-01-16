@@ -17,8 +17,13 @@
     <div
       class="col col-competence"
       *ngFor="let competence of competences; let i = index"
-      [ngClass]="{ 'hovered': hoveredIndex === i }">
-      <div class="bg-transparent card h-100 border-0">
+      [ngClass]="{
+        'hovered': (hoveredIndex === i && !selectedCompetence) || selectedCompetence === competence,
+        'reset-animation': !selectedCompetence
+      }"
+      (click)="onCompetenceClick(competence)">
+      <div class="bg-transparent card h-100 border-0"
+        id="competence-{{competence.title.toLowerCase()}}">
         <div
           class="card-header text-white text-center rounded mb-3"
           [style.backgroundColor]="competence.color"

@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
-import { Competence } from '../competence';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Competence } from '../competence.model';
+import { CompetencesService } from '../../services/competence.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-competence',
   templateUrl: './competence.component.html',
   styleUrls: ['./competence.component.scss'],
   standalone: false,
 })
-export class CompetencesComponent {
+export class CompetencesComponent implements OnInit, OnDestroy {
+  selectedCompetence: Competence | null = null;
   static competenceRealiser: Competence = {
     color: '#dc3545',
     title: 'Réaliser',
@@ -230,13 +233,48 @@ export class CompetencesComponent {
     CompetencesComponent.competenceCollaborer,
   ];
 
+  private subscription!: Subscription;
+
   hoveredIndex: number | null = null;
 
+  constructor(private competencesService: CompetencesService) {}
+
   onMouseOver(index: number) {
-    this.hoveredIndex = index;
+    if (!this.selectedCompetence) {
+      this.hoveredIndex = index;
+    }
   }
 
   onMouseLeave() {
-    this.hoveredIndex = null;
+    if (!this.selectedCompetence) {
+      this.hoveredIndex = null;
+    }
+  }
+
+  ngOnInit(): void {
+    this.subscription = this.competencesService.selectedCompetence$.subscribe(
+      (competence) => {
+        if (this.selectedCompetence !== competence) {
+          this.selectedCompetence = null;
+          this.hoveredIndex = null;
+
+          requestAnimationFrame(() => {
+            this.selectedCompetence = competence;
+            if (competence) {
+              this.hoveredIndex = this.competences.indexOf(competence);
+            }
+          });
+        }
+      },
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  // Optionnel: si on clique directement sur la compétence dans la grille
+  onCompetenceClick(competence: Competence) {
+    this.competencesService.setSelectedCompetence(competence, false);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Competence } from '../competence';
+import { Competence } from '../competence.model';
 import { CompetencesComponent } from '../competence/competence.component';
+import { CompetencesService } from '../../services/competence.service';
 
 @Component({
   selector: 'app-competence-label',
@@ -11,6 +12,14 @@ import { CompetencesComponent } from '../competence/competence.component';
 })
 export class CompetenceLabelComponent {
   @Input() competence: Competence = CompetencesComponent.competenceRealiser;
+
+  constructor(private competencesService: CompetencesService) {}
+
+  onLabelClick() {
+    console.log('onLabelClick');
+    console.log(this.competence);
+    this.competencesService.setSelectedCompetence(this.competence, true);
+  }
 
   getTextColor(): string {
     const hex = this.competence.color.replace('#', '');

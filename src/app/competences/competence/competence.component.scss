@@ -39,6 +39,27 @@
 
   &.hovered {
     transform: scale(1.02);
+    animation: highlight-competence 2s ease-in-out forwards;
+  }
+
+  &.reset-animation {
+    animation: none;
+    transform: scale(1) !important;
+  }
+}
+
+@keyframes highlight-competence {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
   }
 }
 

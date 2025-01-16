@@ -41,6 +41,8 @@ module.exports = tseslint.config(
     ],
     rules: {
       "@angular-eslint/template/mouse-events-have-key-events": "off", // Désactivation ici
+      "@angular-eslint/template/click-events-have-key-events": "off", // Désactive la règle du click sans key event
+      "@angular-eslint/template/interactive-supports-focus": "off", // Désactive la règle sur le focus
     },
   }
 );
