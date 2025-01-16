@@ -17,26 +17,30 @@ export class CompetencesService {
     scrollToCompetence = false,
   ) {
     if (this.scrollService.isCurrentlyScrolling()) {
-      return; // Ignorer les clics pendant le scroll
+      return;
     }
 
     // Si on clique sur la même compétence, on la désélectionne
-    if (this._selectedCompetence$.value === competence) {
+    if (this._selectedCompetence$.value?.title === competence?.title) {
       this._selectedCompetence$.next(null);
       return;
     }
 
-    this._selectedCompetence$.next(competence);
-    if (competence) {
-      if (scrollToCompetence) {
-        this.scrollService.scrollToElement(
-          `competence-${competence.title.toLowerCase()}`,
-        );
-      } else {
-        setTimeout(() => {
+    // Réinitialiser d'abord
+    this._selectedCompetence$.next(null);
+
+    // Attendre le prochain cycle de rendu
+    setTimeout(() => {
+      this._selectedCompetence$.next(competence);
+      if (competence) {
+        if (scrollToCompetence) {
+          this.scrollService.scrollToElement(
+            `competence-${competence.title.toLowerCase()}`,
+          );
+        } else {
           this.scrollService.scrollToFirstMatchingProject(competence.title);
-        }, 100);
+        }
       }
-    }
+    }, 50);
   }
 }

@@ -254,17 +254,19 @@ export class CompetencesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.competencesService.selectedCompetence$.subscribe(
       (competence) => {
-        if (this.selectedCompetence !== competence) {
-          this.selectedCompetence = null;
-          this.hoveredIndex = null;
+        // Réinitialiser d'abord
+        this.selectedCompetence = null;
+        this.hoveredIndex = null;
 
-          requestAnimationFrame(() => {
-            this.selectedCompetence = competence;
-            if (competence) {
-              this.hoveredIndex = this.competences.indexOf(competence);
-            }
-          });
-        }
+        // Attendre le prochain cycle de rendu
+        setTimeout(() => {
+          this.selectedCompetence = competence;
+          if (competence) {
+            this.hoveredIndex = this.competences.findIndex(
+              (c) => c.title === competence.title,
+            );
+          }
+        }, 50);
       },
     );
   }

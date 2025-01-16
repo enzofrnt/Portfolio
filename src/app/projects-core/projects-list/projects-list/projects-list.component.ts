@@ -35,13 +35,13 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
 
     this.subscription = this.competencesService.selectedCompetence$.subscribe(
       (competence) => {
-        if (this.highlightedCompetence && !competence) {
-          requestAnimationFrame(() => {
-            this.highlightedCompetence = null;
-          });
-        } else {
+        // Réinitialiser d'abord
+        this.highlightedCompetence = null;
+
+        // Attendre le prochain cycle de rendu
+        setTimeout(() => {
           this.highlightedCompetence = competence;
-        }
+        }, 50);
       },
     );
   }
