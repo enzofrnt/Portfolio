@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
 import { Competence } from '../../../competences/competence.model';
+import { CompetencesComponent } from '../../../competences/competence/competence.component';
 
 interface UnityInstance {
   Quit: () => void;
@@ -19,7 +20,7 @@ interface UnityInstance {
   standalone: false,
 })
 export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
-  competences?: Competence[] | undefined;
+  competences = [CompetencesComponent.competenceRealiser];
   id = 'flappybrid';
   name = 'Flappybrid - Unity';
   description = 'Jeu de flappy bird en Unity';
@@ -148,38 +149,71 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
    */
   private enforceAspectRatio(): void {
     const aspectRatio = 9 / 16;
-    const container = this.webglContainer.nativeElement;
+    const isFullscreen =
+      this.fullscreenOverlay.nativeElement.classList.contains('active');
+    const container = isFullscreen
+      ? this.fullscreenContainer.nativeElement
+      : this.webglContainer.nativeElement;
     const canvas = container.querySelector(
       '#unity-canvas',
     ) as HTMLCanvasElement;
     if (!canvas) return;
 
-    // Calcule la taille maximale disponible dans le wrapper
-    const wrapper = container.parentElement;
-    if (!wrapper) return;
+    if (isFullscreen) {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const windowRatio = windowWidth / windowHeight;
 
-    const maxWidth = wrapper.clientWidth - 64; // 2rem padding de chaque côté
-    const maxHeight = window.innerHeight * 0.7; // 70% de la hauteur de la fenêtre
+      if (windowRatio > aspectRatio) {
+        // Écran plus large que le ratio
+        const height = windowHeight;
+        const width = height * aspectRatio;
 
-    // Calcule les dimensions optimales
-    let width, height;
-    if (maxWidth / maxHeight > aspectRatio) {
-      // Limité par la hauteur
-      height = maxHeight;
-      width = height * aspectRatio;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = '100vh';
+        canvas.style.marginLeft = '0';
+        canvas.style.marginTop = '0';
+
+        container.style.width = `${width}px`;
+        container.style.height = '100vh';
+      } else {
+        // Écran plus haut que le ratio
+        const width = windowWidth;
+        const height = width / aspectRatio;
+
+        canvas.style.width = '100vw';
+        canvas.style.height = `${height}px`;
+        canvas.style.marginLeft = '0';
+        canvas.style.marginTop = `${(windowHeight - height) / 2}px`;
+
+        container.style.width = '100vw';
+        container.style.height = `${height}px`;
+      }
     } else {
-      // Limité par la largeur
-      width = maxWidth;
-      height = width / aspectRatio;
+      // Mode normal, on garde le code existant
+      const wrapper = container.parentElement;
+      if (!wrapper) return;
+
+      const maxWidth = wrapper.clientWidth - 64;
+      const maxHeight = window.innerHeight * 0.7;
+
+      let width, height;
+      if (maxWidth / maxHeight > aspectRatio) {
+        height = maxHeight;
+        width = height * aspectRatio;
+      } else {
+        width = maxWidth;
+        height = width / aspectRatio;
+      }
+
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      canvas.style.marginLeft = '0';
+      canvas.style.marginTop = '0';
+
+      container.style.width = `${width}px`;
+      container.style.height = `${height}px`;
     }
-
-    // Applique les dimensions au canvas
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
-
-    // Ajuste le conteneur à la taille exacte du canvas
-    container.style.width = `${width}px`;
-    container.style.height = `${height}px`;
   }
 
   enterFullscreen(): void {

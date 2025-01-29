@@ -62,6 +62,20 @@
 
 .fullscreen-overlay.active {
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #unity-container {
+    position: relative;
+    width: auto; // Au lieu de 100vw
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .fullscreen-button {

@@ -1,5 +1,4 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-  <!-- Boutons à gauche -->
   <div class="d-flex">
     <button class="btn btn-secondary me-2" [routerLink]="['/projects']">
       <i class="bi bi-arrow-left"></i> Retour aux projets
@@ -15,17 +14,22 @@
     </a>
   </div>
 
-  <!-- Titre centré -->
-  <!-- <h1 class="flex-grow-1 text-center m-0">{{ project.name }}</h1> -->
-
-  <!-- <div class="text-center mb-4"> -->
-
 </div>
 <div class="text-center mb-4 flex-grow-1 text-center m-0">
   <h1 class="display-4">{{ this.project.name }}</h1>
-  <!-- <span class="badge bg-primary">Portage MacOS</span> -->
   <span class="badge bg-primary">{{ this.project.description }}</span>
-  <!--TODO: Add little summary for Project -->
 </div>
 
-<ng-content></ng-content>
+<ng-content>
+  <div class="container text-center py-5" *ngIf="!$any(project).hasContent">
+    <div class="card shadow-sm border-warning">
+      <div class="card-body">
+        <i class="bi bi-clock-history display-1 text-warning mb-3"></i>
+        <h2 class="card-title">Contenu à venir</h2>
+        <p class="card-text text-muted">
+          Le contenu de se projete est en cours de rédaction.
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-content>
