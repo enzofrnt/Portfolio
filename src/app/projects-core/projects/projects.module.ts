@@ -12,6 +12,7 @@ import { RoomOcupComponent } from './room-ocup/room-ocup.component';
 import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
 import { ProjectsCoreModule } from '../projects-core.module';
 import { CodeBlockComponent } from '../../utils/code-block/code-block.component';
+import { FlappybridComponent } from './flappybrid/flappybrid.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CodeBlockComponent } from '../../utils/code-block/code-block.component'
     DjangoHybridrouterComponent,
     FlopedtReworkComponent,
     DjangoRagComponent,
+    FlappybridComponent,
   ],
   imports: [CommonModule, ProjectsCoreModule, CodeBlockComponent],
   providers: [],

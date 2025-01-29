@@ -10,6 +10,7 @@ import { BeamMPMacosComponent } from './projects/beammp-macos/beammp-macos.compo
 import { BankManageComponent } from './projects/bank-manage/bank-manage.component';
 import { AutoQcmComponent } from './projects/auto-qcm/auto-qcm.component';
 import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
+import { FlappybridComponent } from './projects/flappybrid/flappybrid.component';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +27,7 @@ export class ProjectCoreService {
     BankManageComponent,
     AutoQcmComponent,
     DjangoRagComponent,
+    FlappybridComponent,
   ];
 
   private cachedProjects: Project[] | null = null;

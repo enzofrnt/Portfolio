@@ -37,9 +37,11 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/highlight.js/styles/github-dark.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/game/TemplateData/style.css"
             ],
             "scripts": [
+              "src/assets/game/Build/test-web.loader.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },

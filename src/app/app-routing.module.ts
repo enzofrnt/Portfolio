@@ -4,7 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { CompetencesComponent } from './competences/competence/competence.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'competences', component: CompetencesComponent },
   {
     path: 'projects',
     loadChildren: () =>
@@ -12,9 +13,8 @@ const routes: Routes = [
         (m) => m.ProjectsCoreModule,
       ),
   },
-  { path: 'home', component: HomeComponent },
-  { path: 'competences', component: CompetencesComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

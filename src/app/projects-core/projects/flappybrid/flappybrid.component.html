@@ -1,0 +1,57 @@
+<app-project-wrapper [project]="this">
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Flappy Bird</strong> est un jeu mobile créé en 2013 qui est
+            devenu viral grâce à sa simplicité et sa difficulté.
+            Le but est de faire voler un oiseau entre des tuyaux sans les
+            toucher.
+            <br><br>
+            Ce projet est une recréation du jeu original utilisant le moteur de
+            jeu <strong>Unity</strong>,
+            exporté en WebGL pour être jouable directement dans le navigateur.
+            <br><br>
+            Le jeu conserve les mécaniques originales tout en ajoutant quelques
+            fonctionnalités modernes comme
+            un système de score et une adaptation responsive pour différentes
+            tailles d'écran.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Jeu -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-controller"></i> Le Jeu
+        </div>
+        <div class="card-body game-wrapper">
+          <div id="unity-container" class="unity-desktop" #webglContainer>
+            <canvas id="unity-canvas" tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="unity-warning"></div>
+            <div id="unity-footer">
+              <div id="unity-webgl-logo"></div>
+              <div id="unity-fullscreen-button"></div>
+              <div id="unity-build-title"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>
