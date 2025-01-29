@@ -190,13 +190,11 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
     // Copier le canvas dans le conteneur fullscreen
     const originalCanvas =
       this.webglContainer.nativeElement.querySelector('#unity-canvas');
-    const fullscreenCanvas =
-      this.fullscreenContainer.nativeElement.querySelector(
-        '#unity-canvas-fullscreen',
-      );
+    const fullscreenContainer = this.fullscreenContainer.nativeElement;
 
-    if (originalCanvas && fullscreenCanvas) {
-      fullscreenCanvas.replaceWith(originalCanvas);
+    if (originalCanvas) {
+      // Au lieu de chercher un canvas existant, on déplace simplement le canvas original
+      fullscreenContainer.appendChild(originalCanvas);
     }
 
     // Réajuster le ratio
@@ -216,7 +214,7 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
     const originalContainer = this.webglContainer.nativeElement;
 
     if (canvas && originalContainer) {
-      originalContainer.insertBefore(canvas, originalContainer.firstChild);
+      originalContainer.appendChild(canvas);
     }
 
     // Réajuster le ratio
