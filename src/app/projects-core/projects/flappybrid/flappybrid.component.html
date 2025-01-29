@@ -35,7 +35,19 @@
           <i class="bi bi-controller"></i> Le Jeu
         </div>
         <div class="card-body game-wrapper">
+          <div class="fullscreen-overlay" #fullscreenOverlay>
+            <div id="unity-container" class="unity-desktop"
+              #fullscreenContainer>
+              <button class="fullscreen-button" (click)="exitFullscreen()">
+                <i class="bi bi-x-lg"></i>
+              </button>
+              <canvas id="unity-canvas-fullscreen" tabindex="-1"></canvas>
+            </div>
+          </div>
           <div id="unity-container" class="unity-desktop" #webglContainer>
+            <button class="fullscreen-button" (click)="enterFullscreen()">
+              <i class="bi bi-fullscreen"></i>
+            </button>
             <canvas id="unity-canvas" tabindex="-1"></canvas>
             <div id="unity-loading-bar">
               <div id="unity-logo"></div>
@@ -46,7 +58,6 @@
             <div id="unity-warning"></div>
             <div id="unity-footer">
               <div id="unity-webgl-logo"></div>
-              <div id="unity-fullscreen-button"></div>
               <div id="unity-build-title"></div>
             </div>
           </div>

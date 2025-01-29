@@ -31,10 +31,23 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
    * qui contient le canvas Unity.
    */
   @ViewChild('webglContainer') webglContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('fullscreenOverlay')
+  fullscreenOverlay!: ElementRef<HTMLDivElement>;
+  @ViewChild('fullscreenContainer')
+  fullscreenContainer!: ElementRef<HTMLDivElement>;
 
   private unityInstance: UnityInstance | null = null;
   /** Listener pour la fonction de redimensionnement (on le stocke pour pouvoir le retirer en OnDestroy). */
   private resizeListener = () => this.enforceAspectRatio();
+
+  constructor() {
+    // Écouter la touche Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.exitFullscreen();
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
     // --------------------------
@@ -167,5 +180,46 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
     // Ajuste le conteneur à la taille exacte du canvas
     container.style.width = `${width}px`;
     container.style.height = `${height}px`;
+  }
+
+  enterFullscreen(): void {
+    const overlay = this.fullscreenOverlay.nativeElement;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Copier le canvas dans le conteneur fullscreen
+    const originalCanvas =
+      this.webglContainer.nativeElement.querySelector('#unity-canvas');
+    const fullscreenCanvas =
+      this.fullscreenContainer.nativeElement.querySelector(
+        '#unity-canvas-fullscreen',
+      );
+
+    if (originalCanvas && fullscreenCanvas) {
+      fullscreenCanvas.replaceWith(originalCanvas);
+    }
+
+    // Réajuster le ratio
+    setTimeout(() => this.enforceAspectRatio(), 100);
+  }
+
+  exitFullscreen(): void {
+    const overlay = this.fullscreenOverlay.nativeElement;
+    if (!overlay.classList.contains('active')) return;
+
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+
+    // Remettre le canvas dans son conteneur original
+    const canvas =
+      this.fullscreenContainer.nativeElement.querySelector('#unity-canvas');
+    const originalContainer = this.webglContainer.nativeElement;
+
+    if (canvas && originalContainer) {
+      originalContainer.insertBefore(canvas, originalContainer.firstChild);
+    }
+
+    // Réajuster le ratio
+    setTimeout(() => this.enforceAspectRatio(), 100);
   }
 }
