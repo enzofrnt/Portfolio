@@ -67,7 +67,7 @@
 
   #unity-container {
     position: relative;
-    width: auto; // Au lieu de 100vw
+    width: 100vw;
     height: 100vh;
     max-width: none;
     margin: 0;
@@ -76,19 +76,24 @@
     justify-content: center;
     align-items: center;
   }
+
+  // Masquer le bouton plein écran quand on est en plein écran
+  & ~ .unity-desktop .fullscreen-button {
+    display: none;
+  }
 }
 
 .fullscreen-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  // padding: 8px;
   background: rgba(255, 255, 255, 0.2);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1000;
   transition: background 0.3s;
+  padding: 8px;
 
   i {
     color: white;

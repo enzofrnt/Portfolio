@@ -1,6 +1,6 @@
 <h6 class="dropdown-header">{{ header() }}</h6>
 <li *ngFor="let project of projects()">
-  <a class="dropdown-item" [href]="'/projects/' + project.id"
+  <a class="dropdown-item" [routerLink]="['/projects/' + project.id]"
     [appActiveLink]="'/projects/' + project.id"
     [appActiveLinkStrict]="true">{{ project.name
     }}</a>

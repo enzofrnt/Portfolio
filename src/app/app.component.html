@@ -3,5 +3,10 @@
   <div class="container flex-grow-1 mt-4">
     <router-outlet></router-outlet>
   </div>
+  <div class="scroll-to-top" [class.show]="showScrollButton">
+    <button (click)="scrollToTop()" class="btn" title="Retour en haut">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </div>
   <app-footer></app-footer>
 </div>

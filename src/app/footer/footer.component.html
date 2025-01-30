@@ -1,45 +1,43 @@
-<footer class="bg-body-tertiary text-white py-3 mt-4">
+<footer class="bg-body-tertiary text-bg-secondary py-3 mt-4">
   <div class="container">
     <div class="row align-items-center">
       <!-- Navigation Links -->
       <div class="col-lg-9 col-md-8">
         <ul class="nav justify-content-start">
           <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Home</a>
+            <a class="nav-link text-white px-2"
+              [routerLink]="['/home']">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">About</a>
+            <a class="nav-link text-white px-2" [routerLink]="['/cv']">CV</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Platform</a>
+            <a class="nav-link text-white px-2"
+              [routerLink]="['/competences']">Compétences</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Technology</a>
+            <a class="nav-link text-white px-2"
+              [routerLink]="['/projects']">Projets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Benchmark</a>
+            <a class="nav-link text-white px-2"
+              href="https://github.com/enzofrnt" target="_blank">
+              <i class="bi bi-github"></i> GitHub
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Use Cases</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Careers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Contact</a>
+            <a class="nav-link text-white px-2"
+              href="https://www.linkedin.com/in/enzofrnt/" target="_blank">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
           </li>
         </ul>
       </div>
-
-      <!-- Copyright Info -->
+      <!-- Copyright -->
       <div class="col-lg-3 col-md-4 text-end">
-        <small>&copy; {{this.currentYear}} <strong>Propeller</strong>. Crafted
-          by <a
-            href="#"
-            class="text-white text-decoration-underline">DIGI<strong>CORP</strong></a></small>
+        <small class="text-white">
+          © 2024 Enzo Fournet
+        </small>
       </div>
     </div>
   </div>

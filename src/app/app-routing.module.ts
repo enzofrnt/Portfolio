@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CompetencesComponent } from './competences/competence/competence.component';
+import { CvComponent } from './cv/cv.component';
 
 const routes: Routes = [
+  { path: 'cv', component: CvComponent },
   { path: 'home', component: HomeComponent },
   { path: 'competences', component: CompetencesComponent },
   {

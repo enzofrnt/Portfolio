@@ -22,11 +22,20 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/']"
+            [routerLink]="['/home']"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
             aria-current="page">
             Accueil
+          </a>
+        </li>
+
+        <!-- Lien CV -->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/cv']"
+            routerLinkActive="active">
+            CV
           </a>
         </li>
 

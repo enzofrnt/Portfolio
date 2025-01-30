@@ -6,7 +6,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
-import { Competence } from '../../../competences/competence.model';
 import { CompetencesComponent } from '../../../competences/competence/competence.component';
 
 interface UnityInstance {
@@ -79,9 +78,6 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
     ) as HTMLElement;
     const progressBarFull = container.querySelector(
       '#unity-progress-bar-full',
-    ) as HTMLElement;
-    const fullscreenButton = container.querySelector(
-      '#unity-fullscreen-button',
     ) as HTMLElement;
 
     // --------------------------
@@ -170,12 +166,12 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
         const width = height * aspectRatio;
 
         canvas.style.width = `${width}px`;
-        canvas.style.height = '100vh';
-        canvas.style.marginLeft = '0';
+        canvas.style.height = `${height}px`;
+        // canvas.style.marginLeft = `${(windowWidth - width) / 2}px`;
         canvas.style.marginTop = '0';
 
         container.style.width = `${width}px`;
-        container.style.height = '100vh';
+        container.style.height = `${height}px`;
       } else {
         // Écran plus haut que le ratio
         const width = windowWidth;
@@ -184,7 +180,7 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
         canvas.style.width = '100vw';
         canvas.style.height = `${height}px`;
         canvas.style.marginLeft = '0';
-        canvas.style.marginTop = `${(windowHeight - height) / 2}px`;
+        // canvas.style.marginTop = `${(windowHeight - height) / 2}px`;
 
         container.style.width = '100vw';
         container.style.height = `${height}px`;

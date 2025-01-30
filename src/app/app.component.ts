@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DarkModeService } from './services/dark-mode.service';
 
 @Component({
@@ -10,5 +10,19 @@ import { DarkModeService } from './services/dark-mode.service';
 export class AppComponent {
   title = 'Portfolio-enzo_frnt';
   code = 'test';
+  showScrollButton = false;
+
   constructor(public darkModeService: DarkModeService) {}
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.showScrollButton = window.scrollY > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
 }
