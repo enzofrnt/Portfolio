@@ -34,7 +34,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
       // Progression entre 0 et 1 selon la visibilité
       let progress =
-        (viewportHeight - rect.top - startOffset) / (rect.height + endOffset);
+        (viewportHeight - rect.top - startOffset) / (rect.height + endOffset) -
+        0.05;
 
       progress = Math.max(0, Math.min(1, progress)); // Clamp entre 0 et 1
       setScrollProgress(progress);
@@ -47,20 +48,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   }, []);
 
   return (
-    <div className="relative w-full bg-white dark:bg-neutral-950 font-sans md:px-10">
+    <div className="relative w-full bg-transparent font-sans md:px-10">
       <div className="relative max-w-7xl mx-auto py-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          Mon parcours
-        </h2>
         <div ref={ref} className="relative">
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex justify-start pt-10 md:pt-40 md:gap-10"
+              className="flex justify-start pt-10 pb-10 md:pt-40 md:pb-40 md:gap-10"
             >
               <div className="sticky flex flex-col md:flex-row z-50 items-center top-24 self-start max-w-xs lg:max-w-sm md:w-full">
-                <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
-                  <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+                {/* <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center"> */}
+                <div
+                  className="h-10 absolute w-10 rounded-full bg-body-tertiary flex items-center justify-center"
+                  style={{ left: '0.78rem' }}
+                >
+                  {/* <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" /> */}
+                  <div className="h-4 w-4 rounded-full bg-body border border-neutral-300 dark:border-neutral-700 p-2" />
                 </div>
                 <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
                   {item.title}

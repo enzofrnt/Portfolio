@@ -3,7 +3,8 @@ module.exports = {
   darkMode: ["class"],
   // content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   content: [
-    "./src/**/*.{html,ts,tsx,css,scss}", // Inclure Angular + React
+    // "./src/**/*.{html,ts,tsx,css,scss}", // Inclure Angular + React
+    "./src/app/timeline/react/*.tsx", // Inclure les composants shadcn
     // "./components/ui/**/*.{ts,tsx}", // Inclure les composants shadcn
   ],
   theme: {
