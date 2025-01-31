@@ -23,7 +23,9 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "framer-motion": "^12.0.6",
     "ngx-highlightjs": "^12.0.0",
+    "react": "^19.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -32,7 +34,10 @@
     "@angular/cli": "^19.0.6",
     "@angular/compiler-cli": "^19.0.5",
     "@types/jasmine": "~5.1.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "angular-eslint": "19.0.2",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.16.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -40,7 +45,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.1",
     "prettier": "^3.3.3",
+    "tailwindcss": "^4.0.1",
     "typescript": "~5.5.4",
     "typescript-eslint": "8.18.0"
   }

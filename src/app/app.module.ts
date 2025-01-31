@@ -20,6 +20,7 @@ import { CodeBlockComponent } from './utils/code-block/code-block.component';
 import { provideHighlightOptions } from 'ngx-highlightjs';
 import { CompetencesModule } from './competences/competences.module';
 import { CvComponent } from './cv/cv.component';
+import { TimelineModule } from './timeline/timeline.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { CvComponent } from './cv/cv.component';
     CommonModule,
     ProjectsCoreModule,
     ProjectsModule,
+    TimelineModule,
     CodeBlockComponent,
     CompetencesModule,
   ],
