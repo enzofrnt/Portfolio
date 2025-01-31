@@ -1,6 +1,5 @@
 import React from 'react';
 // import { Timeline } from "../../components/ui/timeline";
-import Image from 'next/image';
 import { Timeline } from './timeline';
 
 export function TimelineDemo() {
@@ -225,8 +224,8 @@ export function TimelineDemo() {
     },
   };
   return (
-    <div className="min-h-screen w-full">
-      <div className="absolute top-0 left-0 w-full">
+    <div className="relative w-full">
+      <div className="mx-auto max-w-4xl">
         <Timeline data={data} />
       </div>
     </div>
