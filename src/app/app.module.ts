@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DarkModeToggleComponent } from './navbar/dark-mode-toggle/dark-mode-toggle.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDropdownComponent } from './navbar/project-dropdown/project-dropdown.component';
@@ -21,6 +21,7 @@ import { provideHighlightOptions } from 'ngx-highlightjs';
 import { CompetencesModule } from './competences/competences.module';
 import { CvComponent } from './cv/cv.component';
 import { TimelineModule } from './timeline/timeline.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { TimelineModule } from './timeline/timeline.module';
     CvComponent,
   ],
   imports: [
+    NgOptimizedImage,
     BrowserModule,
     NgbModule,
     AppRoutingModule,

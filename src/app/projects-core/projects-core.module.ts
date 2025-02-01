@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ProjectsRoutingModule } from './projects-core-routing.module';
 import { ProjectsListComponent } from './projects-list/projects-list/projects-list.component';
 import { ProjectCardComponent } from './projects-list/project-card/project-card.component';
@@ -14,7 +14,12 @@ import { ProjectsPageComponent } from './projects-page/projects-page.component';
     ProjectCardComponent,
     ProjectsPageComponent,
   ],
-  imports: [CommonModule, ProjectsRoutingModule, CompetencesModule],
+  imports: [
+    CommonModule,
+    ProjectsRoutingModule,
+    CompetencesModule,
+    NgOptimizedImage,
+  ],
   exports: [ProjectWrapperComponent, ProjectsListComponent],
 })
 export class ProjectsCoreModule {}

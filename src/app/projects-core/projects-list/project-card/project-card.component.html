@@ -1,9 +1,12 @@
 <div class="card h-100">
   <img
-    src="assets/images/{{ project.id }}.png"
+    [ngSrc]="'/assets/images/' + project.id + '.png'"
+    width="300"
+    height="300"
     class="card-img-top"
     alt="{{ project.name }}"
-    onerror="this.src='assets/images/default.png';" />
+    onerror="this.src='assets/images/default.png';"
+    priority />
   <div class="card-body d-flex flex-column">
     <h5 class="card-title">{{ project.name }}</h5>
     <p class="card-text">{{ project.description }}</p>

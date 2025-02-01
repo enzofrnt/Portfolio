@@ -1,2 +1,125 @@
 <h1 class="display-4 mb-3">Mon parcours</h1>
-<div class="relative w-full" [appReactComponent]="TimelineDemo"></div>
+<div class="relative w-full" [appReactComponent]="Timeline"
+  [appReactProps]="TimelineProps">
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="grandOralModal" tabindex="-1"
+  aria-labelledby="grandOralModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="grandOralModalLabel">
+          <i class="bi bi-water me-2"></i>Projet Bouée Connectée - Grand Oral
+        </h5>
+        <button type="button" class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!-- Section Contexte -->
+          <div class="col-12 mb-4">
+            <div class="card border-primary">
+              <div class="card-header bg-primary text-white">
+                <i class="bi bi-info-circle me-2"></i>Contexte et Objectifs
+              </div>
+              <div class="card-body">
+                <p>Dans le cadre de mon Grand Oral STI2D, j'ai développé une
+                  bouée connectée en partenariat avec le CNES, capable de
+                  mesurer différents paramètres environnementaux pour modéliser
+                  le réchauffement climatique et la pollution des océans et des
+                  fleuves.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Mesures -->
+          <div class="col-md-6 mb-4">
+            <div class="card border-success">
+              <div class="card-header bg-success text-white">
+                <i class="bi bi-graph-up me-2"></i>Paramètres Mesurés
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <strong>Profondeur de l'eau :</strong> Détection des
+                    sécheresses et crues
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Température :</strong> Indicateur direct du
+                    réchauffement
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Turbidité :</strong> Mesure de la pollution et des
+                    crues
+                  </li>
+                  <li class="list-group-item">
+                    <strong>pH :</strong> Détection des pollutions et impacts du
+                    CO2
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Luminosité :</strong> Mesure de l'ensoleillement
+                  </li>
+                  <li class="list-group-item">
+                    <strong>GPS :</strong> Suivi des courants marins
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Technique -->
+          <div class="col-md-6 mb-4">
+            <div class="card border-info">
+              <div class="card-header bg-info text-white">
+                <i class="bi bi-gear me-2"></i>Caractéristiques Techniques
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <i class="bi bi-sun me-2"></i>
+                    <strong>Alimentation :</strong> Panneau solaire et batterie
+                    pour autonomie complète
+                  </li>
+                  <li class="list-group-item">
+                    <i class="bi bi-wifi me-2"></i>
+                    <strong>Connectivité :</strong> SigFox et Bluetooth
+                  </li>
+                  <li class="list-group-item">
+                    <i class="bi bi-cpu me-2"></i>
+                    <strong>Carte :</strong> MKR FOX 1200 avec mode veille
+                    profonde
+                  </li>
+                  <li class="list-group-item">
+                    <i class="bi bi-battery-charging me-2"></i>
+                    <strong>Monitoring :</strong> 5 LEDs pour niveau de batterie
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Impact -->
+          <div class="col-12">
+            <div class="card border-warning">
+              <div class="card-header bg-warning text-white">
+                <i class="bi bi-globe me-2"></i>Impact et Applications
+              </div>
+              <div class="card-body">
+                <p>Ce projet s'inscrit dans une démarche environnementale
+                  globale, similaire aux bouées ARGOS du CNES. Des applications
+                  concrètes existent déjà, comme la société toulousaine Flipr
+                  qui utilise une technologie similaire pour les piscines
+                  privées.</p>
+                <p>L'utilisation du réseau SigFox permet une collecte de données
+                  efficace et économe en énergie, ouvrant la voie à de
+                  nombreuses applications urbaines intelligentes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

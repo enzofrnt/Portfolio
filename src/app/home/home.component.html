@@ -1,11 +1,13 @@
 <div class="container py-5">
   <div class="row align-items-center">
     <div class="col-md-4 text-center mb-4 mb-md-0 mt-4">
-      <img src="assets/images/pp.jpeg"
+      <img [ngSrc]="'assets/images/pp.jpeg'"
         alt="Enzo Fournet"
         id="profile-image"
+        width="300"
+        height="450"
         class="rounded-circle img-fluid profile-image"
-        style="max-width: 250px; aspect-ratio: 1/1; object-fit: cover; object-position: center 30%; transform: scale(1.1);">
+        priority />
     </div>
     <div class="col-md-8">
       <h1 class="display-4 mb-3">Enzo Fournet</h1>

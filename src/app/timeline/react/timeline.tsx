@@ -16,7 +16,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
-      console.log('Hauteur détectée du ref:', rect.height);
     }
   }, []);
 
@@ -39,9 +38,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
       progress = Math.max(0, Math.min(1, progress)); // Clamp entre 0 et 1
       setScrollProgress(progress);
-
-      console.log('📊 Scroll progress:', progress);
     };
+
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -87,7 +86,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <motion.div
               style={{
                 height: `${scrollProgress * height}px`, // 🏁 Dynamique avec le scroll
-                opacity: scrollProgress,
+                opacity:
+                  scrollProgress < 0.9
+                    ? 1
+                    : Math.max(0, 1 - Math.pow((scrollProgress - 0.9) * 8, 2)),
               }}
               className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
             />
