@@ -5,38 +5,38 @@ export const timelineData = [
     title: '2021-2022',
     content: (
       <div className="space-y-6">
-        <div className="p-6 rounded-2xl shadow-md bg-body">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+        <div className="bg-body rounded-2xl p-6 shadow-md">
+          <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
             BAC STI2D
           </h2>
-          <h3 className="text-xl md:text-2xl text-muted mb-2">
+          <h3 className="mb-2 text-xl text-muted md:text-2xl">
             Lycée Charles de Gaulle - Muret (31)
           </h3>
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center font-semibold text-success text-lg">
+              <span className="text-success inline-flex items-center text-lg font-semibold">
                 <i className="bi bi-award me-2"></i>
                 Mention Bien
               </span>
-              <span className="inline-flex items-center font-semibold text-primary text-lg">
+              <span className="inline-flex items-center text-lg font-semibold text-primary">
                 <i className="bi bi-cpu me-2"></i>
                 Option SIN
               </span>
             </div>
 
-            <p className="text-lg md:text-xl leading-relaxed">
+            <p className="text-lg leading-relaxed md:text-xl">
               Formation axée sur l'innovation technologique et le développement
               durable. Spécialisation en Systèmes d'Information et Numérique
               (SIN).
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-                <h4 className="font-semibold mb-3 text-primary text-xl">
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                <h4 className="mb-3 text-xl font-semibold text-primary">
                   Compétences acquises
                 </h4>
-                <ul className="list-disc list-inside text-base md:text-lg space-y-2">
+                <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                   <li>Programmation Arduino</li>
                   <li>Bases de l'électronique</li>
                   <li>Initiation au développement</li>
@@ -44,8 +44,8 @@ export const timelineData = [
                 </ul>
               </div>
 
-              <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-                <h4 className="font-semibold mb-3 text-primary text-xl">
+              <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                <h4 className="mb-3 text-xl font-semibold text-primary">
                   Projet principal - Grand Oral
                 </h4>
                 <div className="flex flex-col gap-3">
@@ -75,33 +75,33 @@ export const timelineData = [
     title: '2022-2023',
     content: (
       <div className="space-y-6">
-        <div className="p-6 rounded-2xl shadow-md bg-body">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+        <div className="bg-body rounded-2xl p-6 shadow-md">
+          <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
             BUT Informatique - BUT1
           </h2>
-          <h3 className="text-xl md:text-2xl text-muted mb-2">
+          <h3 className="mb-2 text-xl text-muted md:text-2xl">
             IUT de Blagnac - Université Toulouse 2 - Jean Jaures
           </h3>
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center font-semibold text-primary text-lg">
+              <span className="inline-flex items-center text-lg font-semibold text-primary">
                 <i className="bi bi-cpu me-2"></i>
                 Formation en développement logiciel
               </span>
             </div>
 
-            <p className="text-lg md:text-xl leading-relaxed">
+            <p className="text-lg leading-relaxed md:text-xl">
               Formation axée sur le développement logiciel et les bases de
               données.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-                <h4 className="font-semibold mb-3 text-primary text-xl">
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                <h4 className="mb-3 text-xl font-semibold text-primary">
                   Formation
                 </h4>
-                <ul className="list-disc list-inside text-base md:text-lg space-y-2">
+                <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                   <li>Entrée en BUT Informatique</li>
                   <li>IUT de Blagnac - Université Toulouse 2</li>
                   <li>Formation en développement logiciel</li>
@@ -110,8 +110,8 @@ export const timelineData = [
                 </ul>
               </div>
 
-              <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-                <h4 className="font-semibold mb-3 text-primary text-xl">
+              <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                <h4 className="mb-3 text-xl font-semibold text-primary">
                   Projets académiques
                 </h4>
                 <div className="flex flex-col gap-3">
@@ -134,8 +134,8 @@ export const timelineData = [
             </div>
           </div>
           <div>
-            <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm mt-6">
-              <h4 className="font-semibold mb-3 text-primary text-xl">
+            <div className="bg-body-tertiary mt-6 rounded-2xl p-4 shadow-sm">
+              <h4 className="mb-3 text-xl font-semibold text-primary">
                 <i className="bi bi-search me-2"></i>
                 Recherche d'alternance
               </h4>
@@ -147,16 +147,16 @@ export const timelineData = [
                   modernes.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="badge bg-primary fs-6 px-2 py-1">
+                  <span className="badge fs-6 bg-primary px-2 py-1">
                     <i className="bi bi-globe me-1"></i>Développement Web
                   </span>
-                  <span className="badge bg-primary fs-6 px-2 py-1">
+                  <span className="badge fs-6 bg-primary px-2 py-1">
                     <i className="bi bi-filetype-java me-1"></i>Java
                   </span>
-                  <span className="badge bg-primary fs-6 px-2 py-1">
+                  <span className="badge fs-6 bg-primary px-2 py-1">
                     <i className="bi bi-filetype-py me-1"></i>Python
                   </span>
-                  <span className="badge bg-primary fs-6 px-2 py-1">
+                  <span className="badge fs-6 bg-primary px-2 py-1">
                     <i className="bi bi-code-slash me-1"></i>C
                   </span>
                 </div>
@@ -172,14 +172,14 @@ export const timelineData = [
     content: (
       <div>
         <div className="space-y-6">
-          <div className="p-6 rounded-2xl shadow-md bg-body">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+          <div className="bg-body rounded-2xl p-6 shadow-md">
+            <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
               BUT2 Informatique en alternance
             </h2>
-            <h3 className="text-xl md:text-2xl text-muted mb-2">
+            <h3 className="mb-2 text-xl text-muted md:text-2xl">
               IUT de Blagnac - Université Toulouse 2 - Jean Jaures
             </h3>
-            <h3 className="text-xl md:text-2xl text-muted mb-2 flex items-center gap-2">
+            <h3 className="mb-2 flex items-center gap-2 text-xl text-muted md:text-2xl">
               <img
                 src="/assets/images/equans_ineo.jpg"
                 alt="Logo EQUANS"
@@ -190,23 +190,23 @@ export const timelineData = [
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center font-semibold text-primary text-lg">
+                <span className="inline-flex items-center text-lg font-semibold text-primary">
                   <i className="bi bi-cpu me-2"></i>
                   Formation en développement logiciel
                 </span>
               </div>
 
-              <p className="text-lg md:text-xl leading-relaxed">
+              <p className="text-lg leading-relaxed md:text-xl">
                 Formation axée sur le développement logiciel et les bases de
                 données.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-                  <h4 className="font-semibold mb-3 text-primary text-xl">
+              <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                  <h4 className="mb-3 text-xl font-semibold text-primary">
                     Formation
                   </h4>
-                  <ul className="list-disc list-inside text-base md:text-lg space-y-2">
+                  <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                     <li>Entrée en BUT Informatique</li>
                     <li>IUT de Blagnac - Université Toulouse 2</li>
                     <li>Formation en développement logiciel</li>
@@ -215,8 +215,8 @@ export const timelineData = [
                   </ul>
                 </div>
 
-                <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-                  <h4 className="font-semibold mb-3 text-primary text-xl">
+                <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                  <h4 className="mb-3 text-xl font-semibold text-primary">
                     Projets académiques
                   </h4>
                   <div className="flex flex-col gap-3">
@@ -239,8 +239,8 @@ export const timelineData = [
               </div>
             </div>
             <div>
-              <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm mt-6">
-                <h4 className="font-semibold mb-3 text-primary text-xl">
+              <div className="bg-body-tertiary mt-6 rounded-2xl p-4 shadow-sm">
+                <h4 className="mb-3 text-xl font-semibold text-primary">
                   <i className="bi bi-search me-2"></i>
                   Recherche d'alternance
                 </h4>
@@ -252,16 +252,16 @@ export const timelineData = [
                     modernes.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="badge bg-primary fs-6 px-2 py-1">
+                    <span className="badge fs-6 bg-primary px-2 py-1">
                       <i className="bi bi-globe me-1"></i>Développement Web
                     </span>
-                    <span className="badge bg-primary fs-6 px-2 py-1">
+                    <span className="badge fs-6 bg-primary px-2 py-1">
                       <i className="bi bi-filetype-java me-1"></i>Java
                     </span>
-                    <span className="badge bg-primary fs-6 px-2 py-1">
+                    <span className="badge fs-6 bg-primary px-2 py-1">
                       <i className="bi bi-filetype-py me-1"></i>Python
                     </span>
-                    <span className="badge bg-primary fs-6 px-2 py-1">
+                    <span className="badge fs-6 bg-primary px-2 py-1">
                       <i className="bi bi-code-slash me-1"></i>C
                     </span>
                   </div>
@@ -272,8 +272,8 @@ export const timelineData = [
         </div>
 
         <div>
-          <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-            <h4 className="font-semibold mb-3 text-primary text-xl">
+          <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+            <h4 className="mb-3 text-xl font-semibold text-primary">
               <i className="bi bi-building me-2"></i>
               BUT2 Informatique en alternance
             </h4>
@@ -284,10 +284,10 @@ export const timelineData = [
                 en parallèle au sein de l'IUT de Blagnac.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="badge bg-primary fs-6 px-2 py-1">
+                <span className="badge fs-6 bg-primary px-2 py-1">
                   <i className="bi bi-building me-1"></i>INEO MPLR
                 </span>
-                <span className="badge bg-primary fs-6 px-2 py-1">
+                <span className="badge fs-6 bg-primary px-2 py-1">
                   <i className="bi bi-mortarboard me-1"></i>BUT2
                 </span>
               </div>
@@ -305,8 +305,8 @@ export const timelineData = [
     title: '2025-202X',
     content: (
       <div>
-        <div className="bg-body-tertiary p-4 rounded-2xl shadow-sm">
-          <h4 className="font-semibold mb-3 text-primary text-xl">
+        <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+          <h4 className="mb-3 text-xl font-semibold text-primary">
             <i className="bi bi-mortarboard me-2"></i>
             École d'Ingénieur - Spécialisation dans l'Intelligence Artificielle
           </h4>
@@ -318,13 +318,13 @@ export const timelineData = [
               deep learning. 🤞🏻
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="badge bg-primary fs-6 px-2 py-1">
+              <span className="badge fs-6 bg-primary px-2 py-1">
                 <i className="bi bi-robot me-1"></i>Intelligence Artificielle
               </span>
-              <span className="badge bg-primary fs-6 px-2 py-1">
+              <span className="badge fs-6 bg-primary px-2 py-1">
                 <i className="bi bi-building me-1"></i>Alternance
               </span>
-              <span className="badge bg-primary fs-6 px-2 py-1">
+              <span className="badge fs-6 bg-primary px-2 py-1">
                 <i className="bi bi-mortarboard me-1"></i>École d'Ingénieur
               </span>
             </div>
