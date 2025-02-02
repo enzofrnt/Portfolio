@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { CompetencesService } from '../../services/competence.service';
 import { Competence } from '../competence.model';
 import { CompetencesComponent } from '../competence/competence.component';
-import { CompetencesService } from '../../services/competence.service';
 
 @Component({
   selector: 'app-competence-label',

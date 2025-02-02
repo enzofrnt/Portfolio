@@ -1,9 +1,9 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Project, ProjectType } from '../../project.model';
-import { ProjectCoreService } from '../../project-core.service';
-import { Competence } from '../../../competences/competence.model';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Competence } from '../../../competences/competence.model';
 import { CompetencesService } from '../../../services/competence.service';
+import { ProjectCoreService } from '../../project-core.service';
+import { Project, ProjectType } from '../../project.model';
 
 @Component({
   selector: 'app-projects-list',

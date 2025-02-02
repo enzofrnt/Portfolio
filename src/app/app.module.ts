@@ -5,22 +5,22 @@ import {
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { provideHighlightOptions } from 'ngx-highlightjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DarkModeToggleComponent } from './navbar/dark-mode-toggle/dark-mode-toggle.component';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { ProjectDropdownComponent } from './navbar/project-dropdown/project-dropdown.component';
-import { ActiveLinkDirective } from './directives/active-link.directive';
-import { ProjectsCoreModule } from './projects-core/projects-core.module';
-import { ProjectsModule } from './projects-core/projects/projects.module';
-import { FooterComponent } from './footer/footer.component';
-import { CodeBlockComponent } from './utils/code-block/code-block.component';
-import { provideHighlightOptions } from 'ngx-highlightjs';
 import { CompetencesModule } from './competences/competences.module';
 import { CvComponent } from './cv/cv.component';
+import { ActiveLinkDirective } from './directives/active-link.directive';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { DarkModeToggleComponent } from './navbar/dark-mode-toggle/dark-mode-toggle.component';
+import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { ProjectDropdownComponent } from './navbar/project-dropdown/project-dropdown.component';
+import { ProjectsCoreModule } from './projects-core/projects-core.module';
+import { ProjectsModule } from './projects-core/projects/projects.module';
 import { TimelineModule } from './timeline/timeline.module';
+import { CodeBlockComponent } from './utils/code-block/code-block.component';
 
 @NgModule({
   declarations: [

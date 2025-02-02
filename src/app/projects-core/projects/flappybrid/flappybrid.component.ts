@@ -5,8 +5,8 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { Project, ProjectType } from '../../project.model';
 import { CompetencesComponent } from '../../../competences/competence/competence.component';
+import { Project, ProjectType } from '../../project.model';
 
 interface UnityInstance {
   Quit: () => void;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Project, ProjectType } from '../../project.model';
 import { CompetencesComponent } from '../../../competences/competence/competence.component';
+import { Project, ProjectType } from '../../project.model';
 
 @Component({
   selector: 'app-room-ocup',

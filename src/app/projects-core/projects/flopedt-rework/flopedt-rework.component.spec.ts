@@ -8,10 +8,9 @@ describe('FlopedtReworkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FlopedtReworkComponent]
-    })
-    .compileComponents();
-    
+      declarations: [FlopedtReworkComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FlopedtReworkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

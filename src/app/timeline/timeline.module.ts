@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimelineComponent } from './componenent/timeline.component';
+import { NgModule } from '@angular/core';
 import { ReactComponentDirective } from '../directives/react-component.directive';
+import { TimelineComponent } from './componenent/timeline.component';
 
 @NgModule({
   declarations: [TimelineComponent, ReactComponentDirective],

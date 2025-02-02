@@ -8,10 +8,9 @@ describe('DjangoHybridrouterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DjangoHybridrouterComponent]
-    })
-    .compileComponents();
-    
+      declarations: [DjangoHybridrouterComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DjangoHybridrouterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

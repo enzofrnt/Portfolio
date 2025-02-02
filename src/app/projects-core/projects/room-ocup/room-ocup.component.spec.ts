@@ -8,10 +8,9 @@ describe('RoomOcupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RoomOcupComponent]
-    })
-    .compileComponents();
-    
+      declarations: [RoomOcupComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RoomOcupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,5 +1,5 @@
-import { Directive, ElementRef, Renderer2, Input, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Directive({
   selector: '[appActiveLink]',

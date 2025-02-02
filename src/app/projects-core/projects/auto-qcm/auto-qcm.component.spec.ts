@@ -8,10 +8,9 @@ describe('AutoQcmComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AutoQcmComponent]
-    })
-    .compileComponents();
-    
+      declarations: [AutoQcmComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AutoQcmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

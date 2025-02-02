@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Project } from '../project.model';
-import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-project-wrapper',

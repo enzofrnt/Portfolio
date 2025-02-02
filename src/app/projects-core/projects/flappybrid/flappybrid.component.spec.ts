@@ -8,9 +8,8 @@ describe('FlappybridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FlappybridComponent]
-    })
-    .compileComponents();
+      declarations: [FlappybridComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FlappybridComponent);
     component = fixture.componentInstance;

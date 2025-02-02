@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Competence } from '../competence.model';
-import { CompetencesService } from '../../services/competence.service';
 import { Subscription } from 'rxjs';
+import { CompetencesService } from '../../services/competence.service';
+import { Competence } from '../competence.model';
 @Component({
   selector: 'app-competence',
   templateUrl: './competence.component.html',

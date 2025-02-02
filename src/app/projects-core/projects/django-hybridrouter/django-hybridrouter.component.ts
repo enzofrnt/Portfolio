@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
-    selector: 'app-django-hybridrouter',
-    templateUrl: './django-hybridrouter.component.html',
-    styleUrl: './django-hybridrouter.component.scss',
-    standalone: false
+  selector: 'app-django-hybridrouter',
+  templateUrl: './django-hybridrouter.component.html',
+  styleUrl: './django-hybridrouter.component.scss',
+  standalone: false,
 })
 export class DjangoHybridrouterComponent implements Project {
   id = 'django-hybridrouter';

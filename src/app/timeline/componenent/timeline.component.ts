@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Timeline } from '../react/timeline';
 import type { ComponentProps } from 'react';
+import { Timeline } from '../react/timeline';
 import { timelineData } from '../react/timeline-content';
 
 interface CustomWindow extends Window {

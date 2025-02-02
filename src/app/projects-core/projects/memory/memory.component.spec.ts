@@ -8,10 +8,9 @@ describe('MemoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MemoryComponent]
-    })
-    .compileComponents();
-    
+      declarations: [MemoryComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(MemoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

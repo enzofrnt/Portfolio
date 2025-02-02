@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { throttle } from 'lodash';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 interface TimelineEntry {
   title: string;

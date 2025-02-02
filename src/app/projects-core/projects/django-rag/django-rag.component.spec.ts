@@ -8,10 +8,9 @@ describe('DjangoRagComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DjangoRagComponent]
-    })
-    .compileComponents();
-    
+      declarations: [DjangoRagComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DjangoRagComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

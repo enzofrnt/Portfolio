@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
-    selector: 'app-django-rag',
-    templateUrl: './django-rag.component.html',
-    styleUrl: './django-rag.component.scss',
-    standalone: false
+  selector: 'app-django-rag',
+  templateUrl: './django-rag.component.html',
+  styleUrl: './django-rag.component.scss',
+  standalone: false,
 })
 export class DjangoRagComponent implements Project {
   id = 'django-rag';

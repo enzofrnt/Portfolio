@@ -8,10 +8,9 @@ describe('DjangoSseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DjangoSseComponent]
-    })
-    .compileComponents();
-    
+      declarations: [DjangoSseComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DjangoSseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
