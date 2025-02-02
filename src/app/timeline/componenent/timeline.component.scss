@@ -1,8 +1,11 @@
 .timeline-wrapper {
+  min-height: 5052px;
+}
+
+app-timeline {
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  min-height: 5052px;
 }
 
 .bg-body {

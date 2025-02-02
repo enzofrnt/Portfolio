@@ -1,4 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  Inject,
+  PLATFORM_ID,
+  ViewEncapsulation,
+} from '@angular/core';
 import type { ComponentProps } from 'react';
 import { Timeline } from '../react/timeline';
 import { timelineData } from '../react/timeline-content';
@@ -32,8 +38,10 @@ export class TimelineComponent {
     data: timelineData,
   };
 
-  constructor() {
-    window.timelineComponent = this;
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+    if (isPlatformBrowser(this.platformId)) {
+      window.timelineComponent = this;
+    }
   }
 
   onEnSavoirPlusClick() {

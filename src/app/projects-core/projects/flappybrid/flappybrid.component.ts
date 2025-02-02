@@ -41,12 +41,15 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
   private resizeListener = () => this.enforceAspectRatio();
 
   constructor() {
-    // Écouter la touche Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        this.exitFullscreen();
-      }
-    });
+    // Vérifier si nous sommes dans un environnement navigateur
+    if (typeof document !== 'undefined') {
+      // Écouter la touche Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.exitFullscreen();
+        }
+      });
+    }
   }
 
   ngAfterViewInit(): void {
@@ -130,6 +133,14 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
    * Nettoyage lorsqu'on détruit le composant.
    */
   ngOnDestroy(): void {
+    if (typeof document !== 'undefined') {
+      document.removeEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.exitFullscreen();
+        }
+      });
+    }
+
     // Retire l'écouteur d'événements pour éviter les fuites
     window.removeEventListener('resize', this.resizeListener);
 

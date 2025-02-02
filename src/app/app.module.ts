@@ -2,7 +2,7 @@ import {
   NgModule,
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CommonModule, NgOptimizedImage } from '@angular/common';
@@ -52,6 +52,7 @@ import { CodeBlockComponent } from './utils/code-block/code-block.component';
       lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
       fullLibraryLoader: () => import('highlight.js'),
     }),
+    provideClientHydration(withEventReplay()),
   ],
 })
 export class AppModule {}
