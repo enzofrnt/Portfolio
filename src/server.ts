@@ -3,6 +3,7 @@ import { CommonEngine, isMainModule } from '@angular/ssr/node';
 import express from 'express';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ProjectCoreService } from './app/projects-core/project-core.service';
 import { SitemapService } from './app/services/sitemap.service';
 import AppServerModule from './main.server';
 
@@ -29,7 +30,8 @@ const commonEngine = new CommonEngine();
  * Endpoint pour la sitemap (à placer AVANT les routes génériques)
  */
 app.get('/sitemap.xml', (req, res) => {
-  const sitemapService = new SitemapService();
+  const projectService = new ProjectCoreService();
+  const sitemapService = new SitemapService(projectService);
   const sitemap = sitemapService.generateSitemap();
 
   res.header('Content-Type', 'application/xml');

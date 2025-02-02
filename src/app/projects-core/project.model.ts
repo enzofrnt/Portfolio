@@ -12,4 +12,5 @@ export interface Project {
   type: ProjectType;
   link?: string;
   competences?: Competence[];
+  keywords?: string[];
 }

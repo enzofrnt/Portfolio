@@ -59,6 +59,13 @@ export class ProjectCoreService {
       return {
         path: tempInstance.id,
         component: Component,
+        data: {
+          title: `Projet - ${tempInstance.name}`,
+          description: tempInstance.description,
+          ...('keywords' in tempInstance && {
+            keywords: tempInstance.keywords,
+          }),
+        },
       };
     });
   }
