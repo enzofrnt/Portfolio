@@ -3,6 +3,7 @@ import { CommonEngine, isMainModule } from '@angular/ssr/node';
 import express from 'express';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SitemapService } from './app/services/sitemap.service';
 import AppServerModule from './main.server';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
@@ -14,7 +15,7 @@ const commonEngine = new CommonEngine();
 
 /**
  * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
+ * Uncomment and define endpoints as necessary.x
  *
  * Example:
  * ```ts
@@ -25,13 +26,24 @@ const commonEngine = new CommonEngine();
  */
 
 /**
+ * Endpoint pour la sitemap (à placer AVANT les routes génériques)
+ */
+app.get('/sitemap.xml', (req, res) => {
+  const sitemapService = new SitemapService();
+  const sitemap = sitemapService.generateSitemap();
+
+  res.header('Content-Type', 'application/xml');
+  res.send(sitemap);
+});
+
+/**
  * Serve static files from /browser
  */
 app.get(
   '**',
   express.static(browserDistFolder, {
     maxAge: '1y',
-    index: 'index.html'
+    index: 'index.html',
   }),
 );
 

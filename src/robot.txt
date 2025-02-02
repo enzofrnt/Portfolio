@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://enzo-frnt.fr/sitemap.xml
