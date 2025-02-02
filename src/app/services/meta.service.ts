@@ -27,4 +27,10 @@ export class MetaService {
       this.meta.updateTag({ name: 'keywords', content: keywords });
     }
   }
+
+  updateTag(tag: { property: string; content: string }) {
+    if (tag.property && tag.content) {
+      this.meta.updateTag(tag);
+    }
+  }
 }

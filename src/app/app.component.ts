@@ -38,6 +38,26 @@ export class AppComponent implements OnInit {
           this.metaService.updateTitle(title);
           this.metaService.updateDescription(description);
           this.metaService.updateKeywords(keywords);
+          this.metaService.updateTag({
+            property: 'og:type',
+            content: 'website',
+          });
+          this.metaService.updateTag({
+            property: 'og:title',
+            content: title,
+          });
+          this.metaService.updateTag({
+            property: 'og:description',
+            content: description,
+          });
+          this.metaService.updateTag({
+            property: 'og:image',
+            content: 'https://enzo-frnt.fr/assets/images/pp.webp',
+          });
+          this.metaService.updateTag({
+            property: 'og:url',
+            content: 'https://enzo-frnt.fr',
+          });
         }),
       )
       .subscribe();
