@@ -1,5 +1,5 @@
 <div *ngIf="this.includePersoProjects">
-  <h2>Projets personnels</h2>
+  <h2 class="mb-4">Projets personnels</h2>
   <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
     <div *ngFor="let project of persoProjects"
       class="col mb-4 project-card"
@@ -19,7 +19,7 @@
   *ngIf="this.includeIutProjects && this.includePersoProjects" />
 
 <div *ngIf="this.includeIutProjects">
-  <h2>Projet réalisés à l'IUT</h2>
+  <h2 class="mb-4">Projets réalisés à l'IUT</h2>
   <div
     class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
     <div *ngFor="let project of iutProjects"
@@ -33,4 +33,4 @@
       </app-project-card>
     </div>
   </div>
-  <div>
+</div>

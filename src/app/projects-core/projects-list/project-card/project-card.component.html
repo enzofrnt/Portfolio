@@ -1,11 +1,11 @@
 <div class="card h-100">
   <img
-    [ngSrc]="'/assets/images/' + project.id + '.png'"
+    [ngSrc]="'/assets/images/' + project.id + '.webp'"
     width="300"
     height="300"
     class="card-img-top"
     alt="{{ project.name }}"
-    onerror="this.src='assets/images/default.png';"
+    onerror="this.src='assets/images/default.webp';"
     priority />
   <div class="card-body d-flex flex-column">
     <h5 class="card-title">{{ project.name }}</h5>
@@ -29,7 +29,8 @@
         Voir le projet
       </a>
       <a [href]="project.link" *ngIf="project.link" class="btn btn-secondary"
-        target="_blank">
+        target="_blank"
+        [attr.aria-label]="'Button pour oubrir le gihtub du projet ' + project.name">
         <i class="bi bi-github"></i>
       </a>
     </div>

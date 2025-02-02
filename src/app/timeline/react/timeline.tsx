@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { throttle } from 'lodash';
 
 interface TimelineEntry {
   title: string;
@@ -10,6 +11,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [height, setHeight] = useState(0);
+  const lastScrollProgress = useRef(0);
+  const rafId = useRef<number>();
 
   // 🔍 Vérifier la hauteur du ref après le rendu
   useEffect(() => {
@@ -19,32 +22,75 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     }
   }, []);
 
-  // 📜 Écoute du scroll
+  // Optimiser le calcul de la progression
+  const calculateProgress = useCallback(
+    (rect: DOMRect, viewportHeight: number, isMobile: boolean) => {
+      if (isMobile) {
+        if (rect.top >= viewportHeight) return 0;
+        if (rect.bottom <= 0) return 1;
+
+        const totalDistance = rect.height + viewportHeight;
+        const scrolledDistance = viewportHeight - rect.top;
+        return Math.max(0, Math.min(1, scrolledDistance / totalDistance));
+      }
+
+      const startOffset = viewportHeight * 0.1;
+      const endOffset = viewportHeight * 0.5;
+      return Math.max(
+        0,
+        Math.min(
+          1,
+          (viewportHeight - rect.top - startOffset) /
+            (rect.height + endOffset) -
+            0.05,
+        ),
+      );
+    },
+    [],
+  );
+
+  // Utiliser requestAnimationFrame pour une animation plus fluide
+  const updateProgress = useCallback(() => {
+    if (!ref.current) return;
+
+    const rect = ref.current.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const isMobile = window.innerWidth < 768;
+
+    const newProgress = calculateProgress(rect, viewportHeight, isMobile);
+
+    // Utiliser une interpolation pour adoucir le mouvement
+    const smoothProgress =
+      lastScrollProgress.current +
+      (newProgress - lastScrollProgress.current) * 0.3;
+
+    lastScrollProgress.current = smoothProgress;
+    setScrollProgress(smoothProgress);
+
+    rafId.current = requestAnimationFrame(updateProgress);
+  }, [calculateProgress]);
+
+  // Gérer le scroll avec RAF
+  const handleScroll = useCallback(
+    throttle(() => {
+      if (!rafId.current) {
+        rafId.current = requestAnimationFrame(updateProgress);
+      }
+    }, 8), // ~120fps
+    [updateProgress],
+  );
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (!ref.current) return;
-
-      const rect = ref.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // 🏁 Calculer le progrès du scroll avec offset (comme useScroll)
-      const startOffset = viewportHeight * 0.1; // Équivalent à "start 10%"
-      const endOffset = viewportHeight * 0.5; // Équivalent à "end 50%"
-
-      // Progression entre 0 et 1 selon la visibilité
-      let progress =
-        (viewportHeight - rect.top - startOffset) / (rect.height + endOffset) -
-        0.05;
-
-      progress = Math.max(0, Math.min(1, progress)); // Clamp entre 0 et 1
-      setScrollProgress(progress);
-    };
-
     handleScroll();
-
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
+  }, [handleScroll]);
 
   return (
     <div className="relative w-full bg-transparent font-sans md:px-10">
@@ -53,15 +99,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex justify-start pb-10 pt-10 md:gap-10 md:pb-40 md:pt-40"
+              className="flex justify-start pb-5 pt-10 md:gap-10 md:pb-5 md:pt-40"
             >
               <div className="sticky top-24 z-50 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
-                {/* <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center"> */}
                 <div
                   className="bg-body-tertiary absolute flex h-10 w-10 items-center justify-center rounded-full"
                   style={{ left: '0.78rem' }}
                 >
-                  {/* <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" /> */}
                   <div className="bg-body h-4 w-4 rounded-full border border-neutral-300 p-2 dark:border-neutral-700" />
                 </div>
                 <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-neutral-500 md:block md:pl-20 md:text-5xl">

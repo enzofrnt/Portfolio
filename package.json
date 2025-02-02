@@ -37,6 +37,7 @@
     "@angular/cli": "^19.0.6",
     "@angular/compiler-cli": "^19.0.5",
     "@types/jasmine": "~5.1.0",
+    "@types/lodash": "^4.17.15",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "angular-eslint": "19.0.2",

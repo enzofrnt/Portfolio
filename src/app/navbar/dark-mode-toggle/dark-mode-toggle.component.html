@@ -1,4 +1,5 @@
-<button class="btn" (click)="toggleDarkMode()">
+<button class="btn" (click)="toggleDarkMode()"
+  [attr.aria-label]="darkModeService.darkModeSignal() === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'">
   <i
     [ngClass]="{
       'bi-brightness-high': darkModeService.darkModeSignal() !== 'dark',
