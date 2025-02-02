@@ -40,9 +40,16 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
   /** Listener pour la fonction de redimensionnement (on le stocke pour pouvoir le retirer en OnDestroy). */
   private resizeListener = () => this.enforceAspectRatio();
 
+  private isBrowser = typeof window !== 'undefined';
+  private escapeListener = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      this.exitFullscreen();
+    }
+  };
+
   constructor() {
     // Vérifier si nous sommes dans un environnement navigateur
-    if (typeof document !== 'undefined') {
+    if (typeof document !== 'undefined' && typeof window !== 'undefined') {
       // Écouter la touche Escape
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
@@ -53,9 +60,14 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
   }
 
   ngAfterViewInit(): void {
-    // --------------------------
-    // 1. Paramètres du Build Unity (à adapter)
-    // --------------------------
+    if (!this.isBrowser) return;
+
+    document.addEventListener('keydown', this.escapeListener);
+    this.initializeGame();
+  }
+
+  private initializeGame(): void {
+    // Déplacer tout le code d'initialisation du jeu ici
     const buildUrl = 'assets/game/Build';
     const config = {
       dataUrl: buildUrl + '/test-web.data',
@@ -133,19 +145,12 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
    * Nettoyage lorsqu'on détruit le composant.
    */
   ngOnDestroy(): void {
-    if (typeof document !== 'undefined') {
-      document.removeEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          this.exitFullscreen();
-        }
-      });
-    }
+    if (!this.isBrowser) return;
 
-    // Retire l'écouteur d'événements pour éviter les fuites
+    document.removeEventListener('keydown', this.escapeListener);
     window.removeEventListener('resize', this.resizeListener);
 
-    // Optionnel : détruire l'instance Unity si nécessaire
-    if (this.unityInstance && this.unityInstance.Quit) {
+    if (this.unityInstance?.Quit) {
       this.unityInstance.Quit();
     }
   }
@@ -155,6 +160,7 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
    * Le canvas ne dépasse pas la taille disponible.
    */
   private enforceAspectRatio(): void {
+    if (!this.isBrowser) return;
     const aspectRatio = 9 / 16;
     const isFullscreen =
       this.fullscreenOverlay.nativeElement.classList.contains('active');
@@ -224,6 +230,7 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
   }
 
   enterFullscreen(): void {
+    if (!this.isBrowser) return;
     const overlay = this.fullscreenOverlay.nativeElement;
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -243,6 +250,7 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
   }
 
   exitFullscreen(): void {
+    if (!this.isBrowser) return;
     const overlay = this.fullscreenOverlay.nativeElement;
     if (!overlay.classList.contains('active')) return;
 

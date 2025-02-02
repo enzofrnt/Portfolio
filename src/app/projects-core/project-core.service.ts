@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Routes } from '@angular/router';
 import { Project, ProjectType } from './project.model';
 import { AutoQcmComponent } from './projects/auto-qcm/auto-qcm.component';
 import { BankManageComponent } from './projects/bank-manage/bank-manage.component';
@@ -50,5 +51,15 @@ export class ProjectCoreService {
       [ProjectType.IUT]: projects.filter((p) => p.type === ProjectType.IUT),
       [ProjectType.PERSO]: projects.filter((p) => p.type === ProjectType.PERSO),
     };
+  }
+
+  getRoutes(): Routes {
+    return ProjectCoreService.projectComponents.map((Component) => {
+      const tempInstance = new Component();
+      return {
+        path: tempInstance.id,
+        component: Component,
+      };
+    });
   }
 }
