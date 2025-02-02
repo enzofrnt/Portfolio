@@ -186,6 +186,8 @@ export const timelineData = [
               <img
                 src="/assets/images/equans_ineo.webp"
                 alt="Logo EQUANS"
+                width="120"
+                height="55"
                 className="h-14 overflow-hidden rounded-xl"
               />
               Alternance chez EQUANS INEO MPLR
@@ -292,6 +294,8 @@ export const timelineData = [
               <img
                 src="/assets/images/equans_ineo.webp"
                 alt="Logo EQUANS"
+                width="120"
+                height="55"
                 className="h-14 overflow-hidden rounded-xl"
               />
               Alternance chez EQUANS INEO MPLR
