@@ -2,7 +2,12 @@ import {
   NgModule,
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  BrowserModule,
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CommonModule, NgOptimizedImage } from '@angular/common';
@@ -10,6 +15,7 @@ import { provideHighlightOptions } from 'ngx-highlightjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompetencesModule } from './competences/competences.module';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CvComponent } from './cv/cv.component';
 import { ActiveLinkDirective } from './directives/active-link.directive';
 import { FooterComponent } from './footer/footer.component';
@@ -32,6 +38,7 @@ import { CodeBlockComponent } from './utils/code-block/code-block.component';
     ActiveLinkDirective,
     FooterComponent,
     CvComponent,
+    ContactFormComponent,
   ],
   imports: [
     NgOptimizedImage,
@@ -44,6 +51,7 @@ import { CodeBlockComponent } from './utils/code-block/code-block.component';
     TimelineModule,
     CodeBlockComponent,
     CompetencesModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
   providers: [
