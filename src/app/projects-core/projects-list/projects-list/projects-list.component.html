@@ -4,10 +4,9 @@
     <div *ngFor="let project of persoProjects"
       class="col mb-4 project-card"
       [ngClass]="{
-      'selected': highlightedCompetence &&
-                  project.competences?.includes(highlightedCompetence),
-      'reset-animation': !highlightedCompetence
-    }">
+        'selected': isHighlighted(project),
+        'reset-animation': !highlightedCompetence
+      }">
       <app-project-card [project]="project"
         [includeCompetences]="this.includeCompetences">
       </app-project-card>
@@ -25,9 +24,8 @@
     <div *ngFor="let project of iutProjects"
       class="mb-4 col project-card"
       [ngClass]="{
-      'selected': highlightedCompetence &&
-                  project.competences?.includes(highlightedCompetence)
-    }">
+        'selected': isHighlighted(project)
+      }">
       <app-project-card [project]="project"
         [includeCompetences]="this.includeCompetences">
       </app-project-card>

@@ -10,3 +10,19 @@ img {
 // .card {
 //   width: 300px;
 // }
+
+.project-card {
+  transition:
+    transform 0.3s ease,
+    border 0.3s ease;
+
+  &.selected {
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+  }
+
+  &.reset-animation {
+    border: none;
+    transform: scale(1);
+  }
+}

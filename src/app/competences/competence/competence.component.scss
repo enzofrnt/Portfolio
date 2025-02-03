@@ -35,11 +35,11 @@
 }
 
 .col-competence {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 
   &.hovered {
-    transform: scale(1.02);
-    animation: highlight-competence 2s ease-in-out forwards;
+    transform: scale(1.05);
+    animation: highlight-competence 1s ease forwards;
   }
 
   &.reset-animation {
@@ -54,8 +54,7 @@
     box-shadow: none;
   }
   50% {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);

@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CompetencesService } from '../../services/competence.service';
+import {
+  CompetencesService,
+  SelectedCompetenceAction,
+} from '../../services/competence.service';
 import { Competence } from '../competence.model';
 @Component({
   selector: 'app-competence',
@@ -21,7 +24,7 @@ export class CompetencesComponent implements OnInit, OnDestroy {
       {
         titre: 'Niveau 2',
         description:
-          'Partir des exigences et aller jusqu’à une application complète',
+          "Partir des exigences et aller jusqu'à une application complète",
       },
       {
         titre: 'Niveau 3',
@@ -74,7 +77,7 @@ export class CompetencesComponent implements OnInit, OnDestroy {
       {
         titre: 'Niveau 1',
         description:
-          'Concevoir et mettre en place une base de données à partir d’un cahier des charges client',
+          "Concevoir et mettre en place une base de données à partir d'un cahier des charges client",
       },
       {
         titre: 'Niveau 2',
@@ -112,7 +115,7 @@ export class CompetencesComponent implements OnInit, OnDestroy {
       {
         titre: 'Niveau 2',
         description:
-          'Situer son rôle et ses missions au sein d’une équipe informatique',
+          "Situer son rôle et ses missions au sein d'une équipe informatique",
       },
       { titre: 'Niveau 3', description: 'Manager une équipe informatique' },
     ],
@@ -135,6 +138,21 @@ export class CompetencesComponent implements OnInit, OnDestroy {
 
   constructor(private competencesService: CompetencesService) {}
 
+  ngOnInit(): void {
+    this.subscription = this.competencesService.selectedCompetence$.subscribe(
+      (action: SelectedCompetenceAction) => {
+        this.selectedCompetence = action.competence;
+        if (action.competence) {
+          this.hoveredIndex = this.competences.findIndex(
+            (c) => c.title === action.competence!.title,
+          );
+        } else {
+          this.hoveredIndex = null;
+        }
+      },
+    );
+  }
+
   onMouseOver(index: number) {
     if (!this.selectedCompetence) {
       this.hoveredIndex = index;
@@ -147,32 +165,12 @@ export class CompetencesComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnInit(): void {
-    this.subscription = this.competencesService.selectedCompetence$.subscribe(
-      (competence) => {
-        // Réinitialiser d'abord
-        this.selectedCompetence = null;
-        this.hoveredIndex = null;
-
-        // Attendre le prochain cycle de rendu
-        setTimeout(() => {
-          this.selectedCompetence = competence;
-          if (competence) {
-            this.hoveredIndex = this.competences.findIndex(
-              (c) => c.title === competence.title,
-            );
-          }
-        }, 50);
-      },
-    );
+  // Lors d'un clic direct sur la compétence dans le grid
+  onCompetenceClick(competence: Competence) {
+    this.competencesService.setSelectedCompetence(competence, false);
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
-
-  // Optionnel: si on clique directement sur la compétence dans la grille
-  onCompetenceClick(competence: Competence) {
-    this.competencesService.setSelectedCompetence(competence, false);
   }
 }

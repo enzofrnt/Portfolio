@@ -3,11 +3,19 @@ import { BehaviorSubject } from 'rxjs';
 import { Competence } from '../competences/competence.model';
 import { ScrollService } from './scroll.service';
 
+export interface SelectedCompetenceAction {
+  competence: Competence | null;
+  highlightProjects: boolean;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class CompetencesService {
-  private _selectedCompetence$ = new BehaviorSubject<Competence | null>(null);
+  private _selectedCompetence$ = new BehaviorSubject<SelectedCompetenceAction>({
+    competence: null,
+    highlightProjects: false,
+  });
   selectedCompetence$ = this._selectedCompetence$.asObservable();
 
   constructor(private scrollService: ScrollService) {}
@@ -16,31 +24,46 @@ export class CompetencesService {
     competence: Competence | null,
     scrollToCompetence = false,
   ) {
-    if (this.scrollService.isCurrentlyScrolling()) {
-      return;
-    }
+    const highlightProjects = !scrollToCompetence;
 
-    // Si on clique sur la même compétence, on la désélectionne
-    if (this._selectedCompetence$.value?.title === competence?.title) {
-      this._selectedCompetence$.next(null);
-      return;
-    }
+    // On récupère la compétence actuellement sélectionnée
+    const current = this._selectedCompetence$.getValue().competence;
+    const sameCompetence =
+      current &&
+      competence &&
+      current.title.toLowerCase() === competence.title.toLowerCase();
 
-    // Réinitialiser d'abord
-    this._selectedCompetence$.next(null);
-
-    // Attendre le prochain cycle de rendu
-    setTimeout(() => {
-      this._selectedCompetence$.next(competence);
-      if (competence) {
+    if (competence) {
+      if (sameCompetence) {
+        // Dans le cas où la même compétence est sélectionnée, on force la réémission
+        this._selectedCompetence$.next({ competence: null, highlightProjects });
+        setTimeout(() => {
+          if (scrollToCompetence) {
+            this.scrollService.scrollToElement(
+              `competence-${competence.title.toLowerCase()}`,
+              100,
+            );
+          }
+          this._selectedCompetence$.next({ competence, highlightProjects });
+        }, 50);
+      } else {
+        // Cas normal : réinitialisation puis mise à jour
+        this._selectedCompetence$.next({ competence: null, highlightProjects });
         if (scrollToCompetence) {
           this.scrollService.scrollToElement(
             `competence-${competence.title.toLowerCase()}`,
+            100,
           );
+          this._selectedCompetence$.next({ competence, highlightProjects });
         } else {
-          this.scrollService.scrollToFirstMatchingProject(competence.title);
+          setTimeout(() => {
+            this._selectedCompetence$.next({ competence, highlightProjects });
+            setTimeout(() => {
+              this.scrollService.scrollToFirstMatchingProject(competence.title);
+            }, 150);
+          }, 50);
         }
       }
-    }, 50);
+    }
   }
 }

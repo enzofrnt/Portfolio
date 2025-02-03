@@ -16,8 +16,6 @@ export class CompetenceLabelComponent {
   constructor(private competencesService: CompetencesService) {}
 
   onLabelClick() {
-    console.log('onLabelClick');
-    console.log(this.competence);
     this.competencesService.setSelectedCompetence(this.competence, true);
   }
 

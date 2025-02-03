@@ -1,7 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Competence } from '../../../competences/competence.model';
-import { CompetencesService } from '../../../services/competence.service';
+import {
+  CompetencesService,
+  SelectedCompetenceAction,
+} from '../../../services/competence.service';
 import { ProjectCoreService } from '../../project-core.service';
 import { Project, ProjectType } from '../../project.model';
 
@@ -34,15 +37,20 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
     this.persoProjects = projectsByType[ProjectType.PERSO];
 
     this.subscription = this.competencesService.selectedCompetence$.subscribe(
-      (competence) => {
-        // Réinitialiser d'abord
-        this.highlightedCompetence = null;
-
-        // Attendre le prochain cycle de rendu
-        setTimeout(() => {
-          this.highlightedCompetence = competence;
-        }, 50);
+      (action: SelectedCompetenceAction) => {
+        this.highlightedCompetence = action.highlightProjects
+          ? action.competence
+          : null;
       },
+    );
+  }
+
+  isHighlighted(project: Project): boolean {
+    if (!this.highlightedCompetence || !project.competences) {
+      return false;
+    }
+    return project.competences.some(
+      (c) => c.title === this.highlightedCompetence!.title,
     );
   }
 
