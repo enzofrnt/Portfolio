@@ -58,6 +58,22 @@ export class AppComponent implements OnInit {
             property: 'og:url',
             content: 'https://enzo-frnt.fr',
           });
+          this.metaService.updateTag({
+            property: 'twitter:image',
+            content: 'https://enzo-frnt.fr/assets/images/pp.webp',
+          });
+          this.metaService.updateTag({
+            property: 'twitter:url',
+            content: 'https://enzo-frnt.fr',
+          });
+          this.metaService.updateTag({
+            property: 'twitter:description',
+            content: description,
+          });
+          this.metaService.updateTag({
+            property: 'twitter:title',
+            content: title,
+          });
         }),
       )
       .subscribe();

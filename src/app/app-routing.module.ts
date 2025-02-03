@@ -9,10 +9,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     data: {
-      title: 'Portfolio - Accueil',
-      description: 'Accueil du portfolio',
+      title: 'Portfolio Enzo Fournet - Développeur Full Stack',
+      description:
+        "Portfolio d'Enzo Fournet, développeur Full Stack passionné par le développement web et les nouvelles technologies. Étudiant en BUT Informatique en alternance.",
       keywords:
-        'Accueil, Portfolio, Full Stack, Enzo, Fournet, Enzo Fournet, Alternance, Développement',
+        'Accueil, Portfolio, Full Stack, Enzo, Fournet, Enzo Fournet, Alternance, Développement, IA, RAG, Jeux',
     },
   },
   {
