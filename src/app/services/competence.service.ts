@@ -6,6 +6,7 @@ import { ScrollService } from './scroll.service';
 export interface SelectedCompetenceAction {
   competence: Competence | null;
   highlightProjects: boolean;
+  highlightCompetence: boolean;
 }
 
 @Injectable({
@@ -15,6 +16,7 @@ export class CompetencesService {
   private _selectedCompetence$ = new BehaviorSubject<SelectedCompetenceAction>({
     competence: null,
     highlightProjects: false,
+    highlightCompetence: false,
   });
   selectedCompetence$ = this._selectedCompetence$.asObservable();
 
@@ -26,97 +28,71 @@ export class CompetencesService {
   setSelectedCompetence(
     competence: Competence | null,
     scrollToCompetence = false,
+    scrollToProjects = false,
   ) {
     const highlightProjects = !scrollToCompetence;
+    console.log('highlightProjects', highlightProjects);
+    const highlightCompetence = !scrollToProjects;
+    console.log('highlightCompetence', highlightCompetence);
+
     console.log('setSelectedCompetence appelé avec:', {
       competence,
       scrollToCompetence,
+      scrollToProjects,
     });
 
-    // Récupération de la compétence actuellement sélectionnée
-    const current = this._selectedCompetence$.getValue().competence;
-    console.log('Compétence actuelle:', current);
-
-    const sameCompetence =
-      current &&
-      competence &&
-      current.title.toLowerCase() === competence.title.toLowerCase();
-    console.log('Même compétence ? :', sameCompetence);
-
     if (competence) {
-      if (sameCompetence) {
-        // Dans le cas où la même compétence est sélectionnée, on force la réémission
-        console.log(
-          'Même compétence détectée. Réinitialisation de la sélection pour forcer le rafraîchissement.',
+      // Réinitialisation initiale
+      this._selectedCompetence$.next({
+        competence: null,
+        highlightProjects,
+        highlightCompetence,
+      });
+
+      if (scrollToCompetence) {
+        // Cas 1: Clic sur label - scroll vers compétence
+        this.scrollService.scrollToElement(
+          `competence-${competence.title.toLowerCase()}`,
+          100,
         );
-        this._selectedCompetence$.next({ competence: null, highlightProjects });
         setTimeout(() => {
-          if (scrollToCompetence) {
-            console.log(
-              "Déclenchement du scroll vers l'élément:",
-              `competence-${competence.title.toLowerCase()}`,
-            );
-            this.scrollService.scrollToElement(
-              `competence-${competence.title.toLowerCase()}`,
-              100,
-            );
-            setTimeout(() => {
-              console.log('Mise en évidence de la compétence après 1 seconde');
-              this.zone.run(() => {
-                this._selectedCompetence$.next({
-                  competence,
-                  highlightProjects: false,
-                });
-              });
-            }, 1000);
-          } else {
-            console.log(
-              'Mise à jour immédiate de la compétence (même compétence, sans scroll).',
-            );
-            this.zone.run(() =>
-              this._selectedCompetence$.next({ competence, highlightProjects }),
-            );
+          this.zone.run(() => {
+            this._selectedCompetence$.next({
+              competence,
+              highlightProjects: false,
+              highlightCompetence: true,
+            });
+          });
+        }, 1000);
+      } else if (scrollToProjects) {
+        // Cas 2: Clic sur compétence - scroll vers projets
+        this.zone.run(() => {
+          this._selectedCompetence$.next({
+            competence,
+            highlightProjects: true,
+            highlightCompetence: false,
+          });
+        });
+        setTimeout(() => {
+          const firstProjectWithCompetence = document.querySelector(
+            `.project-card.selected`,
+          );
+          if (firstProjectWithCompetence) {
+            firstProjectWithCompetence.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
           }
-        }, 50);
+        }, 150);
       } else {
-        // Cas normal : réinitialisation puis mise à jour
-        console.log(
-          'Nouvelle compétence sélectionnée. Réinitialisation de la sélection.',
-        );
-        this._selectedCompetence$.next({ competence: null, highlightProjects });
-        if (scrollToCompetence) {
-          console.log(
-            "Déclenchement du scroll vers l'élément:",
-            `competence-${competence.title.toLowerCase()}`,
-          );
-          this.scrollService.scrollToElement(
-            `competence-${competence.title.toLowerCase()}`,
-            100,
-          );
-          setTimeout(() => {
-            console.log(
-              'Mise en évidence de la nouvelle compétence après 1 seconde.',
-            );
-            this.zone.run(() =>
-              this._selectedCompetence$.next({ competence, highlightProjects }),
-            );
-          }, 1000);
-        } else {
-          setTimeout(() => {
-            console.log(
-              'Mise en évidence de la compétence sans scroll (après délai de 50ms).',
-            );
-            this.zone.run(() =>
-              this._selectedCompetence$.next({ competence, highlightProjects }),
-            );
-            setTimeout(() => {
-              console.log(
-                'Déclenchement du scroll vers le premier projet correspondant après 150ms.',
-              );
-              this.scrollService.scrollToFirstMatchingProject(competence.title);
-            }, 150);
-          }, 50);
-        }
+        // Cas 3: Autre cas (hover, etc.)
+        this.zone.run(() => {
+          this._selectedCompetence$.next({
+            competence,
+            highlightProjects,
+            highlightCompetence,
+          });
+        });
       }
     }
   }

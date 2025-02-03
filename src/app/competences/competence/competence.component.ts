@@ -167,7 +167,8 @@ export class CompetencesComponent implements OnInit, OnDestroy {
 
   // Lors d'un clic direct sur la compétence dans le grid
   onCompetenceClick(competence: Competence) {
-    this.competencesService.setSelectedCompetence(competence, false);
+    console.log('onCompetenceClick appelé');
+    this.competencesService.setSelectedCompetence(competence, false, true);
   }
 
   ngOnDestroy(): void {

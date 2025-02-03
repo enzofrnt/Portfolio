@@ -16,7 +16,8 @@ export class CompetenceLabelComponent {
   constructor(private competencesService: CompetencesService) {}
 
   onLabelClick() {
-    this.competencesService.setSelectedCompetence(this.competence, true);
+    console.log('onLabelClick appelé');
+    this.competencesService.setSelectedCompetence(this.competence, true, false);
   }
 
   getTextColor(): string {
