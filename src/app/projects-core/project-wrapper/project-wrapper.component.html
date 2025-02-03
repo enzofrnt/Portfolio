@@ -30,6 +30,12 @@
           Le contenu de se projete est en cours de rédaction.
         </p>
       </div>
+      <div *ngIf="this.project.link">
+        <p>
+          Vous pouvez retrouver des informations sur le projet sur le
+          <a [href]="this.project.link" target="_blank">lien du projet</a>
+        </p>
+      </div>
     </div>
   </div>
 </ng-content>

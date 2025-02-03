@@ -31,9 +31,7 @@ export class CompetencesService {
     scrollToProjects = false,
   ) {
     const highlightProjects = !scrollToCompetence;
-    console.log('highlightProjects', highlightProjects);
     const highlightCompetence = !scrollToProjects;
-    console.log('highlightCompetence', highlightCompetence);
 
     console.log('setSelectedCompetence appelé avec:', {
       competence,
@@ -42,28 +40,38 @@ export class CompetencesService {
     });
 
     if (competence) {
-      // Réinitialisation initiale
-      this._selectedCompetence$.next({
-        competence: null,
-        highlightProjects,
-        highlightCompetence,
-      });
+      const currentAction = this._selectedCompetence$.getValue();
+      const sameCompetence =
+        currentAction.competence?.title === competence.title;
+
+      if (!sameCompetence) {
+        this._selectedCompetence$.next({
+          competence: null,
+          highlightProjects,
+          highlightCompetence,
+        });
+      }
 
       if (scrollToCompetence) {
         // Cas 1: Clic sur label - scroll vers compétence
-        this.scrollService.scrollToElement(
-          `competence-${competence.title.toLowerCase()}`,
-          100,
-        );
-        setTimeout(() => {
-          this.zone.run(() => {
-            this._selectedCompetence$.next({
-              competence,
-              highlightProjects: false,
-              highlightCompetence: true,
-            });
+        this.zone.run(() => {
+          this._selectedCompetence$.next({
+            competence,
+            highlightProjects: false,
+            highlightCompetence: true,
           });
-        }, 1000);
+        });
+        setTimeout(() => {
+          const competenceElement = document.querySelector(
+            `#competence-${competence.title.toLowerCase()}`,
+          );
+          if (competenceElement) {
+            competenceElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
+          }
+        }, 100);
       } else if (scrollToProjects) {
         // Cas 2: Clic sur compétence - scroll vers projets
         this.zone.run(() => {
