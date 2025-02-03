@@ -36,95 +36,32 @@ export class CompetencesService {
       scrollToProjects,
     });
 
-    const highlightProjects = !scrollToCompetence;
-    const highlightCompetence = !scrollToProjects;
-
-    if (competence) {
-      const currentAction = this._selectedCompetence$.getValue();
-      const sameCompetence =
-        currentAction.competence?.title === competence.title;
-
-      console.log('CompetenceService - État actuel:', {
-        competenceActuelle: currentAction.competence?.title,
-        memeCompetence: sameCompetence,
+    this.zone.run(() => {
+      this._selectedCompetence$.next({
+        competence,
+        highlightProjects: scrollToProjects,
+        highlightCompetence: scrollToCompetence,
       });
+    });
 
-      if (!sameCompetence) {
-        this._selectedCompetence$.next({
-          competence: null,
-          highlightProjects,
-          highlightCompetence,
+    if (scrollToCompetence && competence) {
+      setTimeout(() => {
+        const competenceElement = document.querySelector(
+          `#competence-${competence.title.toLowerCase()}`,
+        );
+        competenceElement?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
         });
-      }
+      }, 100);
+    }
 
-      if (scrollToCompetence) {
-        // Cas 1: Clic sur label - scroll vers compétence
-        this.zone.run(() => {
-          console.log(
-            'CompetenceService - Émission nouvelle action (scrollToCompetence):',
-            {
-              competence: competence.title,
-              highlightProjects: false,
-              highlightCompetence: true,
-            },
-          );
-
-          this._selectedCompetence$.next({
-            competence,
-            highlightProjects: false,
-            highlightCompetence: true,
-          });
-        });
-        setTimeout(() => {
-          const competenceElement = document.querySelector(
-            `#competence-${competence.title.toLowerCase()}`,
-          );
-          if (competenceElement) {
-            competenceElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
-          }
-        }, 100);
-      } else if (scrollToProjects) {
-        // Cas 2: Clic sur compétence - scroll vers projets
-        this.zone.run(() => {
-          console.log(
-            'CompetenceService - Émission nouvelle action (scrollToProjects):',
-            {
-              competence: competence.title,
-              highlightProjects: true,
-              highlightCompetence: false,
-            },
-          );
-
-          this._selectedCompetence$.next({
-            competence,
-            highlightProjects: true,
-            highlightCompetence: false,
-          });
-        });
-        setTimeout(() => {
-          const firstProjectWithCompetence = document.querySelector(
-            `.project-card.selected`,
-          );
-          if (firstProjectWithCompetence) {
-            firstProjectWithCompetence.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
-          }
-        }, 150);
-      } else {
-        // Cas 3: Autre cas (hover, etc.)
-        this.zone.run(() => {
-          this._selectedCompetence$.next({
-            competence,
-            highlightProjects,
-            highlightCompetence,
-          });
-        });
-      }
+    if (scrollToProjects && competence) {
+      setTimeout(() => {
+        document
+          .querySelector('.project-card.selected')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 150);
     }
   }
 }
