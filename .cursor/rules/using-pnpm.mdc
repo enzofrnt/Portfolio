@@ -1,9 +1,10 @@
 ---
-description: When running installatin command, use pnpm instead of npm
+description: Running npm command
 globs: 
 ---
 
 # Never use npm
 
-- You should use `pnpm` command for every installation
-- You can't use `npm` as this package manager use here is `pnpm`
+- Use `pnp` instead of `npm`
+- Use `pnpm` command for every installation
+- Can't use `npm` as this package manager use here is `pnpm`
