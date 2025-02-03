@@ -20,4 +20,5 @@ export class BankManageComponent implements Project {
     CompetencesComponent.competenceConduire,
     CompetencesComponent.competenceCollaborer,
   ];
+  keywords = ['JavaFX', 'Java'];
 }

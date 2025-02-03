@@ -14,4 +14,14 @@ export class DjangoRagComponent implements Project {
     "Django RAG Ollama est un project d'application web de IA RAG avec Django";
   type = ProjectType.PERSO;
   link = 'https://github.com/enzofrnt/Django-ollama-RAG';
+  keywords = [
+    'Django',
+    'RAG',
+    'Ollama',
+    'Python',
+    'AI',
+    'Web',
+    'Application',
+    'Retrival Augmented Generation',
+  ];
 }

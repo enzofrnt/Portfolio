@@ -21,4 +21,13 @@ export class AutoQcmComponent implements Project {
     CompetencesComponent.competenceConduire,
     CompetencesComponent.competenceCollaborer,
   ];
+  keywords = [
+    'QCM',
+    'Auto QCM',
+    'IUT',
+    'Blagnac',
+    'Contrôle',
+    'Django',
+    'Python',
+  ];
 }

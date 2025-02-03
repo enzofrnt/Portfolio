@@ -25,6 +25,7 @@ export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
   description = 'Jeu de flappy bird en Unity';
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/FlappyBird';
+  keywords = ['Jeux', 'Unity', 'Flappy Bird', 'C#'];
 
   /**
    * Référence à l'élément div #webglContainer dans le template

@@ -15,4 +15,5 @@ export class MemoryComponent implements Project {
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/Memory';
   competences = [CompetencesComponent.competenceRealiser];
+  keyword = ['Java FX', 'Jeux de mémoire', 'Jeux', 'MVC'];
 }

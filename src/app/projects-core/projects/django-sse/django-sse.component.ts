@@ -13,4 +13,14 @@ export class DjangoSseComponent implements Project {
   description = 'Ajout du support multiprocessus au module Django Eventstream';
   type = ProjectType.PERSO;
   link = 'https://github.com/fanout/django-eventstream/pull/152';
+  keywords = [
+    'Django',
+    'Eventstream',
+    'SSE',
+    'Python',
+    'Web',
+    'Application',
+    'REST',
+    'Django REST framework',
+  ];
 }

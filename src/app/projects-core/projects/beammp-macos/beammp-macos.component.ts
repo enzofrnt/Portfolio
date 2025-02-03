@@ -13,6 +13,7 @@ export class BeamMPMacosComponent implements Project {
   description = 'Port du client BeamMP sur MacOS';
   type = ProjectType.PERSO;
   link = 'https://github.com/BeamMP/BeamMP-Launcher/pull/147';
+  keywords = ['BeamMP', 'MacOS', 'Port', 'Launcher', 'C++', 'CMake'];
 
   code = `def test() :
   if true :
