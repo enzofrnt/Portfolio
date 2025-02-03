@@ -30,6 +30,12 @@ export class CompetencesService {
     scrollToCompetence = false,
     scrollToProjects = false,
   ) {
+    console.log('CompetenceService - setSelectedCompetence appelé:', {
+      competence: competence?.title,
+      scrollToCompetence,
+      scrollToProjects,
+    });
+
     const highlightProjects = !scrollToCompetence;
     const highlightCompetence = !scrollToProjects;
 
@@ -37,6 +43,11 @@ export class CompetencesService {
       const currentAction = this._selectedCompetence$.getValue();
       const sameCompetence =
         currentAction.competence?.title === competence.title;
+
+      console.log('CompetenceService - État actuel:', {
+        competenceActuelle: currentAction.competence?.title,
+        memeCompetence: sameCompetence,
+      });
 
       if (!sameCompetence) {
         this._selectedCompetence$.next({
@@ -49,6 +60,15 @@ export class CompetencesService {
       if (scrollToCompetence) {
         // Cas 1: Clic sur label - scroll vers compétence
         this.zone.run(() => {
+          console.log(
+            'CompetenceService - Émission nouvelle action (scrollToCompetence):',
+            {
+              competence: competence.title,
+              highlightProjects: false,
+              highlightCompetence: true,
+            },
+          );
+
           this._selectedCompetence$.next({
             competence,
             highlightProjects: false,
@@ -69,6 +89,15 @@ export class CompetencesService {
       } else if (scrollToProjects) {
         // Cas 2: Clic sur compétence - scroll vers projets
         this.zone.run(() => {
+          console.log(
+            'CompetenceService - Émission nouvelle action (scrollToProjects):',
+            {
+              competence: competence.title,
+              highlightProjects: true,
+              highlightCompetence: false,
+            },
+          );
+
           this._selectedCompetence$.next({
             competence,
             highlightProjects: true,

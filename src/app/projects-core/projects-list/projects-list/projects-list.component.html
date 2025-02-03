@@ -24,7 +24,8 @@
     <div *ngFor="let project of iutProjects"
       class="mb-4 col project-card"
       [ngClass]="{
-        'selected': isHighlighted(project)
+        'selected': isHighlighted(project),
+        'reset-animation': isResetting
       }">
       <app-project-card [project]="project"
         [includeCompetences]="this.includeCompetences"

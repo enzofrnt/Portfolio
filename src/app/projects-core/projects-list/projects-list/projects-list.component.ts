@@ -25,6 +25,10 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
 
   highlightedCompetence: Competence | null = null;
 
+  selectedProjects: Project[] = [];
+
+  isResetting = false;
+
   private subscription!: Subscription;
 
   constructor(
@@ -40,21 +44,47 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
     if (this.competenceLink) {
       this.subscription = this.competencesService.selectedCompetence$.subscribe(
         (action: SelectedCompetenceAction) => {
+          console.log('ProjectsList - Nouvelle action reçue:', {
+            competence: action.competence?.title,
+            highlightProjects: action.highlightProjects,
+          });
+
           this.highlightedCompetence = action.highlightProjects
             ? action.competence
             : null;
+
+          this.updateSelectedProjects();
+
+          console.log(
+            'ProjectsList - Compétence mise en évidence:',
+            this.highlightedCompetence?.title,
+          );
         },
       );
     }
   }
 
-  isHighlighted(project: Project): boolean {
-    if (!this.highlightedCompetence || !project.competences) {
-      return false;
+  private updateSelectedProjects() {
+    if (!this.highlightedCompetence) {
+      this.selectedProjects = [];
+      this.isResetting = true;
+      return;
     }
-    return project.competences.some(
-      (c) => c.title === this.highlightedCompetence!.title,
-    );
+
+    this.isResetting = true;
+    setTimeout(() => {
+      this.isResetting = false;
+      const allProjects = [...this.iutProjects, ...this.persoProjects];
+      this.selectedProjects = allProjects.filter((project) =>
+        project.competences?.some(
+          (c) => c.title === this.highlightedCompetence!.title,
+        ),
+      );
+    }, 50);
+  }
+
+  isHighlighted(project: Project): boolean {
+    return this.selectedProjects.includes(project);
   }
 
   ngOnDestroy(): void {
