@@ -13,6 +13,7 @@ import { FlopedtReworkComponent } from './flopedt-rework/flopedt-rework.componen
 import { MemoryComponent } from './memory/memory.component';
 import { RoomOcupComponent } from './room-ocup/room-ocup.component';
 import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
+import { OptiAlgoComponent } from './opti-algo/opti-algo.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
     FlopedtReworkComponent,
     DjangoRagComponent,
     FlappybridComponent,
+    OptiAlgoComponent,
   ],
   imports: [CommonModule, ProjectsCoreModule, CodeBlockComponent],
   providers: [],

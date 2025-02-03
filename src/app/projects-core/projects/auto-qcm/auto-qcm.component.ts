@@ -21,7 +21,7 @@ export class AutoQcmComponent implements Project {
     CompetencesComponent.competenceConduire,
     CompetencesComponent.competenceCollaborer,
   ];
-  keywords = [
+  keyword = [
     'QCM',
     'Auto QCM',
     'IUT',

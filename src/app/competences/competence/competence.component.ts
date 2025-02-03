@@ -141,8 +141,10 @@ export class CompetencesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.competencesService.selectedCompetence$.subscribe(
       (action: SelectedCompetenceAction) => {
-        this.selectedCompetence = action.competence;
-        if (action.competence) {
+        this.selectedCompetence = action.highlightCompetence
+          ? action.competence
+          : null;
+        if (action.highlightCompetence && action.competence) {
           this.hoveredIndex = this.competences.findIndex(
             (c) => c.title === action.competence!.title,
           );

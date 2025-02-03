@@ -10,9 +10,9 @@ import { DjangoSseComponent } from './projects/django-sse/django-sse.component';
 import { FlappybridComponent } from './projects/flappybrid/flappybrid.component';
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './projects/memory/memory.component';
+import { OptiAlgoComponent } from './projects/opti-algo/opti-algo.component';
 import { RoomOcupComponent } from './projects/room-ocup/room-ocup.component';
 import { WaitForDbComponent } from './projects/wait-for-db/wait-for-db.component';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -29,6 +29,7 @@ export class ProjectCoreService {
     AutoQcmComponent,
     DjangoRagComponent,
     FlappybridComponent,
+    OptiAlgoComponent,
   ];
 
   private cachedProjects: Project[] | null = null;
