@@ -33,12 +33,6 @@ export class CompetencesService {
     const highlightProjects = !scrollToCompetence;
     const highlightCompetence = !scrollToProjects;
 
-    console.log('setSelectedCompetence appelé avec:', {
-      competence,
-      scrollToCompetence,
-      scrollToProjects,
-    });
-
     if (competence) {
       const currentAction = this._selectedCompetence$.getValue();
       const sameCompetence =

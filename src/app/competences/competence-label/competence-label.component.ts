@@ -12,12 +12,17 @@ import { CompetencesComponent } from '../competence/competence.component';
 })
 export class CompetenceLabelComponent {
   @Input() competence: Competence = CompetencesComponent.competenceRealiser;
-
+  @Input() competenceLink = false;
   constructor(private competencesService: CompetencesService) {}
 
   onLabelClick() {
-    console.log('onLabelClick appelé');
-    this.competencesService.setSelectedCompetence(this.competence, true, false);
+    if (this.competenceLink) {
+      this.competencesService.setSelectedCompetence(
+        this.competence,
+        true,
+        false,
+      );
+    }
   }
 
   getTextColor(): string {

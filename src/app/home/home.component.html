@@ -42,10 +42,12 @@
 
 <hr class="my-4" />
 
-<app-competence></app-competence>
+<app-competence [competenceLink]="true"></app-competence>
 
-<app-projects-list [includePersoProjects]="false"
-  [includeCompetences]="true"></app-projects-list>
+<app-projects-list
+  [includePersoProjects]="false"
+  [includeCompetences]="true"
+  [competenceLink]="true"></app-projects-list>
 
 <hr class="my-4" />
 

@@ -18,6 +18,7 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
   @Input() includeIutProjects = true;
   @Input() includePersoProjects = true;
   @Input() includeCompetences = false;
+  @Input() competenceLink = false;
 
   iutProjects: Project[] = [];
   persoProjects: Project[] = [];
@@ -36,13 +37,15 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
     this.iutProjects = projectsByType[ProjectType.IUT];
     this.persoProjects = projectsByType[ProjectType.PERSO];
 
-    this.subscription = this.competencesService.selectedCompetence$.subscribe(
-      (action: SelectedCompetenceAction) => {
-        this.highlightedCompetence = action.highlightProjects
-          ? action.competence
-          : null;
-      },
-    );
+    if (this.competenceLink) {
+      this.subscription = this.competencesService.selectedCompetence$.subscribe(
+        (action: SelectedCompetenceAction) => {
+          this.highlightedCompetence = action.highlightProjects
+            ? action.competence
+            : null;
+        },
+      );
+    }
   }
 
   isHighlighted(project: Project): boolean {
@@ -55,6 +58,8 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

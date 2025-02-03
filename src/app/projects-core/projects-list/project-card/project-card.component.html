@@ -19,7 +19,9 @@
     <div
       class="d-flex flex-wrap mb-3">
       <app-competence-label *ngFor="let competence of project.competences"
-        [competence]="competence" class="m-1"></app-competence-label>
+        [competence]="competence"
+        [competenceLink]="this.competenceLink"
+        class="m-1"></app-competence-label>
     </div>
     }
     <div class="d-flex align-items-center mt-auto">

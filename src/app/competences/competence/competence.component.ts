@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {
   CompetencesService,
@@ -12,6 +12,8 @@ import { Competence } from '../competence.model';
   standalone: false,
 })
 export class CompetencesComponent implements OnInit, OnDestroy {
+  @Input() competenceLink = false;
+
   selectedCompetence: Competence | null = null;
   static competenceRealiser: Competence = {
     color: '#dc3545',
@@ -139,20 +141,22 @@ export class CompetencesComponent implements OnInit, OnDestroy {
   constructor(private competencesService: CompetencesService) {}
 
   ngOnInit(): void {
-    this.subscription = this.competencesService.selectedCompetence$.subscribe(
-      (action: SelectedCompetenceAction) => {
-        this.selectedCompetence = action.highlightCompetence
-          ? action.competence
-          : null;
-        if (action.highlightCompetence && action.competence) {
-          this.hoveredIndex = this.competences.findIndex(
-            (c) => c.title === action.competence!.title,
-          );
-        } else {
-          this.hoveredIndex = null;
-        }
-      },
-    );
+    if (this.competenceLink) {
+      this.subscription = this.competencesService.selectedCompetence$.subscribe(
+        (action: SelectedCompetenceAction) => {
+          this.selectedCompetence = action.highlightCompetence
+            ? action.competence
+            : null;
+          if (action.highlightCompetence && action.competence) {
+            this.hoveredIndex = this.competences.findIndex(
+              (c) => c.title === action.competence!.title,
+            );
+          } else {
+            this.hoveredIndex = null;
+          }
+        },
+      );
+    }
   }
 
   onMouseOver(index: number) {
@@ -169,11 +173,14 @@ export class CompetencesComponent implements OnInit, OnDestroy {
 
   // Lors d'un clic direct sur la compétence dans le grid
   onCompetenceClick(competence: Competence) {
-    console.log('onCompetenceClick appelé');
-    this.competencesService.setSelectedCompetence(competence, false, true);
+    if (this.competenceLink) {
+      this.competencesService.setSelectedCompetence(competence, false, true);
+    }
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
