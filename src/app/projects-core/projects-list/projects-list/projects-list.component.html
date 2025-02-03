@@ -5,7 +5,7 @@
       class="col mb-4 project-card"
       [ngClass]="{
         'selected': isHighlighted(project),
-        'reset-animation': !highlightedCompetence
+        'reset-animation': isResetting
       }">
       <app-project-card [project]="project"
         [includeCompetences]="this.includeCompetences">

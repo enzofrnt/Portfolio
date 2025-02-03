@@ -65,7 +65,12 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
   }
 
   private updateSelectedProjects() {
+    console.log('ProjectsList - DÉBUT updateSelectedProjects:', {
+      highlightedCompetence: this.highlightedCompetence?.title,
+    });
+
     if (!this.highlightedCompetence) {
+      console.log('ProjectsList - Réinitialisation des projets sélectionnés');
       this.selectedProjects = [];
       this.isResetting = true;
       return;
@@ -80,11 +85,21 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
           (c) => c.title === this.highlightedCompetence!.title,
         ),
       );
+      console.log('ProjectsList - FIN updateSelectedProjects:', {
+        competence: this.highlightedCompetence?.title,
+        nombreProjetsSelectionnes: this.selectedProjects.length,
+        projetsSelectionnes: this.selectedProjects.map((p) => p.name),
+      });
     }, 50);
   }
 
   isHighlighted(project: Project): boolean {
-    return this.selectedProjects.includes(project);
+    const result = this.selectedProjects.includes(project);
+    // console.log('ProjectsList - isHighlighted:', {
+    //   projet: project.name,
+    //   selectionne: result,
+    // });
+    return result;
   }
 
   ngOnDestroy(): void {

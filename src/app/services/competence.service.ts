@@ -30,18 +30,26 @@ export class CompetencesService {
     scrollToCompetence = false,
     scrollToProjects = false,
   ) {
-    console.log('CompetenceService - setSelectedCompetence appelé:', {
+    console.log('CompetenceService - DÉBUT setSelectedCompetence:', {
       competence: competence?.title,
       scrollToCompetence,
       scrollToProjects,
     });
 
     this.zone.run(() => {
+      console.log('CompetenceService - AVANT émission action:', {
+        competence: competence?.title,
+        highlightProjects: scrollToProjects,
+        highlightCompetence: scrollToCompetence,
+      });
+
       this._selectedCompetence$.next({
         competence,
         highlightProjects: scrollToProjects,
         highlightCompetence: scrollToCompetence,
       });
+
+      console.log('CompetenceService - APRÈS émission action');
     });
 
     if (scrollToCompetence && competence) {
@@ -58,10 +66,14 @@ export class CompetencesService {
 
     if (scrollToProjects && competence) {
       setTimeout(() => {
-        document
-          .querySelector('.project-card.selected')
-          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 150);
+        const projectElement = document.querySelector('.project-card.selected');
+        console.log('CompetenceService - Élément projet trouvé:', {
+          found: !!projectElement,
+          element: projectElement,
+        });
+
+        projectElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
     }
   }
 }
