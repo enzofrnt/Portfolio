@@ -11,7 +11,7 @@ const routes: Routes = [
     data: {
       title: 'Portfolio Enzo Fournet - Développeur Full Stack',
       description:
-        "Portfolio d'Enzo Fournet, développeur Full Stack passionné par le développement web et les nouvelles technologies. Étudiant en BUT Informatique en alternance.",
+        "Portfolio d'Enzo Fournet, développeur Full Stack passionné par les nouvelles technologies. Étudiant en BUT Informatique en alternance.",
       keywords:
         'Accueil, Portfolio, Full Stack, Enzo, Fournet, Enzo Fournet, Alternance, Développement, IA, RAG, Jeux',
     },

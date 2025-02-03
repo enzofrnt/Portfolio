@@ -1,0 +1,40 @@
+.cv-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cv-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 141.4%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+// Ajustements responsifs
+@media (max-width: 768px) {
+  .cv-container {
+    margin: 0 -15px;
+    border-radius: 0;
+  }
+}
+
+// Assure que le conteneur ne dépasse pas la hauteur de l'écran sur les grands écrans
+@media (min-height: 1200px) {
+  .cv-wrapper {
+    max-height: 80vh;
+    padding-top: calc(80vh * 1.414);
+  }
+}
