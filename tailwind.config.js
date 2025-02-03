@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '480px',
+        sm: '600px',
+        md: '1200px',
+        lg: '1440px',
+        xl: '1440px'
+      },
       colors: {
         border: "hsl(var(--border))",
         int: "hsl(var(--input))",
