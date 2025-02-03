@@ -1,3 +1,5 @@
+<h1>Formulaire de contact</h1>
+
 <div class="container py-4">
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"
     class="needs-validation">
@@ -34,8 +36,7 @@
         id="message"
         rows="5"
         formControlName="message"
-        [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-      </textarea>
+        [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
       <div class="invalid-feedback">
         Veuillez entrer votre message
       </div>
