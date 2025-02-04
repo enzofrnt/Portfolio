@@ -11,9 +11,10 @@ import { DjangoSseComponent } from './django-sse/django-sse.component';
 import { FlappybridComponent } from './flappybrid/flappybrid.component';
 import { FlopedtReworkComponent } from './flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './memory/memory.component';
+import { OptiAlgoComponent } from './opti-algo/opti-algo.component';
+import { RagReportComponent } from './rag-report/rag-report.component';
 import { RoomOcupComponent } from './room-ocup/room-ocup.component';
 import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
-import { OptiAlgoComponent } from './opti-algo/opti-algo.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { OptiAlgoComponent } from './opti-algo/opti-algo.component';
     DjangoRagComponent,
     FlappybridComponent,
     OptiAlgoComponent,
+    RagReportComponent,
   ],
   imports: [CommonModule, ProjectsCoreModule, CodeBlockComponent],
   providers: [],

@@ -1,1 +1,91 @@
-<app-project-wrapper [project]="this"></app-project-wrapper>
+<app-project-wrapper [project]="this">
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            Ce projet se concentre sur l'implémentation et l'optimisation
+            d'algorithmes de recherche de chemins sur des données OpenStreetMap.
+            L'objectif principal est de comparer les performances de deux
+            approches
+            majeures : l'algorithme de Dijkstra et l'algorithme A*. Les données
+            sont fournies sous forme de fichiers CSV contenant les nœuds avec
+            leurs coordonnées géographiques et les chemins reliant ces nœuds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Objectifs -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-success">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-bullseye"></i> Objectifs
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Optimiser le temps de chargement des données CSV</li>
+            <li>Implémenter et comparer les algorithmes Dijkstra et A*</li>
+            <li>Analyser les performances et la complexité des algorithmes</li>
+            <li>Proposer des optimisations de structure de données</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Résultats -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-graph-up"></i> Résultats
+        </div>
+        <div class="card-body">
+          <p>
+            Notre implémentation d'A* a montré des gains significatifs de 30-45%
+            sur le temps de calcul par rapport à Dijkstra. De plus,
+            l'utilisation
+            de la bibliothèque Polars pour la lecture des fichiers CSV a permis
+            d'optimiser considérablement le temps de chargement des données par
+            rapport aux solutions traditionnelles comme la bibliothèque CSV ou
+            même Pandas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-code-slash"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-primary">
+              <i class="bi bi-filetype-py me-1"></i>Python
+            </span>
+            <span class="badge bg-primary">
+              <i class="bi bi-graph me-1"></i>Pandas
+            </span>
+            <span class="badge bg-primary">
+              <i class="bi bi-lightning me-1"></i>Polars
+            </span>
+            <span class="badge bg-primary">
+              <i class="bi bi-diagram-3 me-1"></i>OpenStreetMap
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>

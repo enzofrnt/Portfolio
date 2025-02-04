@@ -11,6 +11,7 @@ import { FlappybridComponent } from './projects/flappybrid/flappybrid.component'
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './projects/memory/memory.component';
 import { OptiAlgoComponent } from './projects/opti-algo/opti-algo.component';
+import { RagReportComponent } from './projects/rag-report/rag-report.component';
 import { RoomOcupComponent } from './projects/room-ocup/room-ocup.component';
 import { WaitForDbComponent } from './projects/wait-for-db/wait-for-db.component';
 @Injectable({
@@ -30,6 +31,7 @@ export class ProjectCoreService {
     DjangoRagComponent,
     FlappybridComponent,
     OptiAlgoComponent,
+    RagReportComponent,
   ];
 
   private cachedProjects: Project[] | null = null;

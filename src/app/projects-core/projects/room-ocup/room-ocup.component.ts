@@ -23,4 +23,14 @@ export class RoomOcupComponent implements Project {
     CompetencesComponent.competenceConduire,
     CompetencesComponent.competenceCollaborer,
   ];
+  keywords = [
+    'IoT',
+    'Capteurs',
+    'VueJS',
+    'Django',
+    'Docker',
+    'TimescaleDB',
+    'IUT',
+    'Blagnac',
+  ];
 }

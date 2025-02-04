@@ -1,0 +1,71 @@
+<app-project-wrapper [project]="this">
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            Ce mémoire présente une étude approfondie sur l'implémentation d'un
+            système RAG
+            (Retrieval-Augmented Generation) pour l'analyse automatique de
+            rapports.
+            Le projet explore les différentes approches et technologies
+            permettant
+            d'améliorer la compréhension et l'extraction d'informations à partir
+            de
+            documents techniques.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section PDF Viewer -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-file-pdf"></i> Mémoire Complet
+        </div>
+        <div class="card-body">
+          <div class="pdf-wrapper"
+            style="position: relative; padding-bottom: 100%; height: 0;">
+            <iframe
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="assets/pdf/memoire-rag.pdf"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-code-slash"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-primary">
+              <i class="bi bi-database me-1"></i>PGVector
+            </span>
+            <span class="badge bg-primary">
+              <i class="bi bi-robot me-1"></i>RAG
+            </span>
+            <span class="badge bg-primary">
+              <i class="bi bi-filetype-py me-1"></i>Python
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>

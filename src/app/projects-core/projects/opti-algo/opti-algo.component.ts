@@ -10,14 +10,23 @@ import { Project, ProjectType } from '../../project.model';
 })
 export class OptiAlgoComponent implements Project {
   id = 'opti-algo';
-  name = "Optimisation d'algorithme";
-  type = ProjectType.IUT;
+  name = "Optimisation d'algorithmes";
   description =
-    "Optimisation d'algorithme de recherche de chemin optimal dans un graphe";
+    "Optimisation et comparaison d'algorithmes de recherche de chemins sur des données OpenStreetMap";
+  type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/Projet-Algo-Qual';
   competences = [
     CompetencesComponent.competenceOptimiser,
     CompetencesComponent.competenceRealiser,
   ];
-  keywords = ['algorithme', 'optimisation', 'graphe'];
+  keywords = [
+    'Python',
+    'Algorithmes',
+    'Optimisation',
+    'Dijkstra',
+    'A*',
+    'OpenStreetMap',
+    'Pandas',
+    'Polars',
+  ];
 }

@@ -12,14 +12,4 @@ export class ScrollService {
       window.scrollTo({ top: targetY, behavior: 'smooth' });
     }
   }
-
-  scrollToFirstMatchingProject(competence: string): void {
-    const projectCards = document.querySelectorAll('.project-card.selected');
-    if (projectCards.length > 0) {
-      const firstProject = projectCards[0] as HTMLElement;
-      const targetY =
-        firstProject.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
-    }
-  }
 }

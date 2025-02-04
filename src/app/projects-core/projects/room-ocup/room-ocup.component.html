@@ -1,1 +1,165 @@
-<app-project-wrapper [project]="this"></app-project-wrapper>
+<app-project-wrapper [project]="this">
+  <!-- Alerte SAE -->
+  <div class="alert alert-info mb-4" role="alert">
+    <i class="bi bi-info-circle-fill me-2"></i>
+    Ce projet a été réalisé dans le cadre d'une SAE (Situation d'Apprentissage
+    et d'Évaluation) du BUT Informatique en alternance.
+  </div>
+
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            Aujourd'hui, la quasi-totalité des salles de l'IUT de Blagnac sont
+            équipées de capteurs Milesight AM107-868M. Ces capteurs fournissent
+            des données précieuses sur plusieurs paramètres environnementaux :
+            température, humidité, luminosité, taux de CO2, présence de
+            particules fines dans l'air, pression atmosphérique, et détection de
+            présence humaine dans la salle. Ils sont connectés à un réseau
+            LoRaWAN, qui transmet ensuite les données à un broker MQTT.
+            Cependant, ces informations ne sont actuellement pas exploitées à
+            leur plein potentiel et demeurent difficilement accessibles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Objectifs -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-success">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-bullseye"></i> Objectifs de la SAE
+        </div>
+        <div class="card-body">
+          <p>
+            Le client, M. Boulle, nous a missionné pour développer une
+            application permettant de visualiser les données des capteurs, de
+            les stocker, et de les exploiter. L'application devra être capable
+            de fournir des graphiques et des statistiques sur les données. Des
+            fonctionnalités supplémentaires sont envisagées par l'équipe, comme
+            par exemple la possibilité d'avoir une carte interactive des salles
+            et des prédictions sur les données.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-code-slash"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3 text-center mb-3">
+              <img src="https://assets.zabbix.com/img/brands/timescaledb.jpg"
+                alt="Logo Timescaledb"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>TimescaleDB</h5>
+              <p class="small">Base de données temporelle</p>
+            </div>
+            <div class="col-md-3 text-center mb-3">
+              <img src="https://skillicons.dev/icons?i=django" alt="Logo Django"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>Django</h5>
+              <p class="small">Framework Python backend</p>
+            </div>
+            <div class="col-md-3 text-center mb-3">
+              <img src="https://skillicons.dev/icons?i=vue" alt="Logo VueJS"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>VueJS</h5>
+              <p class="small">Framework JavaScript frontend</p>
+            </div>
+            <div class="col-md-3 text-center mb-3">
+              <img src="https://skillicons.dev/icons?i=docker" alt="Logo Docker"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>Docker</h5>
+              <p class="small">Conteneurisation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Équipe -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-people"></i> Notre équipe
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/P4C-M4N" target="_blank"
+                      class="text-decoration-none">
+                      Thomas Silvestre
+                    </a>
+                  </h6>
+                  <small class="text-muted">Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/Tructruc" target="_blank"
+                      class="text-decoration-none">
+                      Émilien Fieu
+                    </a>
+                  </h6>
+                  <small class="text-muted">SCRUM Master / Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/enzofrnt" target="_blank"
+                      class="text-decoration-none">
+                      Enzo Fournet
+                    </a>
+                  </h6>
+                  <small class="text-muted">Product Owner / Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/Baraphe" target="_blank"
+                      class="text-decoration-none">
+                      Raphaël Bar
+                    </a>
+                  </h6>
+                  <small class="text-muted">Développeur / Illustrateur</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>

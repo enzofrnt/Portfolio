@@ -1,1 +1,258 @@
-<app-project-wrapper [project]="this"></app-project-wrapper>
+<app-project-wrapper [project]="this">
+  <!-- Alerte SAE -->
+  <div class="alert alert-info mb-4" role="alert">
+    <i class="bi bi-info-circle-fill me-2"></i>
+    Ce projet a été réalisé dans le cadre d'une SAE (Situation d'Apprentissage
+    et d'Évaluation) du BUT Informatique.
+  </div>
+
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            Dans le cadre de notre SAE, nous avons été missionnés par les
+            enseignants de l'IUT de Blagnac pour répondre à une problématique
+            concrète. En effet, ils avaient précédemment mis en place un système
+            de QCM hebdomadaires via un outil dédié pour aider les étudiants à
+            réviser leurs cours et suivre leur progression. Ces QCM
+            constituaient un outil précieux pour les enseignants comme pour les
+            élèves, permettant d'assurer un apprentissage continu. Toutefois, à
+            la rentrée 2024, ce dispositif a été abandonné en raison du temps
+            considérable qu'il nécessitait et du manque de ressources pour le
+            maintenir en place.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Objectifs -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-success">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-bullseye"></i> Objectifs de la SAE
+        </div>
+        <div class="card-body">
+          <p>
+            Notre mission consistait à concevoir une solution innovante pour
+            relancer les QCM hebdomadaires, en mettant l'accent sur
+            l'automatisation du processus grâce à l'intelligence artificielle.
+            L'objectif principal était de développer un outil qui simplifierait
+            considérablement la gestion des QCM pour les enseignants tout en
+            offrant une expérience enrichissante pour les étudiants. Cette SAE
+            nous a permis de mettre en pratique nos compétences techniques tout
+            en répondant à un besoin réel de notre établissement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Fonctionnalités -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-info h-100">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-gear"></i> Fonctionnalités principales
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Création d'un outil pour la soumission
+              facile des questions</li>
+            <li class="list-group-item">Regroupement des questions de la
+              semaine</li>
+            <li class="list-group-item">Génération automatique de fichiers PDF
+              pour les contrôles</li>
+            <li class="list-group-item">Base de données pour la réutilisation
+              des questions</li>
+            <li class="list-group-item">Intégration de modèles de langage (LLM)
+              pour la génération de questions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm border-warning h-100">
+        <div class="card-header bg-warning text-white">
+          <i class="bi bi-graph-up"></i> Tableaux de bord
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Pour les enseignants :</strong> Suivi de la progression
+              des étudiants
+            </li>
+            <li class="list-group-item">
+              <strong>Pour les étudiants :</strong> Consultation des réponses et
+              progression
+            </li>
+            <li class="list-group-item">
+              <strong>Intégration future :</strong> Connection avec Moodle
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-code-slash"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 text-center mb-3">
+              <img src="https://skillicons.dev/icons?i=django" alt="Logo Django"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>Django</h5>
+              <p class="small">Framework Python pour le backend</p>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+              <img src="https://skillicons.dev/icons?i=postgresql"
+                alt="Logo PostgreSQL"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>PostgreSQL</h5>
+              <p class="small">Base de données relationnelle</p>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+              <img src="https://skillicons.dev/icons?i=docker" alt="Logo Docker"
+                class="tech-logo mb-2" width="100" height="100">
+              <h5>Docker</h5>
+              <p class="small">Conteneurisation et déploiement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-camera-video"></i> Présentation du projet
+        </div>
+        <div class="card-body text-center">
+          <p class="mb-3">
+            Découvrez notre pitch de présentation d'Auto QCM :
+          </p>
+          <a href="https://youtu.be/peyzMnrUfjc"
+            target="_blank"
+            class="btn btn-primary">
+            <i class="bi bi-youtube me-2"></i>
+            Voir la vidéo de présentation
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Équipe -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-people"></i> Notre équipe
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/enzofrnt" target="_blank"
+                      class="text-decoration-none">
+                      Enzo Fournet
+                    </a>
+                  </h6>
+                  <small class="text-muted">Scrum Master & Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/AlexiFon" target="_blank"
+                      class="text-decoration-none">
+                      Alexi Fontanilles
+                    </a>
+                  </h6>
+                  <small class="text-muted">Product Owner</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/November304" target="_blank"
+                      class="text-decoration-none">
+                      Nathan Pagnucco
+                    </a>
+                  </h6>
+                  <small class="text-muted">Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/loispacqueteau" target="_blank"
+                      class="text-decoration-none">
+                      Loïs Pacqueteau
+                    </a>
+                  </h6>
+                  <small class="text-muted">Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/KeynoIX" target="_blank"
+                      class="text-decoration-none">
+                      Anthony Declippel
+                    </a>
+                  </h6>
+                  <small class="text-muted">Développeur</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-2 me-2"></i>
+                <div>
+                  <h6 class="mb-0">
+                    <a href="https://github.com/Kilianspore" target="_blank"
+                      class="text-decoration-none">
+                      Kilian Boivert
+                    </a>
+                  </h6>
+                  <small class="text-muted">Développeur</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>

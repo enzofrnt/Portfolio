@@ -4,6 +4,13 @@ import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { DarkModeService } from './services/dark-mode.service';
 import { MetaService } from './services/meta.service';
 import { NavigationService } from './services/navigation.service';
+
+interface CustomWindow extends Window {
+  navigationService?: NavigationService;
+}
+
+declare const window: CustomWindow;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,7 +30,7 @@ export class AppComponent implements OnInit {
     private navigationService: NavigationService,
   ) {
     if (typeof window !== 'undefined') {
-      (window as any).navigationService = this.navigationService;
+      window.navigationService = this.navigationService;
     }
   }
 
