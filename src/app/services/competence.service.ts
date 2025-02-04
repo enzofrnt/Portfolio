@@ -37,19 +37,45 @@ export class CompetencesService {
     });
 
     this.zone.run(() => {
-      console.log('CompetenceService - AVANT émission action:', {
-        competence: competence?.title,
-        highlightProjects: scrollToProjects,
-        highlightCompetence: scrollToCompetence,
-      });
-
       this._selectedCompetence$.next({
-        competence,
-        highlightProjects: scrollToProjects,
-        highlightCompetence: scrollToCompetence,
+        competence: null,
+        highlightProjects: false,
+        highlightCompetence: false,
       });
 
-      console.log('CompetenceService - APRÈS émission action');
+      setTimeout(() => {
+        this._selectedCompetence$.next({
+          competence,
+          highlightProjects: scrollToProjects,
+          highlightCompetence: scrollToCompetence,
+        });
+        console.log('CompetenceService - Action émise');
+
+        if (scrollToProjects && competence) {
+          console.log(
+            'CompetenceService - Préparation du scroll vers les projets',
+          );
+
+          // Premier scroll approximatif
+          window.scrollBy({
+            top: 800, // Scroll d'environ 800px
+            behavior: 'smooth',
+          });
+
+          // Puis scroll précis après un délai
+          setTimeout(() => {
+            const selectedProjects = document.getElementsByClassName(
+              'project-card selected',
+            );
+            if (selectedProjects.length > 0) {
+              selectedProjects[0].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+              });
+            }
+          }, 500); // Attendre que le premier scroll soit terminé
+        }
+      }, 50);
     });
 
     if (scrollToCompetence && competence) {
@@ -57,22 +83,12 @@ export class CompetencesService {
         const competenceElement = document.querySelector(
           `#competence-${competence.title.toLowerCase()}`,
         );
-        competenceElement?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-      }, 100);
-    }
-
-    if (scrollToProjects && competence) {
-      setTimeout(() => {
-        const projectElement = document.querySelector('.project-card.selected');
-        console.log('CompetenceService - Élément projet trouvé:', {
-          found: !!projectElement,
-          element: projectElement,
-        });
-
-        projectElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (competenceElement) {
+          competenceElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }
       }, 100);
     }
   }
