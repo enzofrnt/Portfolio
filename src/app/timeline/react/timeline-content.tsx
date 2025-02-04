@@ -103,17 +103,15 @@ export const timelineData = [
                 </h4>
                 <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                   <li>Base de l'algorithmique</li>
-                  <li>Base Java</li>
-                  <li>Bases de données</li>
+                  <li>Base de Java</li>
+                  <li>Principe fondamentaaux de Bases de données</li>
                   <li>Introduction à la gestion de projet</li>
-                  <li>Base développement Web</li>
-                  <li>Bas niveau C</li>
-                  <li>Base Python</li>
+                  <li>Base du développement Web</li>
+                  <li>Base de C</li>
+                  <li>Base de Python</li>
                   <li>Java FX</li>
                 </ul>
-              </div>
-
-              <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+                <br />
                 <h4 className="mb-3 text-xl font-semibold text-primary">
                   Projets académiques
                 </h4>
@@ -124,14 +122,6 @@ export const timelineData = [
                     informatiques. Participation à plusieurs projets pratiques
                     en équipe.
                   </p>
-                  {/* <button
-                    className="btn btn-primary"
-                    onClick={() =>
-                      (window as any).timelineComponent?.onEnSavoirPlusClick()
-                    }
-                  >
-                    En savoir plus
-                  </button> */}
                 </div>
               </div>
             </div>
@@ -139,30 +129,22 @@ export const timelineData = [
           <div>
             <div className="bg-body-tertiary mt-6 rounded-2xl p-4 shadow-sm">
               <h4 className="mb-3 text-xl font-semibold text-primary">
-                <i className="bi bi-search me-2"></i>
-                Recherche d'alternance
+                <i className="bi bi-tools me-2"></i>
+                Technologies maîtrisées
               </h4>
-              <div className="flex flex-col gap-3">
-                <p className="text-base md:text-lg">
-                  Recherche d'une alternance pour la rentrée 2023 dans le
-                  domaine du développement logiciel. Je suis particulièrement
-                  intéressé par les technologies web et les applications
-                  modernes.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="badge fs-6 bg-primary px-2 py-1">
-                    <i className="bi bi-globe me-1"></i>Développement Web
-                  </span>
-                  <span className="badge fs-6 bg-primary px-2 py-1">
-                    <i className="bi bi-filetype-java me-1"></i>Java
-                  </span>
-                  <span className="badge fs-6 bg-primary px-2 py-1">
-                    <i className="bi bi-filetype-py me-1"></i>Python
-                  </span>
-                  <span className="badge fs-6 bg-primary px-2 py-1">
-                    <i className="bi bi-code-slash me-1"></i>C
-                  </span>
-                </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="badge fs-6 bg-primary px-2 py-1">
+                  <i className="bi bi-globe me-1"></i>Développement Web
+                </span>
+                <span className="badge fs-6 bg-primary px-2 py-1">
+                  <i className="bi bi-filetype-java me-1"></i>Java
+                </span>
+                <span className="badge fs-6 bg-primary px-2 py-1">
+                  <i className="bi bi-filetype-py me-1"></i>Python
+                </span>
+                <span className="badge fs-6 bg-primary px-2 py-1">
+                  <i className="bi bi-code-slash me-1"></i>C
+                </span>
               </div>
             </div>
           </div>
@@ -236,9 +218,12 @@ export const timelineData = [
                     </p>
                     <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                       <li>Frontend Angular avec Material Design</li>
-                      <li>API REST Spring Boot</li>
+                      <li>API REST Django</li>
                       <li>Base de données PostgreSQL</li>
                       <li>Intégration continue avec GitLab CI</li>
+                      <li>
+                        Mise en place d'une architecture microservices (Docker)
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -269,6 +254,10 @@ export const timelineData = [
                   </span>
                   <span className="badge fs-6 bg-primary px-2 py-1">
                     <i className="bi bi-cpu me-1"></i>IoT
+                  </span>
+
+                  <span className="badge fs-6 bg-primary px-2 py-1">
+                    <i className="bi bi-boxes me-1"></i>Docker
                   </span>
                 </div>
               </div>
@@ -320,7 +309,7 @@ export const timelineData = [
               <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                   <h4 className="mb-3 text-xl font-semibold text-primary">
-                    Formation Spécialisée
+                    Formation Approfondie
                   </h4>
                   <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                     <li>Bases de données graphes (Neo4J)</li>
@@ -336,12 +325,13 @@ export const timelineData = [
 
                 <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                   <h4 className="mb-3 text-xl font-semibold text-primary">
-                    Projet Professionnel Majeur
+                    Expérience Professionnelle
                   </h4>
                   <div className="flex flex-col gap-3">
                     <p className="text-base md:text-lg">
-                      Développement d'une solution fullstack complexe intégrant
-                      :
+                      Toujours en alternance chez EQUANS INEO MPLR,
+                      développement d'une solution de gestion des
+                      vulnérabilités. Application web complète avec :
                     </p>
                     <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
                       <li>Architecture microservices</li>
@@ -350,6 +340,10 @@ export const timelineData = [
                       <li>Pipeline CI/CD complet</li>
                       <li>Tests et qualité logicielle</li>
                     </ul>
+                    <p className="text-base md:text-lg">
+                      Mise en oeuvre de processus de recette de déploiement et
+                      de tests. Démarche de garantie de la qualité logicielle.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -359,7 +353,7 @@ export const timelineData = [
               <div className="bg-body-tertiary mt-6 rounded-2xl p-4 shadow-sm">
                 <h4 className="mb-3 text-xl font-semibold text-primary">
                   <i className="bi bi-tools me-2"></i>
-                  Technologies avancées
+                  Technologies maîtrisées
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="badge fs-6 bg-primary px-2 py-1">
@@ -398,28 +392,58 @@ export const timelineData = [
     title: '2025-20...',
     content: (
       <div>
-        <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
-          <h4 className="mb-3 text-xl font-semibold text-primary">
-            <i className="bi bi-mortarboard me-2"></i>
-            École d'Ingénieur - Spécialisation dans l'Intelligence Artificielle
-          </h4>
-          <div className="flex flex-col gap-3">
-            <p className="text-base md:text-lg">
-              Potentielle poursuite d'études en école d'ingénieur avec un cursus
-              de spécialisation dans l'Intelligence Artificielle. Formation
-              approfondie sur les technologies d'IA, le machine learning et le
-              deep learning. 🤞🏻
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="badge fs-6 bg-primary px-2 py-1">
-                <i className="bi bi-robot me-1"></i>Intelligence Artificielle
-              </span>
-              <span className="badge fs-6 bg-primary px-2 py-1">
-                <i className="bi bi-building me-1"></i>Alternance
-              </span>
-              <span className="badge fs-6 bg-primary px-2 py-1">
-                <i className="bi bi-mortarboard me-1"></i>École d'Ingénieur
-              </span>
+        <div className="bg-body rounded-2xl p-6 shadow-md">
+          <div className="space-y-6">
+            <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
+              <h4 className="mb-3 text-xl font-semibold text-primary">
+                <i className="bi bi-mortarboard me-2"></i>
+                École d'Ingénieur - Spécialisation dans l'Intelligence
+                Artificielle
+              </h4>
+              <div className="flex flex-col gap-3">
+                <p className="text-base md:text-lg">
+                  Potentielle poursuite d'études en école d'ingénieur avec un
+                  cursus de spécialisation dans l'Intelligence Artificielle.
+                  Formation approfondie sur les technologies d'IA, le machine
+                  learning et le deep learning. 🤞🏻
+                  <br /> <br />
+                  Mon expérience préalable dans la mise en œuvre d'une
+                  application de RAG (Retrieval Augmented Generation) m'a permis
+                  de découvrir les technologies autour de l'intelligence
+                  artificielle, et cette immersion m'a donné envie de continuer
+                  dans cette voie.
+                </p>
+                <button
+                  className="btn btn-primary mt-4 d-inline-block px-3 py-2"
+                  style={{
+                    fontSize: '0.9rem',
+                    borderRadius: '0.5rem',
+                    transition: 'all 0.2s ease-in-out',
+                  }}
+                  onClick={() => {
+                    const navigationService = (window as any).navigationService;
+                    if (navigationService) {
+                      navigationService.navigateToProject('django-rag');
+                    }
+                  }}
+                >
+                  <i className="bi bi-eye me-2"></i>
+                  Voir le projet RAG
+                </button>
+                <hr className="my-4" />
+                <div className="flex flex-wrap gap-2">
+                  <span className="badge fs-6 bg-primary px-2 py-1">
+                    <i className="bi bi-robot me-1"></i>Intelligence
+                    Artificielle
+                  </span>
+                  <span className="badge fs-6 bg-primary px-2 py-1">
+                    <i className="bi bi-building me-1"></i>Alternance
+                  </span>
+                  <span className="badge fs-6 bg-primary px-2 py-1">
+                    <i className="bi bi-mortarboard me-1"></i>École d'Ingénieur
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

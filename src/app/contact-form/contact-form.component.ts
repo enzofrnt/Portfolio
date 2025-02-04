@@ -28,7 +28,7 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      emailjs.init('VOTRE_CLE_PUBLIQUE');
+      emailjs.init('FkfC-x6Q99UYh4Fp6');
     }
   }
 
@@ -39,7 +39,7 @@ export class ContactFormComponent implements OnInit {
       this.submitError = false;
 
       try {
-        await emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', {
+        await emailjs.send('service_cx0lvy8', 'Portfolio', {
           from_name: this.contactForm.value.name,
           from_email: this.contactForm.value.email,
           message: this.contactForm.value.message,

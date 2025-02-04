@@ -3,6 +3,7 @@ import { ActivatedRoute, Data, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { DarkModeService } from './services/dark-mode.service';
 import { MetaService } from './services/meta.service';
+import { NavigationService } from './services/navigation.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +20,12 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private metaService: MetaService,
-  ) {}
+    private navigationService: NavigationService,
+  ) {
+    if (typeof window !== 'undefined') {
+      (window as any).navigationService = this.navigationService;
+    }
+  }
 
   ngOnInit(): void {
     this.router.events
