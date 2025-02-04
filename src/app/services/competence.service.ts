@@ -30,12 +30,6 @@ export class CompetencesService {
     scrollToCompetence = false,
     scrollToProjects = false,
   ) {
-    console.log('CompetenceService - DÉBUT setSelectedCompetence:', {
-      competence: competence?.title,
-      scrollToCompetence,
-      scrollToProjects,
-    });
-
     this.zone.run(() => {
       this._selectedCompetence$.next({
         competence: null,
@@ -49,16 +43,11 @@ export class CompetencesService {
           highlightProjects: scrollToProjects,
           highlightCompetence: scrollToCompetence,
         });
-        console.log('CompetenceService - Action émise');
 
         if (scrollToProjects && competence) {
-          console.log(
-            'CompetenceService - Préparation du scroll vers les projets',
-          );
-
           // Premier scroll approximatif
           window.scrollBy({
-            top: 800, // Scroll d'environ 800px
+            top: 500, // Scroll d'environ 800px
             behavior: 'smooth',
           });
 
@@ -73,7 +62,7 @@ export class CompetencesService {
                 block: 'center',
               });
             }
-          }, 500); // Attendre que le premier scroll soit terminé
+          }, 100); // Attendre que le premier scroll soit terminé
         }
       }, 50);
     });

@@ -174,11 +174,6 @@ export class CompetencesComponent implements OnInit, OnDestroy {
   // Lors d'un clic direct sur la compétence dans le grid
   onCompetenceClick(competence: Competence) {
     if (this.competenceLink) {
-      console.log('Competence - Clic sur la compétence:', {
-        competence: competence.title,
-        competenceLink: this.competenceLink,
-      });
-
       this.competencesService.setSelectedCompetence(competence, false, true);
     }
   }

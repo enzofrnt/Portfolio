@@ -44,33 +44,18 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
     if (this.competenceLink) {
       this.subscription = this.competencesService.selectedCompetence$.subscribe(
         (action: SelectedCompetenceAction) => {
-          console.log('ProjectsList - Nouvelle action reçue:', {
-            competence: action.competence?.title,
-            highlightProjects: action.highlightProjects,
-          });
-
           this.highlightedCompetence = action.highlightProjects
             ? action.competence
             : null;
 
           this.updateSelectedProjects();
-
-          console.log(
-            'ProjectsList - Compétence mise en évidence:',
-            this.highlightedCompetence?.title,
-          );
         },
       );
     }
   }
 
   private updateSelectedProjects() {
-    console.log('ProjectsList - DÉBUT updateSelectedProjects:', {
-      highlightedCompetence: this.highlightedCompetence?.title,
-    });
-
     if (!this.highlightedCompetence) {
-      console.log('ProjectsList - Réinitialisation des projets sélectionnés');
       this.selectedProjects = [];
       this.isResetting = true;
       return;
@@ -85,20 +70,11 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
           (c) => c.title === this.highlightedCompetence!.title,
         ),
       );
-      console.log('ProjectsList - FIN updateSelectedProjects:', {
-        competence: this.highlightedCompetence?.title,
-        nombreProjetsSelectionnes: this.selectedProjects.length,
-        projetsSelectionnes: this.selectedProjects.map((p) => p.name),
-      });
     }, 50);
   }
 
   isHighlighted(project: Project): boolean {
     const result = this.selectedProjects.includes(project);
-    // console.log('ProjectsList - isHighlighted:', {
-    //   projet: project.name,
-    //   selectionne: result,
-    // });
     return result;
   }
 
