@@ -1,55 +1,69 @@
-<footer class="bg-body-tertiary text-bg-secondary py-3 mt-4">
+<footer class="bg-body-tertiary text-bg-secondary py-2">
   <div class="container">
-    <div class="row">
-      <!-- Navigation Links -->
-      <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <ul class="nav justify-content-start mb-2">
+    <div class="row g-2">
+      <!-- Colonne Logo et Copyright -->
+      <div
+        class="col-md-3 text-center text-md-start d-flex flex-column align-items-center align-items-md-start">
+        <small class="text-white">© {{this.currentYear}} Enzo Fournet</small>
+        <img src="assets/images/enzo_frnt.webp" alt="Logo Portfolio" height="30"
+          class="mb-1">
+
+      </div>
+
+      <!-- Colonne Navigation -->
+      <div class="col-md-5">
+        <h6 class="text-white mb-1">Navigation</h6>
+        <div class="row g-0">
+          <div class="col-6">
+            <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link text-white px-2"
+                <a class="nav-link text-white py-1 px-0"
                   [routerLink]="['/home']">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white px-2"
+                <a class="nav-link text-white py-1 px-0"
                   [routerLink]="['/cv']">CV</a>
               </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link text-white px-2"
+                <a class="nav-link text-white py-1 px-0"
                   [routerLink]="['/competences']">Compétences</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white px-2"
+                <a class="nav-link text-white py-1 px-0"
                   [routerLink]="['/projects']">Projets</a>
               </li>
             </ul>
-            <ul class="nav justify-content-start">
-              <li class="nav-item">
-                <a class="nav-link text-white px-2"
-                  href="https://github.com/enzofrnt" target="_blank">
-                  <i class="bi bi-github"></i> GitHub
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white px-2"
-                  href="https://www.linkedin.com/in/enzofrnt/" target="_blank">
-                  <i class="bi bi-linkedin"></i> LinkedIn
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white px-2"
-                  href="mailto:contact&#64;enzo-frnt.fr">
-                  <i class="bi bi-envelope"></i> contact&#64;enzo-frnt.fr
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="align-self-center">
-            <small class="text-white">
-              © 2025 Enzo Fournet
-            </small>
           </div>
         </div>
+      </div>
+
+      <!-- Colonne Réseaux sociaux -->
+      <div class="col-md-4">
+        <h6 class="text-white mb-1">Me contacter</h6>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white py-1 px-0"
+              href="https://github.com/enzofrnt" target="_blank">
+              <i class="bi bi-github me-2"></i>GitHub
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white py-1 px-0"
+              href="https://www.linkedin.com/in/enzofrnt/" target="_blank">
+              <i class="bi bi-linkedin me-2"></i>LinkedIn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white py-1 px-0"
+              href="mailto:contact&#64;enzo-frnt.fr">
+              <i class="bi bi-envelope me-2"></i>contact&#64;enzo-frnt.fr
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
