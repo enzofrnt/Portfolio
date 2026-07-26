@@ -1,1 +1,173 @@
-<app-project-wrapper [project]="this"></app-project-wrapper>
+<app-project-wrapper [project]="this">
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            Beaucoup d'appareils domotiques abordables (relais, prises,
+            volets…) communiquent en radio <strong>433&nbsp;MHz</strong>, un
+            protocole simple mais totalement absent des écosystèmes modernes
+            comme <strong>Matter</strong> ou HomeKit.
+            <br /><br />
+            Ce projet met en place un <strong>pont Matter</strong> sur
+            <strong>ESP32</strong>&nbsp;: le pont expose 8 interrupteurs
+            On/Off dans l'application Maison (ou tout autre contrôleur
+            Matter), et transmet chaque commande par radio 433&nbsp;MHz via un
+            module <strong>CC1101</strong> à un second ESP32 équipé d'une
+            carte 8 relais, qui pilote les appareils physiques.
+            <br /><br />
+            Le driver CC1101 s'appuie sur le travail de
+            <strong
+              ><a
+                href="https://github.com/nopnop2002/esp-idf-cc1101"
+                target="_blank"
+                rel="noopener noreferrer"
+                >nopnop2002 (esp-idf-cc1101)</a
+              ></strong
+            >, adapté et intégré en composant ESP-IDF partagé entre les deux
+            firmwares.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Architecture -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-diagram-3"></i> Architecture
+        </div>
+        <div class="card-body">
+          <p>
+            Le repo contient deux firmwares <strong>ESP-IDF</strong> et des
+            composants partagés&nbsp;:
+          </p>
+          <ul>
+            <li>
+              <strong>matter-bridge</strong>&nbsp;: un ESP-WROOM-32 qui expose
+              8 endpoints On/Off via le SDK <strong>esp-matter</strong> et
+              envoie les commandes en radio.
+            </li>
+            <li>
+              <strong>relay-device</strong>&nbsp;: une carte ESP32 à 8 relais
+              qui reçoit les commandes, commute les relais et renvoie un
+              acquittement.
+            </li>
+            <li>
+              <strong>components/cc1101</strong> et
+              <strong>components/rf_security</strong>&nbsp;: le driver radio
+              SPI et la couche de chiffrement, partagés par les deux
+              firmwares.
+            </li>
+          </ul>
+          <div class="row mt-3">
+            <div class="col-md-6 text-center mb-3 mb-md-0">
+              <img
+                src="assets/images/esp32-matter-rf-bridge.webp"
+                alt="Le pont Matter : ESP-WROOM-32 avec module CC1101"
+                class="img-fluid rounded shadow-sm"
+              />
+              <p class="text-muted mt-2 mb-0">
+                Le pont Matter&nbsp;: ESP-WROOM-32 + CC1101
+              </p>
+            </div>
+            <div class="col-md-6 text-center">
+              <img
+                src="assets/images/esp32-matter-rf-relay.webp"
+                alt="Le récepteur : carte ESP32 8 relais avec module CC1101"
+                class="img-fluid rounded shadow-sm"
+              />
+              <p class="text-muted mt-2 mb-0">
+                Le récepteur&nbsp;: carte ESP32 8 relais + CC1101
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Défis / Fonctionnalités -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-danger h-100">
+        <div class="card-header bg-danger text-white">
+          <i class="bi bi-tools"></i> Défis à relever
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              Sécuriser un lien radio 433&nbsp;MHz, par nature en clair et
+              rejouable, contre l'écoute et le replay.
+            </li>
+            <li>
+              Rendre la liaison fiable malgré un médium radio sans garantie de
+              livraison (acquittements, retries, détection hors-ligne).
+            </li>
+            <li>
+              Cohabiter proprement avec la stack Matter (thread-safety CHIP,
+              watchdogs FreeRTOS, file de commandes dédiée).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm border-success h-100">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-check-circle"></i> Fonctionnalités principales
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              8 interrupteurs pilotables depuis n'importe quel contrôleur
+              Matter (Apple Maison, Google Home, Alexa…).
+            </li>
+            <li>
+              Trames radio chiffrées en <strong>AES-128-GCM</strong> (IV
+              aléatoire + tag d'authentification).
+            </li>
+            <li>
+              Acquittement de chaque commande, marquage hors-ligne après 3
+              échecs consécutifs.
+            </li>
+            <li>
+              États des relais persistés en <strong>NVS</strong>&nbsp;:
+              restauration automatique après une coupure de courant.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-laptop"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <p>
+            Firmwares écrits en <strong>C / C++</strong> sur
+            <strong>ESP-IDF</strong> avec <strong>FreeRTOS</strong>&nbsp;: SDK
+            <strong>esp-matter</strong> pour l'exposition Matter, bus
+            <strong>SPI</strong> pour le module radio CC1101,
+            <strong>mbedTLS</strong> pour l'AES-GCM et
+            <strong>NVS</strong> pour la persistance. La prochaine étape du
+            projet est la conception de PCB dédiés pour remplacer les cartes
+            de développement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>
