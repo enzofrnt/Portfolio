@@ -1,4 +1,9 @@
 img {
   background-color: rgb(131, 140, 148);
+  // Toujours un logo carré : la hauteur suit la largeur de la carte
+  // (les attributs width/height 300 ne servent qu'au calcul intrinsèque).
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
