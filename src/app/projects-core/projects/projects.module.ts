@@ -8,6 +8,7 @@ import { BeamMPMacosComponent } from './beammp-macos/beammp-macos.component';
 import { DjangoHybridrouterComponent } from './django-hybridrouter/django-hybridrouter.component';
 import { DjangoRagComponent } from './django-rag/django-rag.component';
 import { DjangoSseComponent } from './django-sse/django-sse.component';
+import { Esp32MatterRfComponent } from './esp32-matter-rf/esp32-matter-rf.component';
 import { FlappybridComponent } from './flappybrid/flappybrid.component';
 import { FlopedtReworkComponent } from './flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './memory/memory.component';
@@ -26,6 +27,7 @@ import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
     BeamMPMacosComponent,
     DjangoSseComponent,
     DjangoHybridrouterComponent,
+    Esp32MatterRfComponent,
     FlopedtReworkComponent,
     DjangoRagComponent,
     FlappybridComponent,

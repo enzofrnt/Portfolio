@@ -7,6 +7,7 @@ import { BeamMPMacosComponent } from './projects/beammp-macos/beammp-macos.compo
 import { DjangoHybridrouterComponent } from './projects/django-hybridrouter/django-hybridrouter.component';
 import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
 import { DjangoSseComponent } from './projects/django-sse/django-sse.component';
+import { Esp32MatterRfComponent } from './projects/esp32-matter-rf/esp32-matter-rf.component';
 import { FlappybridComponent } from './projects/flappybrid/flappybrid.component';
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './projects/memory/memory.component';
@@ -25,6 +26,7 @@ export class ProjectCoreService {
     FlopedtReworkComponent,
     DjangoSseComponent,
     DjangoHybridrouterComponent,
+    Esp32MatterRfComponent,
     BeamMPMacosComponent,
     BankManageComponent,
     AutoQcmComponent,
