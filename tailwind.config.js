@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
+  // Préfixe uniformément toutes les utilities avec `app-timeline`
+  // (y compris les variantes responsive sous @media) : Tailwind reste
+  // confiné à la timeline sans casser l'ordre/la spécificité des règles.
+  important: "app-timeline",
+  // Pas de reset global : Bootstrap gère déjà le reboot du site.
+  corePlugins: {
+    preflight: false,
+  },
   // content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   content: [
     "./src/app/timeline/react/*",

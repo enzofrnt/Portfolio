@@ -6,10 +6,10 @@ export const timelineData = [
     content: (
       <div className="space-y-6">
         <div className="bg-body rounded-2xl p-6 shadow-md">
-          <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
+          <h2 className="mb-3 text-3xl font-bold text-primary">
             BAC STI2D
           </h2>
-          <h3 className="mb-2 text-xl text-muted md:text-2xl">
+          <h3 className="mb-2 text-xl text-muted">
             Lycée Charles de Gaulle - Muret (31)
           </h3>
 
@@ -25,7 +25,7 @@ export const timelineData = [
               </span>
             </div>
 
-            <p className="text-lg leading-relaxed md:text-xl">
+            <p className="text-lg leading-relaxed">
               Formation axée sur l'innovation technologique et le développement
               durable. Spécialisation en Systèmes d'Information et Numérique
               (SIN).
@@ -36,7 +36,7 @@ export const timelineData = [
                 <h4 className="mb-3 text-xl font-semibold text-primary">
                   Compétences acquises
                 </h4>
-                <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
+                <ul className="list-inside list-disc space-y-2 text-base">
                   <li>Programmation Arduino</li>
                   <li>Bases de l'électronique</li>
                   <li>Initiation au développement</li>
@@ -49,7 +49,7 @@ export const timelineData = [
                   Projet principal - Grand Oral
                 </h4>
                 <div className="flex flex-col gap-3">
-                  <p className="text-base md:text-lg">
+                  <p className="text-base">
                     Conception et réalisation d'une bouée connectée autonome,
                     mesurant l'impact du réchauffement climatique et de la
                     pollution via divers capteurs et un réseau basse
@@ -76,10 +76,10 @@ export const timelineData = [
     content: (
       <div className="space-y-6">
         <div className="bg-body rounded-2xl p-6 shadow-md">
-          <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
+          <h2 className="mb-3 text-3xl font-bold text-primary">
             BUT Informatique - BUT1
           </h2>
-          <h3 className="mb-2 text-xl text-muted md:text-2xl">
+          <h3 className="mb-2 text-xl text-muted">
             IUT de Blagnac - Université Toulouse 2 - Jean Jaures
           </h3>
 
@@ -91,17 +91,17 @@ export const timelineData = [
               </span>
             </div>
 
-            <p className="text-lg leading-relaxed md:text-xl">
+            <p className="text-lg leading-relaxed">
               Formation axée sur le développement logiciel et les bases de
               données.
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-6">
               <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                 <h4 className="mb-3 text-xl font-semibold text-primary">
                   Formation
                 </h4>
-                <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
+                <ul className="list-inside list-disc space-y-2 text-base">
                   <li>Base de l'algorithmique</li>
                   <li>Base de Java</li>
                   <li>Principe fondamentaaux de Bases de données</li>
@@ -116,7 +116,7 @@ export const timelineData = [
                   Projets académiques
                 </h4>
                 <div className="flex flex-col gap-3">
-                  <p className="text-base md:text-lg">
+                  <p className="text-base">
                     Première année de BUT Informatique avec une introduction aux
                     fondamentaux du développement et à la gestion de projets
                     informatiques. Participation à plusieurs projets pratiques
@@ -158,13 +158,13 @@ export const timelineData = [
       <div>
         <div className="space-y-6">
           <div className="bg-body rounded-2xl p-6 shadow-md">
-            <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
+            <h2 className="mb-3 text-3xl font-bold text-primary">
               BUT2 Informatique en alternance
             </h2>
-            <h3 className="mb-2 text-xl text-muted md:text-2xl">
+            <h3 className="mb-2 text-xl text-muted">
               IUT de Blagnac - Université Toulouse 2 - Jean Jaures
             </h3>
-            <h3 className="mb-2 flex items-center gap-2 text-xl text-muted md:text-2xl">
+            <h3 className="mb-2 flex items-center gap-2 text-xl text-muted">
               <img
                 src="/assets/images/equans_ineo.webp"
                 alt="Logo EQUANS"
@@ -183,7 +183,7 @@ export const timelineData = [
                 </span>
               </div>
 
-              <p className="text-lg leading-relaxed md:text-xl">
+              <p className="text-lg leading-relaxed">
                 Alternance chez EQUANS INEO MPLR en tant que développeur
                 FullStack, travaillant sur une solution innovante de gestion des
                 vulnérabilités de nos produits et infrastructures. Formation
@@ -196,7 +196,7 @@ export const timelineData = [
                   <h4 className="mb-3 text-xl font-semibold text-primary">
                     Formation Approfondie
                   </h4>
-                  <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
+                  <ul className="list-inside list-disc space-y-2 text-base">
                     <li>Développement Web Avancé (Angular, VueJS)</li>
                     <li>Backend avec Django et PHP</li>
                     <li>Bases de données SQL avancées</li>
@@ -211,12 +211,12 @@ export const timelineData = [
                     Expérience Professionnelle
                   </h4>
                   <div className="flex flex-col gap-3">
-                    <p className="text-base md:text-lg">
+                    <p className="text-base">
                       En alternance chez EQUANS INEO MPLR, développement d'une
                       solution de gestion des vulnérabilités. Application web
                       complète avec :
                     </p>
-                    <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
+                    <ul className="list-inside list-disc space-y-2 text-base">
                       <li>Frontend Angular avec Material Design</li>
                       <li>API REST Django</li>
                       <li>Base de données PostgreSQL</li>
@@ -273,13 +273,13 @@ export const timelineData = [
       <div>
         <div className="space-y-6">
           <div className="bg-body rounded-2xl p-6 shadow-md">
-            <h2 className="mb-3 text-3xl font-bold text-primary md:text-4xl">
+            <h2 className="mb-3 text-3xl font-bold text-primary">
               BUT3 Informatique en alternance
             </h2>
-            <h3 className="mb-2 text-xl text-muted md:text-2xl">
+            <h3 className="mb-2 text-xl text-muted">
               IUT de Blagnac - Université Toulouse 2 - Jean Jaures
             </h3>
-            <h3 className="mb-2 flex items-center gap-2 text-xl text-muted md:text-2xl">
+            <h3 className="mb-2 flex items-center gap-2 text-xl text-muted">
               <img
                 src="/assets/images/equans_ineo.webp"
                 alt="Logo EQUANS"
@@ -298,7 +298,7 @@ export const timelineData = [
                 </span>
               </div>
 
-              <p className="text-lg leading-relaxed md:text-xl">
+              <p className="text-lg leading-relaxed">
                 Dernière année de BUT en alternance, axée sur des projets
                 complexes et innovants. Développement d'une solution fullstack
                 complète avec relation client et mise en situation
@@ -311,7 +311,7 @@ export const timelineData = [
                   <h4 className="mb-3 text-xl font-semibold text-primary">
                     Formation Approfondie
                   </h4>
-                  <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
+                  <ul className="list-inside list-disc space-y-2 text-base">
                     <li>Bases de données graphes (Neo4J)</li>
                     <li>Bases de données vectorielles (PGVector)</li>
                     <li>RAG et Intelligence Artificielle</li>
@@ -328,19 +328,19 @@ export const timelineData = [
                     Expérience Professionnelle
                   </h4>
                   <div className="flex flex-col gap-3">
-                    <p className="text-base md:text-lg">
+                    <p className="text-base">
                       Toujours en alternance chez EQUANS INEO MPLR,
                       développement d'une solution de gestion des
                       vulnérabilités. Application web complète avec :
                     </p>
-                    <ul className="list-inside list-disc space-y-2 text-base md:text-lg">
+                    <ul className="list-inside list-disc space-y-2 text-base">
                       <li>Architecture microservices</li>
                       <li>Gestion de base de données graphe</li>
                       <li>Intégration IA et RAG</li>
                       <li>Pipeline CI/CD complet</li>
                       <li>Tests et qualité logicielle</li>
                     </ul>
-                    <p className="text-base md:text-lg">
+                    <p className="text-base">
                       Mise en oeuvre de processus de recette de déploiement et
                       de tests. Démarche de garantie de la qualité logicielle.
                     </p>
@@ -401,7 +401,7 @@ export const timelineData = [
                 Artificielle
               </h4>
               <div className="flex flex-col gap-3">
-                <p className="text-base md:text-lg">
+                <p className="text-base">
                   Potentielle poursuite d'études en école d'ingénieur avec un
                   cursus de spécialisation dans l'Intelligence Artificielle.
                   Formation approfondie sur les technologies d'IA, le machine

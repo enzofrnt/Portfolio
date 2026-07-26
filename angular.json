@@ -31,8 +31,7 @@
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": [
               "react",
-              "react-dom",
-              "lodash"
+              "react-dom"
             ],
             "stylePreprocessorOptions": {
               "sass": {

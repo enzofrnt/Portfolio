@@ -1,13 +1,36 @@
 .timeline-wrapper {
   position: relative;
-  overflow: hidden;
+  // `clip` (et non `hidden`) : ne crée pas de conteneur de scroll,
+  // ce qui préserve le `position: sticky` des éléments de la timeline.
+  overflow-x: clip;
   min-height: 5052px;
 }
 
+// Les directives Tailwind sont au niveau racine : le confinement à la
+// timeline est assuré par `important: 'app-timeline'` dans tailwind.config.js.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Mini-reset local (le preflight Tailwind est désactivé pour ne pas
+// interférer avec Bootstrap) : nécessaire pour les utilities `border-*`
+// et pour neutraliser le padding-left Bootstrap des listes.
 app-timeline {
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .bg-body {
