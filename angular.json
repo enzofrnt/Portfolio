@@ -32,7 +32,17 @@
             "assets": [
               "src/favicon.ico",
               "src/robots.txt",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "external/react-cv/dist",
+                "output": "/assets/cv"
+              },
+              {
+                "glob": "CV.pdf",
+                "input": "external/react-cv",
+                "output": "/assets/pdf"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",

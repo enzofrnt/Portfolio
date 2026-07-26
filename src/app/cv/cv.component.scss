@@ -1,6 +1,10 @@
+// Dimensions CSS de la page A4 du CV (voir external/react-cv).
+$cv-page-w: 794px;
+$cv-page-h: 1123px;
+
 .cv-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: $cv-page-w;
   margin: 0 auto;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -11,14 +15,19 @@
 .cv-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 141.4%;
+  // Ratio A4 (1123 / 794)
+  padding-top: calc(100% * 1123 / 794);
+  overflow: hidden;
 
   iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    // Taille native de la page A4 du CV, remise à l'échelle du conteneur
+    // via la propriété CSS scale (calculée dans le composant).
+    width: $cv-page-w;
+    height: $cv-page-h;
+    transform-origin: 0 0;
     border: none;
   }
 }
@@ -28,13 +37,5 @@
   .cv-container {
     margin: 0 -15px;
     border-radius: 0;
-  }
-}
-
-// Assure que le conteneur ne dépasse pas la hauteur de l'écran sur les grands écrans
-@media (min-height: 1200px) {
-  .cv-wrapper {
-    max-height: 80vh;
-    padding-top: calc(80vh * 1.414);
   }
 }

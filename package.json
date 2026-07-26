@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "pnpm --include-workspace-root --parallel run \"/^dev:/\"",
+    "dev:app": "ng serve",
+    "dev:cv": "pnpm --filter cv-enzo-fournet run dev --port 5173 --strictPort",
+    "build": "pnpm run build:cv && ng build",
+    "build:cv": "pnpm --filter cv-enzo-fournet exec playwright install chromium && pnpm --filter cv-enzo-fournet run export",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
@@ -64,5 +67,6 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "~5.5.4",
     "typescript-eslint": "8.18.0"
-  }
+  },
+  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
 }

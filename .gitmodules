@@ -1,0 +1,3 @@
+[submodule "external/react-cv"]
+	path = external/react-cv
+	url = https://github.com/enzofrnt/react-cv.git

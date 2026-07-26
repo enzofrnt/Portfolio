@@ -1,0 +1,4 @@
+# Workspace pnpm : le portfolio + le CV (submodule git external/react-cv).
+# `pnpm install` à la racine installe les dépendances des deux paquets.
+packages:
+  - external/react-cv
