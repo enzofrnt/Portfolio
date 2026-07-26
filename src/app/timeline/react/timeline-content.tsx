@@ -5,7 +5,7 @@ export const timelineData = [
     title: '2021-2022',
     content: (
       <div className="space-y-6">
-        <div className="bg-body rounded-2xl p-6 shadow-md">
+        <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
           <h2 className="mb-3 text-3xl font-bold text-primary">
             BAC STI2D
           </h2>
@@ -14,7 +14,7 @@ export const timelineData = [
           </h3>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <span className="text-success inline-flex items-center text-lg font-semibold">
                 <i className="bi bi-award me-2"></i>
                 Mention Bien
@@ -31,7 +31,7 @@ export const timelineData = [
               (SIN).
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-[1rem] md:gap-6 md:grid-cols-2">
               <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                 <h4 className="mb-3 text-xl font-semibold text-primary">
                   Compétences acquises
@@ -75,7 +75,7 @@ export const timelineData = [
     title: '2022-2023',
     content: (
       <div className="space-y-6">
-        <div className="bg-body rounded-2xl p-6 shadow-md">
+        <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
           <h2 className="mb-3 text-3xl font-bold text-primary">
             BUT Informatique - BUT1
           </h2>
@@ -84,7 +84,7 @@ export const timelineData = [
           </h3>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center text-lg font-semibold text-primary">
                 <i className="bi bi-cpu me-2"></i>
                 Formation en développement logiciel
@@ -96,7 +96,7 @@ export const timelineData = [
               données.
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-6">
+            <div className="mt-6 grid grid-cols-1 gap-[1rem] md:gap-6">
               <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                 <h4 className="mb-3 text-xl font-semibold text-primary">
                   Formation
@@ -157,7 +157,7 @@ export const timelineData = [
     content: (
       <div>
         <div className="space-y-6">
-          <div className="bg-body rounded-2xl p-6 shadow-md">
+          <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
             <h2 className="mb-3 text-3xl font-bold text-primary">
               BUT2 Informatique en alternance
             </h2>
@@ -176,7 +176,7 @@ export const timelineData = [
             </h3>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center text-lg font-semibold text-primary">
                   <i className="bi bi-cpu me-2"></i>
                   Formation en développement logiciel
@@ -191,7 +191,7 @@ export const timelineData = [
                 montée en compétences complète.
               </p>
 
-              <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mt-6 grid grid-cols-1 gap-[1rem] md:gap-6 md:grid-cols-2">
                 <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                   <h4 className="mb-3 text-xl font-semibold text-primary">
                     Formation Approfondie
@@ -272,7 +272,7 @@ export const timelineData = [
     content: (
       <div>
         <div className="space-y-6">
-          <div className="bg-body rounded-2xl p-6 shadow-md">
+          <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
             <h2 className="mb-3 text-3xl font-bold text-primary">
               BUT3 Informatique en alternance
             </h2>
@@ -291,7 +291,7 @@ export const timelineData = [
             </h3>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center text-lg font-semibold text-primary">
                   <i className="bi bi-cpu me-2"></i>
                   Formation avancée en développement et DevOps
@@ -306,7 +306,7 @@ export const timelineData = [
                 architectures modernes.
               </p>
 
-              <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mt-6 grid grid-cols-1 gap-[1rem] md:gap-6 md:grid-cols-2">
                 <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
                   <h4 className="mb-3 text-xl font-semibold text-primary">
                     Formation Approfondie
@@ -392,7 +392,7 @@ export const timelineData = [
     title: '2025-20...',
     content: (
       <div>
-        <div className="bg-body rounded-2xl p-6 shadow-md">
+        <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
           <div className="space-y-6">
             <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
               <h4 className="mb-3 text-xl font-semibold text-primary">
