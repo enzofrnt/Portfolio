@@ -1,5 +1,3 @@
-import { Competence } from '../competences/competence.model';
-
 export enum ProjectType {
   IUT = 'iut',
   PERSO = 'perso',
@@ -11,6 +9,7 @@ export interface Project {
   description: string;
   type: ProjectType;
   link?: string;
-  competences?: Competence[];
   keywords?: string[];
+  /** false si le projet n'a pas de logo dans assets/images/<id>.webp. */
+  hasLogo?: boolean;
 }

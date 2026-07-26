@@ -13,6 +13,7 @@ export class DjangoHybridrouterComponent implements Project {
   description =
     'Un exemple de configuration de Django pour une application Angular';
   type = ProjectType.PERSO;
+  hasLogo = false;
   link = 'https://github.com/enzofrnt/djangorestframework-hybridrouter';
   keywords = [
     'Django',

@@ -12,6 +12,7 @@ export class FlopedtReworkComponent implements Project {
   name = 'Flopedt rework arborescence';
   description = "Refonte de l'arborecense du repository de Flopedt";
   type = ProjectType.PERSO;
+  hasLogo = false;
   keywords = [
     'Django',
     'FLOP',
