@@ -5,7 +5,7 @@ export const timelineData = [
     title: '2021-2022',
     content: (
       <div className="space-y-6">
-        <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
+        <div className="bg-body rounded-2xl border border-[var(--bs-border-color)] p-[1rem] shadow-[0_0.25rem_1rem_rgba(0,0,0,0.15)] md:p-6">
           <h2 className="mb-3 text-3xl font-bold text-primary">
             BAC STI2D
           </h2>
@@ -75,7 +75,7 @@ export const timelineData = [
     title: '2022-2023',
     content: (
       <div className="space-y-6">
-        <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
+        <div className="bg-body rounded-2xl border border-[var(--bs-border-color)] p-[1rem] shadow-[0_0.25rem_1rem_rgba(0,0,0,0.15)] md:p-6">
           <h2 className="mb-3 text-3xl font-bold text-primary">
             BUT Informatique - BUT1
           </h2>
@@ -157,7 +157,7 @@ export const timelineData = [
     content: (
       <div>
         <div className="space-y-6">
-          <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
+          <div className="bg-body rounded-2xl border border-[var(--bs-border-color)] p-[1rem] shadow-[0_0.25rem_1rem_rgba(0,0,0,0.15)] md:p-6">
             <h2 className="mb-3 text-3xl font-bold text-primary">
               BUT2 Informatique en alternance
             </h2>
@@ -272,7 +272,7 @@ export const timelineData = [
     content: (
       <div>
         <div className="space-y-6">
-          <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
+          <div className="bg-body rounded-2xl border border-[var(--bs-border-color)] p-[1rem] shadow-[0_0.25rem_1rem_rgba(0,0,0,0.15)] md:p-6">
             <h2 className="mb-3 text-3xl font-bold text-primary">
               BUT3 Informatique en alternance
             </h2>
@@ -392,7 +392,7 @@ export const timelineData = [
     title: '2025-20...',
     content: (
       <div>
-        <div className="bg-body rounded-2xl p-[1rem] shadow-md md:p-6">
+        <div className="bg-body rounded-2xl border border-[var(--bs-border-color)] p-[1rem] shadow-[0_0.25rem_1rem_rgba(0,0,0,0.15)] md:p-6">
           <div className="space-y-6">
             <div className="bg-body-tertiary rounded-2xl p-4 shadow-sm">
               <h4 className="mb-3 text-xl font-semibold text-primary">
