@@ -11,6 +11,7 @@ import { Project, ProjectType } from '../../projects-core/project.model';
 export class NavbarComponent implements OnInit {
   iutProjects: Project[] = [];
   persoProjects: Project[] = [];
+  cnamProjects: Project[] = [];
 
   constructor(private projectService: ProjectCoreService) {}
 
@@ -18,5 +19,6 @@ export class NavbarComponent implements OnInit {
     const projectsByType = this.projectService.getProjectsByType();
     this.iutProjects = projectsByType[ProjectType.IUT];
     this.persoProjects = projectsByType[ProjectType.PERSO];
+    this.cnamProjects = projectsByType[ProjectType.CNAM];
   }
 }

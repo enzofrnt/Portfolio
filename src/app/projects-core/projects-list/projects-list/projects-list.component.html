@@ -1,3 +1,17 @@
+<div *ngIf="this.includeCnamProjects">
+  <h2 class="mb-4">Projets réalisés au CNAM</h2>
+  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div *ngFor="let project of cnamProjects" class="col project-card mb-4">
+      <app-project-card [project]="project"> </app-project-card>
+    </div>
+  </div>
+</div>
+
+<hr
+  class="my-4"
+  *ngIf="this.includeCnamProjects && this.includePersoProjects"
+/>
+
 <div *ngIf="this.includePersoProjects">
   <h2 class="mb-4">Projets personnels</h2>
   <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
@@ -7,7 +21,13 @@
   </div>
 </div>
 
-<hr class="my-4" *ngIf="this.includeIutProjects && this.includePersoProjects" />
+<hr
+  class="my-4"
+  *ngIf="
+    this.includeIutProjects &&
+    (this.includePersoProjects || this.includeCnamProjects)
+  "
+/>
 
 <div *ngIf="this.includeIutProjects">
   <h2 class="mb-4">Projets réalisés à l'IUT</h2>

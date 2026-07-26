@@ -68,6 +68,15 @@
             </li>
             <li><hr class="dropdown-divider" /></li>
 
+            <!-- Composant pour projets CNAM -->
+            <app-project-dropdown
+              [projects]="cnamProjects"
+              header="Projets du CNAM"
+            >
+            </app-project-dropdown>
+
+            <li><hr class="dropdown-divider" /></li>
+
             <!-- Composant pour projets perso -->
             <app-project-dropdown
               [projects]="persoProjects"

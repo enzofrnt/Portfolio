@@ -11,9 +11,11 @@ import { Project, ProjectType } from '../../project.model';
 export class ProjectsListComponent implements OnInit {
   @Input() includeIutProjects = true;
   @Input() includePersoProjects = true;
+  @Input() includeCnamProjects = true;
 
   iutProjects: Project[] = [];
   persoProjects: Project[] = [];
+  cnamProjects: Project[] = [];
 
   constructor(private projectService: ProjectCoreService) {}
 
@@ -21,5 +23,6 @@ export class ProjectsListComponent implements OnInit {
     const projectsByType = this.projectService.getProjectsByType();
     this.iutProjects = projectsByType[ProjectType.IUT];
     this.persoProjects = projectsByType[ProjectType.PERSO];
+    this.cnamProjects = projectsByType[ProjectType.CNAM];
   }
 }

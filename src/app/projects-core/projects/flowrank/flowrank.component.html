@@ -1,0 +1,131 @@
+<app-project-wrapper [project]="this">
+  <!-- Section Contexte -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-info-circle"></i> Contexte
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>FlowRank</strong> est un projet réalisé en équipe dans le
+            cadre de ma formation au <strong>CNAM</strong>. Le constat de
+            départ&nbsp;: une boîte mail se remplit plus vite qu'on ne la
+            trie, et les newsletters, notifications et messages importants
+            finissent mélangés.
+            <br /><br />
+            FlowRank se connecte à un compte <strong>Gmail</strong> et
+            <strong>classe automatiquement les mails entrants par IA</strong>,
+            afin de faire ressortir ce qui mérite vraiment l'attention de
+            l'utilisateur dans un tableau de bord dédié.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Fonctionnement -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-diagram-3"></i> Fonctionnement
+        </div>
+        <div class="card-body">
+          <ol class="mb-0">
+            <li>
+              L'utilisateur crée un compte puis lie sa boîte Gmail via
+              <strong>OAuth Google</strong>.
+            </li>
+            <li>
+              Un planificateur (<strong>APScheduler</strong>) récupère
+              périodiquement les nouveaux mails via l'API Gmail&nbsp;: les
+              corps HTML sont décodés et convertis en texte exploitable.
+            </li>
+            <li>
+              Un second job classe les mails non étiquetés avec un modèle de
+              classification de texte <strong>Hugging Face</strong>
+              (<strong>Transformers</strong>), entraîné pour le tri de mails.
+            </li>
+            <li>
+              Le tableau de bord présente les mails triés par catégorie à
+              l'utilisateur.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Défis / Fonctionnalités -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-danger h-100">
+        <div class="card-header bg-danger text-white">
+          <i class="bi bi-tools"></i> Défis à relever
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              Intégrer l'API Gmail proprement&nbsp;: OAuth, pagination,
+              décodage MIME / base64 / quoted-printable des corps de mails.
+            </li>
+            <li>
+              Rendre le classifieur interchangeable&nbsp;: le sorter est
+              chargé dynamiquement par configuration, ce qui permet de changer
+              de modèle ou de stratégie sans toucher au reste du backend.
+            </li>
+            <li>
+              Travailler en équipe sur un monorepo front / back avec des
+              environnements Docker reproductibles.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm border-success h-100">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-check-circle"></i> Fonctionnalités principales
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Création de compte et authentification (JWT, bcrypt).</li>
+            <li>Liaison d'un compte Gmail via OAuth Google.</li>
+            <li>
+              Récupération et classification automatiques des mails à
+              intervalle régulier, sans action de l'utilisateur.
+            </li>
+            <li>Tableau de bord de consultation des mails triés.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Technologies -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-laptop"></i> Technologies utilisées
+        </div>
+        <div class="card-body">
+          <p class="mb-0">
+            Le backend est une API <strong>FastAPI</strong> (Python) avec
+            <strong>SQLAlchemy</strong> et <strong>PostgreSQL</strong>, la
+            classification s'appuie sur
+            <strong>Transformers / PyTorch</strong> avec un modèle hébergé sur
+            le Hub Hugging Face. Le frontend est en
+            <strong>React&nbsp;19</strong> avec <strong>TypeScript</strong>,
+            <strong>Tailwind&nbsp;CSS&nbsp;4</strong> et
+            <strong>Vite</strong>, servi par <strong>Nginx</strong>. L'ensemble
+            est orchestré avec <strong>Docker Compose</strong> (environnements
+            dev et prod séparés).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-project-wrapper>

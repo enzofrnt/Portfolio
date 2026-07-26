@@ -10,6 +10,7 @@ import { DjangoRagComponent } from './django-rag/django-rag.component';
 import { DjangoSseComponent } from './django-sse/django-sse.component';
 import { Esp32MatterRfComponent } from './esp32-matter-rf/esp32-matter-rf.component';
 import { FlappybridComponent } from './flappybrid/flappybrid.component';
+import { FlowrankComponent } from './flowrank/flowrank.component';
 import { FlopedtReworkComponent } from './flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './memory/memory.component';
 import { OptiAlgoComponent } from './opti-algo/opti-algo.component';
@@ -28,6 +29,7 @@ import { WaitForDbComponent } from './wait-for-db/wait-for-db.component';
     DjangoSseComponent,
     DjangoHybridrouterComponent,
     Esp32MatterRfComponent,
+    FlowrankComponent,
     FlopedtReworkComponent,
     DjangoRagComponent,
     FlappybridComponent,

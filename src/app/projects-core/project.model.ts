@@ -1,6 +1,7 @@
 export enum ProjectType {
   IUT = 'iut',
   PERSO = 'perso',
+  CNAM = 'cnam',
 }
 
 export interface Project {

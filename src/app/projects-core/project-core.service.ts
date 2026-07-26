@@ -9,6 +9,7 @@ import { DjangoRagComponent } from './projects/django-rag/django-rag.component';
 import { DjangoSseComponent } from './projects/django-sse/django-sse.component';
 import { Esp32MatterRfComponent } from './projects/esp32-matter-rf/esp32-matter-rf.component';
 import { FlappybridComponent } from './projects/flappybrid/flappybrid.component';
+import { FlowrankComponent } from './projects/flowrank/flowrank.component';
 import { FlopedtReworkComponent } from './projects/flopedt-rework/flopedt-rework.component';
 import { MemoryComponent } from './projects/memory/memory.component';
 import { OptiAlgoComponent } from './projects/opti-algo/opti-algo.component';
@@ -20,6 +21,7 @@ import { WaitForDbComponent } from './projects/wait-for-db/wait-for-db.component
 })
 export class ProjectCoreService {
   static projectComponents = [
+    FlowrankComponent,
     WaitForDbComponent,
     RoomOcupComponent,
     MemoryComponent,
@@ -55,6 +57,7 @@ export class ProjectCoreService {
     return {
       [ProjectType.IUT]: projects.filter((p) => p.type === ProjectType.IUT),
       [ProjectType.PERSO]: projects.filter((p) => p.type === ProjectType.PERSO),
+      [ProjectType.CNAM]: projects.filter((p) => p.type === ProjectType.CNAM),
     };
   }
 
