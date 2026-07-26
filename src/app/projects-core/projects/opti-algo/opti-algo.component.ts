@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CompetencesComponent } from '../../../competences/competence/competence.component';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
@@ -15,10 +14,6 @@ export class OptiAlgoComponent implements Project {
     "Optimisation et comparaison d'algorithmes de recherche de chemins sur des données OpenStreetMap";
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/Projet-Algo-Qual';
-  competences = [
-    CompetencesComponent.competenceOptimiser,
-    CompetencesComponent.competenceRealiser,
-  ];
   keywords = [
     'Python',
     'Algorithmes',

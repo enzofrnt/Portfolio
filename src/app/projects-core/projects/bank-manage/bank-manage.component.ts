@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CompetencesComponent } from '../../../competences/competence/competence.component';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
@@ -13,12 +12,5 @@ export class BankManageComponent implements Project {
   name = 'Gestion de banque';
   description = 'Gestion de compte bancaire';
   type = ProjectType.IUT;
-  competences = [
-    CompetencesComponent.competenceAdministrer,
-    CompetencesComponent.competenceRealiser,
-    CompetencesComponent.competenceGerer,
-    CompetencesComponent.competenceConduire,
-    CompetencesComponent.competenceCollaborer,
-  ];
   keywords = ['JavaFX', 'Java'];
 }

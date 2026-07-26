@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CompetencesComponent } from './competences/competence/competence.component';
 import { CvComponent } from './cv/cv.component';
 import { HomeComponent } from './home/home.component';
 
@@ -23,15 +22,6 @@ const routes: Routes = [
       title: 'Portfolio - CV',
       description: 'CV de Enzo Fournet',
       keywords: 'CV, Enzo Fournet, Alternance, Développement',
-    },
-  },
-  {
-    path: 'competences',
-    component: CompetencesComponent,
-    data: {
-      title: 'Portfolio - Competences',
-      description: 'Compétences du BUT informatique',
-      keywords: 'Compétences, BUT informatique',
     },
   },
   {

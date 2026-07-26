@@ -1,36 +1,19 @@
 <div *ngIf="this.includePersoProjects">
   <h2 class="mb-4">Projets personnels</h2>
   <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-    <div *ngFor="let project of persoProjects"
-      class="col mb-4 project-card"
-      [ngClass]="{
-        'selected': isHighlighted(project),
-        'reset-animation': isResetting
-      }">
-      <app-project-card [project]="project"
-        [includeCompetences]="this.includeCompetences">
-      </app-project-card>
+    <div *ngFor="let project of persoProjects" class="col project-card mb-4">
+      <app-project-card [project]="project"> </app-project-card>
     </div>
   </div>
 </div>
 
-<hr class="my-4"
-  *ngIf="this.includeIutProjects && this.includePersoProjects" />
+<hr class="my-4" *ngIf="this.includeIutProjects && this.includePersoProjects" />
 
 <div *ngIf="this.includeIutProjects">
   <h2 class="mb-4">Projets réalisés à l'IUT</h2>
-  <div
-    class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-    <div *ngFor="let project of iutProjects"
-      class="mb-4 col project-card"
-      [ngClass]="{
-        'selected': isHighlighted(project),
-        'reset-animation': isResetting
-      }">
-      <app-project-card [project]="project"
-        [includeCompetences]="this.includeCompetences"
-        [competenceLink]="this.competenceLink">
-      </app-project-card>
+  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div *ngFor="let project of iutProjects" class="col project-card mb-4">
+      <app-project-card [project]="project"> </app-project-card>
     </div>
   </div>
 </div>

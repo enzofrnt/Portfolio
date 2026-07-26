@@ -14,7 +14,6 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { provideHighlightOptions } from 'ngx-highlightjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CompetencesModule } from './competences/competences.module';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CvComponent } from './cv/cv.component';
 import { ActiveLinkDirective } from './directives/active-link.directive';
@@ -50,7 +49,6 @@ import { CodeBlockComponent } from './utils/code-block/code-block.component';
     ProjectsModule,
     TimelineModule,
     CodeBlockComponent,
-    CompetencesModule,
     ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CompetencesComponent } from '../../../competences/competence/competence.component';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
@@ -16,10 +15,6 @@ export class RagReportComponent implements Project {
     "Mémoire sur l'implémentation d'un système RAG pour l'analyse de rapports";
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/Memoire-RAG';
-  competences = [
-    CompetencesComponent.competenceOptimiser,
-    CompetencesComponent.competenceRealiser,
-  ];
   keywords = [
     'RAG',
     'NLP',

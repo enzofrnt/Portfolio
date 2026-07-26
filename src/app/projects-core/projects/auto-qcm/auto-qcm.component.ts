@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CompetencesComponent } from '../../../competences/competence/competence.component';
 import { Project, ProjectType } from '../../project.model';
 
 @Component({
@@ -14,13 +13,6 @@ export class AutoQcmComponent implements Project {
   description = "Application de QCM automatique pour l'IUT de blagnac";
   type = ProjectType.IUT;
   link = 'https://github.com/enzofrnt/AUTO-QCM';
-  competences = [
-    CompetencesComponent.competenceAdministrer,
-    CompetencesComponent.competenceRealiser,
-    CompetencesComponent.competenceGerer,
-    CompetencesComponent.competenceConduire,
-    CompetencesComponent.competenceCollaborer,
-  ];
   keyword = [
     'QCM',
     'Auto QCM',

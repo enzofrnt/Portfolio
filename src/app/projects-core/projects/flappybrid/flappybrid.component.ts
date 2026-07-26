@@ -5,7 +5,6 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { CompetencesComponent } from '../../../competences/competence/competence.component';
 import { Project, ProjectType } from '../../project.model';
 
 interface UnityInstance {
@@ -19,7 +18,6 @@ interface UnityInstance {
   standalone: false,
 })
 export class FlappybridComponent implements AfterViewInit, OnDestroy, Project {
-  competences = [CompetencesComponent.competenceRealiser];
   id = 'flappybrid';
   name = 'Flappybrid - Unity';
   description = 'Jeu de flappy bird en Unity';
