@@ -102,12 +102,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               className="flex justify-start pb-5 pt-10 md:gap-10 md:pb-5 md:pt-40"
             >
               <div className="sticky top-24 z-50 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
-                <div
-                  className="bg-body-tertiary absolute flex h-10 w-10 items-center justify-center rounded-full"
-                  style={{ left: '0.78rem' }}
-                >
-                  <div className="bg-body h-4 w-4 rounded-full border border-neutral-300 p-2 dark:border-neutral-700" />
-                </div>
                 <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-neutral-500 md:block md:pl-20 md:text-5xl">
                   {item.title}
                 </h3>
@@ -138,6 +132,21 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-purple-500 via-blue-500 to-transparent"
             />
           </div>
+
+          {/* 🔵 Rond unique qui suit la progression du scroll */}
+          <motion.div
+            style={{
+              left: '0.78rem',
+              top: `${Math.max(0, Math.min(scrollProgress * height, height) - 20)}px`,
+              opacity:
+                scrollProgress < 0.9
+                  ? 1
+                  : Math.max(0, 1 - Math.pow((scrollProgress - 0.9) * 8, 2)),
+            }}
+            className="bg-body-tertiary absolute z-50 flex h-10 w-10 items-center justify-center rounded-full"
+          >
+            <div className="bg-body h-4 w-4 rounded-full border border-neutral-300 p-2 dark:border-neutral-700" />
+          </motion.div>
         </div>
       </div>
     </div>
